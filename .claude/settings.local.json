@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python *)",
+      "Bash(kill %1)",
+      "Bash(python3 *)",
+      "Bash(curl -s http://localhost:8788/)",
+      "Bash(curl -s http://localhost:8789/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8790/)",
+      "Bash(curl -s http://localhost:8790/)",
+      "Bash(curl -s http://localhost:8791/investors.json)"
+    ]
+  }
+}

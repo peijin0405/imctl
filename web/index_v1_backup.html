@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Washon Investor Map</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, sans-serif;
+      background: #f5f7fa;
+      color: #111827;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: #0f172a;
+      color: #fff;
+      padding: 28px 36px;
+    }
+    header h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
+    header p  { font-size: 0.85rem; color: #94a3b8; margin-top: 4px; }
+
+    /* ── Controls ── */
+    .controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 16px 36px;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .controls input,
+    .controls select {
+      padding: 7px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      color: #111827;
+      background: #fff;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .controls input { flex: 1; min-width: 200px; }
+    .controls input:focus,
+    .controls select:focus { border-color: #6366f1; box-shadow: 0 0 0 2px #e0e7ff; }
+
+    /* ── Stats bar ── */
+    #stats {
+      padding: 10px 36px;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    /* ── Grid ── */
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 14px;
+      padding: 8px 36px 40px;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: box-shadow 0.18s, border-color 0.18s;
+    }
+    .card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      border-color: #c7d2fe;
+    }
+
+    /* Firm name */
+    .card-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.25;
+    }
+
+    /* Tag row */
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    .tag-sector { background: #f3f4f6; color: #374151; border: 1px solid #e5e7eb; }
+    .tag-type   { background: #ede9fe; color: #5b21b6; }
+    .tag-region { background: #d1fae5; color: #065f46; }
+    .tag-focus  { background: #e0f2fe; color: #0369a1; }
+
+    /* Section label */
+    .section-label {
+      font-size: 0.67rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #9ca3af;
+      margin-bottom: 4px;
+    }
+
+    /* Portfolio list */
+    .portfolio-list {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .portfolio-item {
+      font-size: 0.82rem;
+      color: #374151;
+      padding-left: 10px;
+      position: relative;
+    }
+    .portfolio-item::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: #9ca3af;
+    }
+
+    /* Website button */
+    .card-footer { margin-top: auto; }
+    .btn-website {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 7px 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 7px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #4f46e5;
+      text-decoration: none;
+      background: #f9fafb;
+      transition: background 0.14s, border-color 0.14s;
+    }
+    .btn-website:hover {
+      background: #eef2ff;
+      border-color: #c7d2fe;
+    }
+
+    /* Empty state */
+    .empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 64px;
+      color: #9ca3af;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Washon Investor Map</h1>
+  <p>Multi-sector investor intelligence across AI, Semiconductor, Healthcare, EdTech, FinTech, GreenTech &amp; Energy</p>
+</header>
+
+<div class="controls">
+  <input id="search" type="text" placeholder="Search by firm name, focus, or portfolio…" />
+  <select id="filterSector">
+    <option value="">All Sectors</option>
+    <option value="ai_apps">AI Apps</option>
+    <option value="ai_hardware">AI Hardware &amp; Robotics</option>
+    <option value="semiconductor">Semiconductor</option>
+    <option value="healthcare">Healthcare</option>
+    <option value="edtech">EdTech</option>
+    <option value="fintech">FinTech &amp; Quant</option>
+    <option value="greentech">GreenTech &amp; Materials</option>
+    <option value="energy">Energy</option>
+  </select>
+  <select id="filterType">
+    <option value="">All Types</option>
+    <option value="Angel">Angel</option>
+    <option value="VC">VC</option>
+    <option value="PE">PE / Growth</option>
+    <option value="CVC">CVC</option>
+  </select>
+  <select id="filterStage">
+    <option value="">All Stages</option>
+    <option value="Angel">Angel</option>
+    <option value="Pre-A">Pre-A</option>
+    <option value="Series A-C">Series A-C</option>
+    <option value="Pre-IPO">Pre-IPO</option>
+  </select>
+  <select id="filterRegion">
+    <option value="">All Regions</option>
+  </select>
+</div>
+
+<div id="stats">Loading…</div>
+<div id="grid"></div>
+
+<script>
+  let allData = [];
+
+  const SECTOR_LABELS = {
+    ai_apps:       "AI Apps",
+    ai_hardware:   "AI Hardware",
+    semiconductor: "Semiconductor",
+    healthcare:    "Healthcare",
+    edtech:        "EdTech",
+    fintech:       "FinTech",
+    greentech:     "GreenTech",
+    energy:        "Energy",
+  };
+
+  const STAGE_TYPE = {
+    "Pre-Seed": "Angel",
+    "Seed":     "VC",
+    "VC":       "VC",
+    "Series A": "VC",
+    "Series B": "VC",
+    "Series C": "VC",
+    "Series D": "PE",
+    "Series E": "PE",
+    "Growth":   "PE",
+    "PE":       "PE",
+  };
+
+  const CVC_NAMES = ["chugai", "gilead", "pfizer", "novartis", "merck",
+    "roche", "abbvie", "bristol", "astrazeneca", "health systems", "hospital"];
+
+  function inferType(d) {
+    const nl = (d.name || "").toLowerCase();
+    if (CVC_NAMES.some(k => nl.includes(k))) return "CVC";
+    return STAGE_TYPE[d.stage] || null;
+  }
+
+  async function loadData() {
+    try {
+      const res = await fetch("investors.json");
+      allData = await res.json();
+    } catch {
+      document.getElementById("stats").textContent =
+        "Could not load data — open via a local HTTP server (python3 -m http.server 8080).";
+      return;
+    }
+    buildFilters();
+    render();
+  }
+
+  function buildFilters() {
+    const regions = [...new Set(allData.map(d => d.region).filter(Boolean))].sort();
+    const regionEl = document.getElementById("filterRegion");
+    regions.forEach(r => {
+      const o = document.createElement("option");
+      o.value = r; o.textContent = r;
+      regionEl.appendChild(o);
+    });
+  }
+
+  function render() {
+    const q      = document.getElementById("search").value.toLowerCase().trim();
+    const sector = document.getElementById("filterSector").value;
+    const type   = document.getElementById("filterType").value;
+    const stage  = document.getElementById("filterStage").value;
+    const region = document.getElementById("filterRegion").value;
+
+    const filtered = allData.filter(d => {
+      if (sector && d.sector !== sector)    return false;
+      if (stage  && d.stage  !== stage)     return false;
+      if (region && d.region !== region)    return false;
+      if (type   && inferType(d) !== type)  return false;
+      if (q) {
+        const haystack = [
+          d.name,
+          ...(d.focus     || []),
+          ...(d.portfolio || []),
+        ].join(" ").toLowerCase();
+        if (!haystack.includes(q)) return false;
+      }
+      return true;
+    });
+
+    const sectorLabel = sector ? SECTOR_LABELS[sector] : "All Sectors";
+    document.getElementById("stats").textContent =
+      `${filtered.length} of ${allData.length} firms · ${sectorLabel}`;
+
+    const grid = document.getElementById("grid");
+    if (!filtered.length) {
+      grid.innerHTML = '<div class="empty">No results found.</div>';
+      return;
+    }
+
+    grid.innerHTML = filtered.map(d => {
+      const itype  = inferType(d);
+      const focus3 = (d.focus || []).slice(0, 3);
+      const port2  = (d.portfolio || []).slice(0, 2);
+
+      const sectorBadge = d.sector && SECTOR_LABELS[d.sector]
+        ? `<span class="tag tag-sector">${SECTOR_LABELS[d.sector]}</span>`
+        : "";
+      const typeBadge   = itype    ? `<span class="tag tag-type">${esc(itype)}</span>` : "";
+      const regionBadge = d.region ? `<span class="tag tag-region">${esc(d.region)}</span>` : "";
+      const focusTags   = focus3.map(f => `<span class="tag tag-focus">${esc(f)}</span>`).join("");
+
+      const portfolioHtml = port2.length ? `
+        <div>
+          <div class="section-label">Notable Portfolio</div>
+          <div class="portfolio-list">
+            ${port2.map(p => `<div class="portfolio-item">${esc(p)}</div>`).join("")}
+          </div>
+        </div>` : "";
+
+      const websiteUrl = d.source_url || d.website;
+      const websiteBtn = websiteUrl
+        ? `<a class="btn-website" href="${esc(websiteUrl)}" target="_blank" rel="noopener">View Profile ↗</a>`
+        : "";
+
+      return `
+      <div class="card">
+        <div class="card-name">${esc(d.name)}</div>
+        <div class="card-tags">${sectorBadge}${typeBadge}${regionBadge}${focusTags}</div>
+        ${portfolioHtml}
+        <div class="card-footer">${websiteBtn}</div>
+      </div>`;
+    }).join("");
+  }
+
+  function esc(s) {
+    return String(s ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  ["search", "filterSector", "filterType", "filterStage", "filterRegion"].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener(id === "search" ? "input" : "change", render);
+  });
+
+  loadData();
+</script>
+</body>
+</html>
