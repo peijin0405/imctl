@@ -20,14 +20,28 @@
       color: #fff;
       padding: 28px 36px;
     }
+    .header-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
     header h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
-    header p  { font-size: 0.85rem; color: #94a3b8; margin-top: 4px; }
+    header p  { font-size: 0.85rem; color: #94a3b8; margin-top: 6px; }
+
+    .access-badge {
+      display: inline-block;
+      padding: 2px 9px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .access-badge.pro   { background: #6366f1; color: #fff; }
+    .access-badge.basic { background: #1e293b; color: #64748b; border: 1px solid #334155; }
 
     /* ── Controls ── */
     .controls {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
+      align-items: center;
       padding: 16px 36px;
       background: #fff;
       border-bottom: 1px solid #e5e7eb;
@@ -47,6 +61,45 @@
     .controls input:focus,
     .controls select:focus { border-color: #6366f1; box-shadow: 0 0 0 2px #e0e7ff; }
 
+    .controls-right {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-left: auto;
+    }
+
+    /* Toggle buttons (Saved Only) */
+    .btn-toggle {
+      padding: 7px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-family: inherit;
+      background: #fff;
+      color: #374151;
+      cursor: pointer;
+      transition: background 0.14s, border-color 0.14s, color 0.14s;
+      white-space: nowrap;
+    }
+    .btn-toggle:hover  { border-color: #6366f1; color: #4f46e5; }
+    .btn-toggle.active { background: #6366f1; color: #fff; border-color: #6366f1; }
+
+    /* View toggle */
+    .view-toggle { display: flex; border: 1px solid #d1d5db; border-radius: 6px; overflow: hidden; }
+    .view-btn {
+      padding: 7px 14px;
+      border: none;
+      font-size: 0.875rem;
+      font-family: inherit;
+      background: #fff;
+      color: #374151;
+      cursor: pointer;
+      transition: background 0.14s, color 0.14s;
+    }
+    .view-btn + .view-btn { border-left: 1px solid #d1d5db; }
+    .view-btn.active      { background: #6366f1; color: #fff; }
+    .view-btn:hover:not(.active) { background: #f3f4f6; }
+
     /* ── Stats bar ── */
     #stats {
       padding: 10px 36px;
@@ -54,7 +107,7 @@
       color: #6b7280;
     }
 
-    /* ── Grid ── */
+    /* ── Card grid ── */
     #grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -72,11 +125,32 @@
       flex-direction: column;
       gap: 12px;
       transition: box-shadow 0.18s, border-color 0.18s;
+      position: relative;
+      cursor: pointer;
     }
     .card:hover {
       box-shadow: 0 4px 16px rgba(0,0,0,0.08);
       border-color: #c7d2fe;
     }
+
+    /* Bookmark button */
+    .bookmark-btn {
+      position: absolute;
+      top: 13px;
+      right: 14px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.05rem;
+      color: #d1d5db;
+      line-height: 1;
+      padding: 2px 4px;
+      border-radius: 4px;
+      transition: color 0.15s;
+      z-index: 1;
+    }
+    .bookmark-btn:hover { color: #f59e0b; }
+    .bookmark-btn.saved { color: #f59e0b; }
 
     /* Firm name */
     .card-name {
@@ -84,14 +158,11 @@
       font-weight: 700;
       color: #0f172a;
       line-height: 1.25;
+      padding-right: 28px;
     }
 
     /* Tag row */
-    .card-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
     .tag {
       display: inline-block;
       padding: 3px 9px;
@@ -104,6 +175,7 @@
     .tag-type   { background: #ede9fe; color: #5b21b6; }
     .tag-region { background: #d1fae5; color: #065f46; }
     .tag-focus  { background: #e0f2fe; color: #0369a1; }
+    .tag-stage  { background: #fef3c7; color: #92400e; }
 
     /* Section label */
     .section-label {
@@ -116,23 +188,17 @@
     }
 
     /* Portfolio list */
-    .portfolio-list {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-    }
+    .portfolio-list { display: flex; flex-direction: column; gap: 3px; }
     .portfolio-item {
       font-size: 0.82rem;
       color: #374151;
       padding-left: 10px;
       position: relative;
     }
-    .portfolio-item::before {
-      content: "·";
-      position: absolute;
-      left: 0;
-      color: #9ca3af;
-    }
+    .portfolio-item::before { content: "·"; position: absolute; left: 0; color: #9ca3af; }
+
+    /* Pro-only placeholder */
+    .pro-only { font-size: 0.78rem; color: #9ca3af; font-style: italic; }
 
     /* Website button */
     .card-footer { margin-top: auto; }
@@ -150,9 +216,22 @@
       background: #f9fafb;
       transition: background 0.14s, border-color 0.14s;
     }
-    .btn-website:hover {
-      background: #eef2ff;
-      border-color: #c7d2fe;
+    .btn-website:hover { background: #eef2ff; border-color: #c7d2fe; }
+
+    /* Unlock button */
+    .btn-unlock {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 7px 0;
+      border: 1px solid #e5e7eb;
+      border-radius: 7px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #9ca3af;
+      background: #f9fafb;
+      cursor: not-allowed;
+      font-family: inherit;
     }
 
     /* Empty state */
@@ -163,12 +242,115 @@
       color: #9ca3af;
       font-size: 0.95rem;
     }
+
+    /* ── Table view ── */
+    #table-wrap {
+      padding: 8px 36px 40px;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      font-size: 0.875rem;
+    }
+    thead th {
+      background: #f9fafb;
+      padding: 11px 14px;
+      text-align: left;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #6b7280;
+      border-bottom: 1px solid #e5e7eb;
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
+    thead th:hover          { background: #f3f4f6; color: #374151; }
+    thead th.sort-active    { color: #4f46e5; background: #eef2ff; }
+    tbody tr {
+      border-bottom: 1px solid #f3f4f6;
+      cursor: pointer;
+      transition: background 0.12s;
+    }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover      { background: #f9fafb; }
+    tbody td            { padding: 11px 14px; vertical-align: middle; color: #374151; }
+    td.td-name    { font-weight: 600; color: #0f172a; min-width: 160px; }
+    td.td-focus   { max-width: 240px; color: #6b7280; font-size: 0.82rem; }
+    td.td-updated { color: #9ca3af; font-size: 0.78rem; white-space: nowrap; }
+    .table-empty  { text-align: center; padding: 64px; color: #9ca3af; }
+
+    /* ── Modal ── */
+    #modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    #modal-overlay.active { display: flex; }
+
+    #modal {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      max-width: 560px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 28px;
+      position: relative;
+    }
+
+    #modal-close {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      color: #9ca3af;
+      cursor: pointer;
+      line-height: 1;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    #modal-close:hover { color: #374151; background: #f3f4f6; }
+
+    .modal-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 10px;
+      padding-right: 30px;
+      line-height: 1.3;
+    }
+    .modal-meta    { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+    .modal-section { margin-bottom: 16px; }
+    .modal-freshness {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      margin-bottom: 16px;
+    }
+    .modal-footer { margin-top: 4px; }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Washon Investor Map</h1>
+  <div class="header-top">
+    <h1>Washon Investor Map</h1>
+    <span id="access-badge"></span>
+  </div>
   <p>Multi-sector investor intelligence across AI, Semiconductor, Healthcare, EdTech, FinTech, GreenTech &amp; Energy</p>
 </header>
 
@@ -202,14 +384,67 @@
   <select id="filterRegion">
     <option value="">All Regions</option>
   </select>
+  <select id="sortBy">
+    <option value="">Default</option>
+    <option value="name_asc">Name A–Z</option>
+    <option value="name_desc">Name Z–A</option>
+    <option value="region">Region</option>
+  </select>
+  <div class="controls-right">
+    <button id="btnSavedOnly" class="btn-toggle">Saved Only</button>
+    <div class="view-toggle">
+      <button id="btnCard"  class="view-btn active">Card</button>
+      <button id="btnTable" class="view-btn">Table</button>
+    </div>
+  </div>
 </div>
 
 <div id="stats">Loading…</div>
 <div id="grid"></div>
+<div id="table-wrap" style="display:none"></div>
+
+<div id="modal-overlay">
+  <div id="modal">
+    <button id="modal-close">&#x2715;</button>
+    <div id="modal-content"></div>
+  </div>
+</div>
 
 <script>
-  let allData = [];
+  /* ── Pro/Basic flag ── */
+  const isPro = new URLSearchParams(location.search).has('pro');
 
+  const accessBadgeEl = document.getElementById('access-badge');
+  accessBadgeEl.className = `access-badge ${isPro ? 'pro' : 'basic'}`;
+  accessBadgeEl.textContent = isPro ? 'Pro Access' : 'Basic Access';
+
+  /* ── State ── */
+  let allData      = [];
+  let currentView  = 'card';
+  let savedOnly    = false;
+  let tableSortCol = null;
+  let tableSortDir = 'asc';
+
+  /* ── Bookmarks ── */
+  const BOOKMARKS_KEY = 'washon_bookmarks';
+
+  function getBookmarks() {
+    try { return new Set(JSON.parse(localStorage.getItem(BOOKMARKS_KEY)) || []); }
+    catch { return new Set(); }
+  }
+
+  function saveBookmarks(set) {
+    localStorage.setItem(BOOKMARKS_KEY, JSON.stringify([...set]));
+  }
+
+  function toggleBookmark(name) {
+    const bm = getBookmarks();
+    if (bm.has(name)) bm.delete(name); else bm.add(name);
+    saveBookmarks(bm);
+    render();
+  }
+
+  /* ── Constants (preserved) ── */
   const SECTOR_LABELS = {
     ai_apps:       "AI Apps",
     ai_hardware:   "AI Hardware",
@@ -243,10 +478,12 @@
     return STAGE_TYPE[d.stage] || null;
   }
 
+  /* ── Data load ── */
   async function loadData() {
     try {
       const res = await fetch("investors.json");
       allData = await res.json();
+      allData.forEach((d, i) => { d._idx = i; });
     } catch {
       document.getElementById("stats").textContent =
         "Could not load data — open via a local HTTP server (python3 -m http.server 8080).";
@@ -266,18 +503,28 @@
     });
   }
 
+  /* ── Main render ── */
   function render() {
     const q      = document.getElementById("search").value.toLowerCase().trim();
     const sector = document.getElementById("filterSector").value;
     const type   = document.getElementById("filterType").value;
     const stage  = document.getElementById("filterStage").value;
     const region = document.getElementById("filterRegion").value;
+    const sort   = document.getElementById("sortBy").value;
+    const bm     = getBookmarks();
 
-    const filtered = allData.filter(d => {
-      if (sector && d.sector !== sector)    return false;
-      if (stage  && d.stage  !== stage)     return false;
-      if (region && d.region !== region)    return false;
-      if (type   && inferType(d) !== type)  return false;
+    let filtered = allData.filter(d => {
+      if (savedOnly && !bm.has(d.name))       return false;
+      if (sector && d.sector !== sector)        return false;
+      if (stage) {
+        if (stage === "Series A-C") {
+          if (!["Series A", "Series B", "Series C"].includes(d.stage)) return false;
+        } else if (d.stage !== stage) {
+          return false;
+        }
+      }
+      if (region && d.region !== region)        return false;
+      if (type   && inferType(d) !== type)      return false;
       if (q) {
         const haystack = [
           d.name,
@@ -289,10 +536,47 @@
       return true;
     });
 
-    const sectorLabel = sector ? SECTOR_LABELS[sector] : "All Sectors";
+    /* sortBy (applies to card view; table column sort takes over in table view) */
+    if (sort === 'name_asc')  filtered.sort((a, b) => a.name.localeCompare(b.name));
+    else if (sort === 'name_desc') filtered.sort((a, b) => b.name.localeCompare(a.name));
+    else if (sort === 'region')    filtered.sort((a, b) => (a.region || 'zzz').localeCompare(b.region || 'zzz'));
+
+    /* Table column sort overrides when in table view */
+    if (currentView === 'table' && tableSortCol) {
+      filtered.sort((a, b) => {
+        let av = '', bv = '';
+        switch (tableSortCol) {
+          case 'name':    av = a.name        || ''; bv = b.name        || ''; break;
+          case 'sector':  av = a.sector      || ''; bv = b.sector      || ''; break;
+          case 'stage':   av = a.stage       || ''; bv = b.stage       || ''; break;
+          case 'region':  av = a.region      || ''; bv = b.region      || ''; break;
+          case 'updated': av = a.scraped_at  || ''; bv = b.scraped_at  || ''; break;
+        }
+        const cmp = av.localeCompare(bv);
+        return tableSortDir === 'asc' ? cmp : -cmp;
+      });
+    }
+
+    const sectorLabel = sector ? (SECTOR_LABELS[sector] || sector) : "All Sectors";
     document.getElementById("stats").textContent =
       `${filtered.length} of ${allData.length} firms · ${sectorLabel}`;
 
+    const grid      = document.getElementById("grid");
+    const tableWrap = document.getElementById("table-wrap");
+
+    if (currentView === 'card') {
+      grid.style.display      = '';
+      tableWrap.style.display = 'none';
+      renderCards(filtered, bm);
+    } else {
+      grid.style.display      = 'none';
+      tableWrap.style.display = '';
+      renderTable(filtered);
+    }
+  }
+
+  /* ── Card rendering ── */
+  function renderCards(filtered, bm) {
     const grid = document.getElementById("grid");
     if (!filtered.length) {
       grid.innerHTML = '<div class="empty">No results found.</div>';
@@ -302,37 +586,205 @@
     grid.innerHTML = filtered.map(d => {
       const itype  = inferType(d);
       const focus3 = (d.focus || []).slice(0, 3);
-      const port2  = (d.portfolio || []).slice(0, 2);
 
       const sectorBadge = d.sector && SECTOR_LABELS[d.sector]
-        ? `<span class="tag tag-sector">${SECTOR_LABELS[d.sector]}</span>`
-        : "";
-      const typeBadge   = itype    ? `<span class="tag tag-type">${esc(itype)}</span>` : "";
+        ? `<span class="tag tag-sector">${SECTOR_LABELS[d.sector]}</span>` : "";
+      const typeBadge   = itype    ? `<span class="tag tag-type">${esc(itype)}</span>`      : "";
       const regionBadge = d.region ? `<span class="tag tag-region">${esc(d.region)}</span>` : "";
       const focusTags   = focus3.map(f => `<span class="tag tag-focus">${esc(f)}</span>`).join("");
 
-      const portfolioHtml = port2.length ? `
-        <div>
-          <div class="section-label">Notable Portfolio</div>
-          <div class="portfolio-list">
-            ${port2.map(p => `<div class="portfolio-item">${esc(p)}</div>`).join("")}
-          </div>
-        </div>` : "";
+      let portfolioHtml = "";
+      if (!isPro) {
+        portfolioHtml = `<div><span class="pro-only">Portfolio: Pro only</span></div>`;
+      } else {
+        const port2 = (d.portfolio || []).slice(0, 2);
+        if (port2.length) {
+          portfolioHtml = `
+            <div>
+              <div class="section-label">Notable Portfolio</div>
+              <div class="portfolio-list">
+                ${port2.map(p => `<div class="portfolio-item">${esc(p)}</div>`).join("")}
+              </div>
+            </div>`;
+        }
+      }
 
       const websiteUrl = d.source_url || d.website;
-      const websiteBtn = websiteUrl
-        ? `<a class="btn-website" href="${esc(websiteUrl)}" target="_blank" rel="noopener">View Profile ↗</a>`
-        : "";
+      const footerBtn  = !isPro
+        ? `<button class="btn-unlock" disabled>Unlock with Pro</button>`
+        : websiteUrl
+          ? `<a class="btn-website" href="${esc(websiteUrl)}" target="_blank" rel="noopener">View Profile ↗</a>`
+          : "";
+
+      const isSaved = bm.has(d.name);
 
       return `
-      <div class="card">
+      <div class="card" data-idx="${d._idx}">
+        <button class="bookmark-btn${isSaved ? ' saved' : ''}" data-idx="${d._idx}">${isSaved ? '★' : '☆'}</button>
         <div class="card-name">${esc(d.name)}</div>
         <div class="card-tags">${sectorBadge}${typeBadge}${regionBadge}${focusTags}</div>
         ${portfolioHtml}
-        <div class="card-footer">${websiteBtn}</div>
+        <div class="card-footer">${footerBtn}</div>
       </div>`;
     }).join("");
+
+    /* Delegate all card interactions through one listener per card */
+    grid.querySelectorAll(".card").forEach(card => {
+      card.addEventListener("click", e => {
+        const bmBtn = e.target.closest(".bookmark-btn");
+        if (bmBtn) {
+          const d = allData[parseInt(bmBtn.dataset.idx)];
+          toggleBookmark(d.name);
+          return;
+        }
+        if (e.target.closest(".btn-unlock") || e.target.closest(".btn-website")) return;
+        openModal(allData[parseInt(card.dataset.idx)]);
+      });
+    });
   }
+
+  /* ── Table rendering ── */
+  function renderTable(filtered) {
+    const wrap = document.getElementById("table-wrap");
+    if (!filtered.length) {
+      wrap.innerHTML = '<div class="table-empty">No results found.</div>';
+      return;
+    }
+
+    const cols = [
+      { key: 'name',    label: 'Firm Name' },
+      { key: 'sector',  label: 'Sector'    },
+      { key: 'stage',   label: 'Stage'     },
+      { key: 'region',  label: 'Region'    },
+      { key: 'focus',   label: 'Focus'     },
+      { key: 'updated', label: 'Updated'   },
+    ];
+
+    const thead = cols.map(c => {
+      const active = tableSortCol === c.key;
+      const arrow  = active ? (tableSortDir === 'asc' ? ' ↑' : ' ↓') : '';
+      return `<th class="${active ? 'sort-active' : ''}" data-col="${c.key}">${c.label}${arrow}</th>`;
+    }).join('');
+
+    const tbody = filtered.map(d => {
+      const sectorLabel = SECTOR_LABELS[d.sector] || d.sector || '—';
+      const focus3      = (d.focus || []).slice(0, 3).join(', ') || '—';
+      const updated     = d.scraped_at ? d.scraped_at.slice(0, 10) : '—';
+      return `
+      <tr data-idx="${d._idx}">
+        <td class="td-name">${esc(d.name)}</td>
+        <td>${esc(sectorLabel)}</td>
+        <td>${esc(d.stage  || '—')}</td>
+        <td>${esc(d.region || '—')}</td>
+        <td class="td-focus">${esc(focus3)}</td>
+        <td class="td-updated">${esc(updated)}</td>
+      </tr>`;
+    }).join('');
+
+    wrap.innerHTML = `<table><thead><tr>${thead}</tr></thead><tbody>${tbody}</tbody></table>`;
+
+    wrap.querySelectorAll("thead th").forEach(th => {
+      th.addEventListener("click", () => {
+        const col = th.dataset.col;
+        if (tableSortCol === col) tableSortDir = tableSortDir === 'asc' ? 'desc' : 'asc';
+        else { tableSortCol = col; tableSortDir = 'asc'; }
+        render();
+      });
+    });
+
+    wrap.querySelectorAll("tbody tr").forEach(tr => {
+      tr.addEventListener("click", () => openModal(allData[parseInt(tr.dataset.idx)]));
+    });
+  }
+
+  /* ── Modal ── */
+  function openModal(d) {
+    const itype       = inferType(d);
+    const sectorLabel = SECTOR_LABELS[d.sector] || d.sector || '';
+    const freshness   = d.scraped_at
+      ? `Last updated: ${d.scraped_at.slice(0, 10)}`
+      : 'Recently crawled';
+
+    const focusAll = (d.focus || [])
+      .map(f => `<span class="tag tag-focus">${esc(f)}</span>`).join('');
+
+    let portfolioContent;
+    if (!isPro) {
+      portfolioContent = '<span class="pro-only">Pro only</span>';
+    } else {
+      const portfolio = d.portfolio || [];
+      portfolioContent = portfolio.length
+        ? portfolio.map(p => `<div class="portfolio-item">${esc(p)}</div>`).join('')
+        : '<span style="color:#9ca3af;font-size:0.82rem">None listed</span>';
+    }
+
+    const websiteUrl = d.source_url || d.website;
+    const footerBtn  = !isPro
+      ? `<button class="btn-unlock" disabled>Unlock with Pro</button>`
+      : websiteUrl
+        ? `<a class="btn-website" href="${esc(websiteUrl)}" target="_blank" rel="noopener">View Profile ↗</a>`
+        : '';
+
+    document.getElementById('modal-content').innerHTML = `
+      <div class="modal-name">${esc(d.name)}</div>
+      <div class="modal-meta">
+        ${sectorLabel ? `<span class="tag tag-sector">${esc(sectorLabel)}</span>` : ''}
+        ${itype       ? `<span class="tag tag-type">${esc(itype)}</span>`         : ''}
+        ${d.stage     ? `<span class="tag tag-stage">${esc(d.stage)}</span>`      : ''}
+        ${d.region    ? `<span class="tag tag-region">${esc(d.region)}</span>`    : ''}
+      </div>
+      ${focusAll ? `
+        <div class="modal-section">
+          <div class="section-label">Focus</div>
+          <div class="card-tags">${focusAll}</div>
+        </div>` : ''}
+      <div class="modal-section">
+        <div class="section-label">Portfolio</div>
+        <div class="portfolio-list">${portfolioContent}</div>
+      </div>
+      <div class="modal-freshness">${esc(freshness)}</div>
+      ${footerBtn ? `<div class="modal-footer">${footerBtn}</div>` : ''}
+    `;
+
+    document.getElementById('modal-overlay').classList.add('active');
+  }
+
+  function closeModal() {
+    document.getElementById('modal-overlay').classList.remove('active');
+  }
+
+  document.getElementById('modal-close').addEventListener('click', closeModal);
+  document.getElementById('modal-overlay').addEventListener('click', e => {
+    if (e.target === document.getElementById('modal-overlay')) closeModal();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  /* ── View / Saved toggle buttons ── */
+  document.getElementById('btnCard').addEventListener('click', () => {
+    currentView = 'card';
+    document.getElementById('btnCard').classList.add('active');
+    document.getElementById('btnTable').classList.remove('active');
+    render();
+  });
+
+  document.getElementById('btnTable').addEventListener('click', () => {
+    currentView = 'table';
+    document.getElementById('btnTable').classList.add('active');
+    document.getElementById('btnCard').classList.remove('active');
+    render();
+  });
+
+  document.getElementById('btnSavedOnly').addEventListener('click', () => {
+    savedOnly = !savedOnly;
+    document.getElementById('btnSavedOnly').classList.toggle('active', savedOnly);
+    render();
+  });
+
+  /* ── Filter / sort listeners ── */
+  ["search", "filterSector", "filterType", "filterStage", "filterRegion", "sortBy"].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener(id === "search" ? "input" : "change", render);
+  });
 
   function esc(s) {
     return String(s ?? "")
@@ -341,11 +793,6 @@
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
   }
-
-  ["search", "filterSector", "filterType", "filterStage", "filterRegion"].forEach(id => {
-    const el = document.getElementById(id);
-    el.addEventListener(id === "search" ? "input" : "change", render);
-  });
 
   loadData();
 </script>

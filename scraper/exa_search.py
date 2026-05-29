@@ -18,8 +18,9 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 EXA_API_KEY = os.getenv("EXA_API_KEY")
-DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "investors.json")
-WEB_DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "web", "investors.json")
+DATA_PATH     = os.path.join(os.path.dirname(__file__), "..", "data", "investors.json")
+WEB_DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "web",  "investors.json")
+RAW_DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "raw_results.jsonl")
 
 # ── Domain lists ──────────────────────────────────────────────────────────────
 
@@ -511,6 +512,20 @@ SEARCH_CONFIGS = [
 ]
 
 
+def _save_raw(results: list, query: str, raw_fh) -> None:
+    ts = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+    for r in results:
+        row = {
+            "query":      query,
+            "title":      r.title or "",
+            "url":        r.url   or "",
+            "text":       (r.text or "")[:500],
+            "scraped_at": ts,
+        }
+        raw_fh.write(json.dumps(row, ensure_ascii=False) + "\n")
+    raw_fh.flush()
+
+
 def run_search(exa: Exa, config: dict) -> list:
     kwargs = {k: v for k, v in config.items() if k != "label"}
     query = kwargs.pop("query")
@@ -567,8 +582,22 @@ NAV_SUFFIX_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Phrase patterns that indicate the string is a sentence/tagline, not a firm name
+_BAD_PHRASE_RE = re.compile(
+    r"\b(investing\s+in|invest\s+in|based\s+vc|based\s+fund|sign\s+in|"
+    r"approach\s+to|years\s+investing|new\s+approach)\b",
+    re.IGNORECASE,
+)
 
-def clean_name(name: str) -> str:
+# Words that appear in legitimate firm names; used to distinguish names from sentences
+_FIRM_SUFFIXES = frozenset({
+    "capital", "ventures", "venture", "fund", "partners", "partner",
+    "vc", "investments", "investment", "group", "asset", "advisors",
+    "equity", "management",
+})
+
+
+def clean_name(name: str) -> str | None:
     name = re.sub(r"\s+", " ", name).strip()
     name = PROFILE_SUFFIX_RE.sub("", name).strip()
     name = NAV_PREFIX_RE.sub("", name).strip()
@@ -578,7 +607,28 @@ def clean_name(name: str) -> str:
     half = len(words) // 2
     if half >= 2 and words[:half] == words[half:]:
         name = " ".join(words[:half])
-    return name
+
+    # "X at Institution" → extract just the Institution part
+    # e.g. "3 Years Investing at LDV Capital" → "LDV Capital"
+    at_m = re.search(r"\bat\s+([A-Z][A-Za-z0-9&.\-](?:\s+[A-Za-z0-9&.\-]+){0,5})$", name)
+    if at_m:
+        candidate = at_m.group(1).strip()
+        if any(w.lower() in _FIRM_SUFFIXES for w in candidate.split()):
+            name = candidate
+
+    # Sentence-fragment patterns → reject
+    if _BAD_PHRASE_RE.search(name):
+        return None
+
+    # Too many words → reject (legitimate firm names are short)
+    if len(name.split()) > 6:
+        return None
+
+    # Long string with no institution suffix → likely a sentence fragment
+    if len(name) > 40 and not any(w.lower() in _FIRM_SUFFIXES for w in name.split()):
+        return None
+
+    return name or None
 
 
 def is_valid_firm_name(name: str) -> bool:
@@ -749,7 +799,7 @@ def extract_firm_name(result) -> str | None:
     url = result.url or ""
     title = (result.title or "").strip()
 
-    cleaned_title = clean_name(title)
+    cleaned_title = clean_name(title) or ""
 
     for sep in [" | ", " - ", " – ", " — ", ": "]:
         if sep in title:
@@ -1000,20 +1050,23 @@ def main():
 
     log.info("=== Starting scrape: %d sector groups, %d total queries ===",
              len(sector_groups), len(SEARCH_CONFIGS))
+    os.makedirs(os.path.dirname(RAW_DATA_PATH), exist_ok=True)
     total_sectors = len(sector_groups)
-    for idx, (sector_prefix, configs) in enumerate(sector_groups.items(), 1):
-        log.info(
-            "── Sector [%d/%d]: %-20s  (%d queries)",
-            idx, total_sectors, sector_prefix, len(configs),
-        )
-        for cfg in configs:
-            label = cfg.get("label", "unknown")
-            label_prefix = _get_sector_prefix(label)
-            log.info("  [%s → sector=%s]  %s", label, label_prefix, cfg["query"][:80])
-            results = run_search(exa, cfg)
-            log.info("  └─ got %d results", len(results))
-            all_results.extend((r, label_prefix) for r in results)
-        time.sleep(1.0)
+    with open(RAW_DATA_PATH, "a", encoding="utf-8") as raw_fh:
+        for idx, (sector_prefix, configs) in enumerate(sector_groups.items(), 1):
+            log.info(
+                "── Sector [%d/%d]: %-20s  (%d queries)",
+                idx, total_sectors, sector_prefix, len(configs),
+            )
+            for cfg in configs:
+                label = cfg.get("label", "unknown")
+                label_prefix = _get_sector_prefix(label)
+                log.info("  [%s → sector=%s]  %s", label, label_prefix, cfg["query"][:80])
+                results = run_search(exa, cfg)
+                log.info("  └─ got %d results", len(results))
+                _save_raw(results, cfg["query"], raw_fh)
+                all_results.extend((r, label_prefix) for r in results)
+            time.sleep(1.0)
 
     log.info("Total raw results: %d", len(all_results))
 

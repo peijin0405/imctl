@@ -1,1 +1,38 @@
 .vercel
+
+# Environment secrets
+.env
+.env.local
+.env.*.local
+
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+
+# Uploaded files
+demo/uploads/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# Data pipeline outputs (not needed for app runtime)
+data/
+BP_exa/
+nohup.out
+audit/
+output/
+
+# JSON files — most are pipeline outputs or runtime state
+# Negation rules MUST come after the wildcard
+*.json
+!web/investors.json
+!scraper/investor_embeddings.json

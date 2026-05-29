@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Washon — Investor Intelligence Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0a0f1e;
+      --bg2:       #0d1424;
+      --card:      #111827;
+      --card-hov:  #1a2234;
+      --border:    #1e2a3a;
+      --border2:   #263348;
+      --blue:      #3b82f6;
+      --blue-dim:  #1d4ed8;
+      --green:     #10b981;
+      --green-dim: #059669;
+      --amber:     #f59e0b;
+      --purple:    #8b5cf6;
+      --red:       #ef4444;
+      --text:      #f1f5f9;
+      --text2:     #94a3b8;
+      --text3:     #64748b;
+      --mono:      'JetBrains Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* ── Header ──────────────────────────────────────────── */
+    header {
+      background: linear-gradient(135deg, #0d1424 0%, #0f1e35 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 36px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-logo {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 800; color: #fff;
+      flex-shrink: 0;
+    }
+    .brand-name { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
+    .brand-sub  { font-size: 11px; color: var(--text3); letter-spacing: 0.8px; text-transform: uppercase; margin-top: 1px; }
+
+    .header-stats {
+      display: flex;
+      gap: 32px;
+    }
+    .stat-block {
+      text-align: center;
+    }
+    .stat-num {
+      font-family: var(--mono);
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--blue);
+      line-height: 1;
+    }
+    .stat-lbl {
+      font-size: 11px;
+      color: var(--text3);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .header-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+    }
+    .badge-pro {
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+    .badge-basic {
+      background: var(--card);
+      border: 1px solid var(--border2);
+      color: var(--text2);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* ── Sector Pills ────────────────────────────────────── */
+    .sector-bar {
+      padding: 12px 36px;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .sector-bar::-webkit-scrollbar { display: none; }
+
+    .pill {
+      flex-shrink: 0;
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border2);
+      background: var(--card);
+      color: var(--text2);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .pill:hover { border-color: var(--blue); color: var(--text); }
+    .pill.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* ── Controls ────────────────────────────────────────── */
+    .controls {
+      padding: 16px 36px;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .search-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 200px;
+    }
+    .search-wrap svg {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text3);
+      pointer-events: none;
+    }
+    input[type="search"] {
+      width: 100%;
+      padding: 9px 12px 9px 36px;
+      background: var(--card);
+      border: 1px solid var(--border2);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    input[type="search"]:focus { border-color: var(--blue); }
+    input[type="search"]::placeholder { color: var(--text3); }
+
+    select {
+      padding: 9px 12px;
+      background: var(--card);
+      border: 1px solid var(--border2);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 13px;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.15s;
+    }
+    select:focus { border-color: var(--blue); }
+
+    .ctrl-btn {
+      padding: 9px 14px;
+      background: var(--card);
+      border: 1px solid var(--border2);
+      border-radius: 8px;
+      color: var(--text2);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .ctrl-btn:hover { border-color: var(--blue); color: var(--text); }
+    .ctrl-btn.active {
+      background: rgba(59,130,246,0.15);
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    .view-toggle {
+      display: flex;
+      border: 1px solid var(--border2);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .vbtn {
+      padding: 9px 12px;
+      background: var(--card);
+      border: none;
+      color: var(--text3);
+      cursor: pointer;
+      transition: all 0.15s;
+      display: flex;
+      align-items: center;
+    }
+    .vbtn.active { background: var(--blue); color: #fff; }
+    .vbtn:first-child { border-right: 1px solid var(--border2); }
+
+    /* ── Stats Bar ───────────────────────────────────────── */
+    .stats-bar {
+      padding: 10px 36px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text3);
+    }
+    .stats-bar span b { color: var(--text2); }
+
+    /* ── Main Content ────────────────────────────────────── */
+    main {
+      padding: 24px 36px;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    /* ── Card Grid ───────────────────────────────────────── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      cursor: pointer;
+      transition: all 0.18s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .card:hover {
+      border-color: var(--blue);
+      background: var(--card-hov);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(59,130,246,0.12);
+    }
+
+    /* Zone 1 – Header */
+    .card-z1-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+    }
+    .card-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      flex: 1;
+    }
+    .card-type-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      letter-spacing: 0.4px;
+      background: rgba(59,130,246,0.12);
+      color: var(--blue);
+      border: 1px solid rgba(59,130,246,0.25);
+      white-space: nowrap;
+      flex-shrink: 0;
+      align-self: center;
+    }
+    .bm-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1;
+      color: var(--text3);
+      transition: color 0.15s;
+      padding: 0;
+      flex-shrink: 0;
+      align-self: center;
+    }
+    .bm-btn:hover { color: var(--amber); }
+    .bm-btn.saved  { color: var(--amber); }
+
+    .card-z1-sub {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      align-items: center;
+      min-height: 20px;
+    }
+    .geo-pill {
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border2);
+      color: var(--text2);
+    }
+    .check-size {
+      font-size: 10px;
+      color: var(--text3);
+      font-family: var(--mono);
+      margin-left: auto;
+    }
+
+    /* Zone 2 – Middle */
+    .card-z2 { display: flex; flex-direction: column; gap: 6px; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+    .stage-tag {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .stage-early  { background:rgba(16,185,129,0.12); color:#10b981; border:1px solid rgba(16,185,129,0.25); }
+    .stage-series { background:rgba(59,130,246,0.12); color:var(--blue); border:1px solid rgba(59,130,246,0.25); }
+    .stage-late   { background:rgba(139,92,246,0.12); color:#8b5cf6; border:1px solid rgba(139,92,246,0.25); }
+    .sector-tag {
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(249,115,22,0.08);
+      border: 1px solid rgba(249,115,22,0.25);
+      color: #f97316;
+    }
+    .sector-more {
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--text3);
+      border: 1px solid var(--border2);
+    }
+    .card-thesis {
+      font-size: 11px;
+      color: var(--text2);
+      font-style: italic;
+      line-height: 1.55;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Zone 3 – Footer */
+    .card-z3 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      margin-top: auto;
+      gap: 8px;
+    }
+    .card-z3-left { display: flex; align-items: center; gap: 5px; }
+    .lead-icon { font-size: 13px; line-height: 1; }
+    .avatar {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(59,130,246,0.15);
+      border: 1px solid rgba(59,130,246,0.3);
+      color: var(--blue);
+      font-size: 9px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .apply-btn {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--blue);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity 0.15s;
+    }
+    .apply-btn:hover { opacity: 0.82; }
+    .no-portal { font-size: 11px; color: var(--text3); }
+
+    .badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      letter-spacing: 0.4px;
+    }
+
+    /* ── Table ───────────────────────────────────────────── */
+    .table-wrap {
+      display: none;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .table-wrap.visible { display: block; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    thead th {
+      background: var(--bg2);
+      padding: 12px 14px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text3);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+    }
+    thead th:hover { color: var(--text2); }
+    thead th.sort-asc::after  { content: ' ↑'; color: var(--blue); }
+    thead th.sort-desc::after { content: ' ↓'; color: var(--blue); }
+
+    tbody tr {
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.12s;
+    }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: var(--card-hov); }
+
+    td {
+      padding: 10px 14px;
+      color: var(--text2);
+      max-width: 220px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    td:first-child { color: var(--text); font-weight: 600; }
+
+    /* ── Pager ───────────────────────────────────────────── */
+    .pager {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .pager-btn {
+      min-width: 34px;
+      height: 34px;
+      padding: 0 10px;
+      border: 1px solid var(--border2);
+      border-radius: 7px;
+      background: var(--card);
+      color: var(--text2);
+      font-family: var(--mono);
+      font-size: 13px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.13s;
+    }
+    .pager-btn:hover:not(.active):not(.dots) { border-color: var(--blue); color: var(--text); }
+    .pager-btn.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+      font-weight: 600;
+    }
+    .pager-btn.dots { cursor: default; border-color: transparent; background: none; }
+
+    /* ── Empty ───────────────────────────────────────────── */
+    .empty {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--text3);
+    }
+    .empty-icon { font-size: 48px; margin-bottom: 16px; }
+    .empty h3 { font-size: 18px; color: var(--text2); margin-bottom: 8px; }
+
+    /* ── Modal ───────────────────────────────────────────── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: var(--card);
+      border: 1px solid var(--border2);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 720px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .modal-header {
+      padding: 24px 28px 20px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: var(--card);
+      z-index: 1;
+    }
+    .modal-title {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      padding-right: 32px;
+    }
+    .modal-badges {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--text3);
+      font-size: 22px;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.15s;
+    }
+    .modal-close:hover { color: var(--text); }
+
+    .modal-body { padding: 24px 28px; }
+
+    .modal-section { margin-bottom: 24px; }
+    .modal-section:last-child { margin-bottom: 0; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text3);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .modal-field {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .field-key {
+      font-size: 11px;
+      color: var(--text3);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .field-val {
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 500;
+    }
+    .field-val a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    .field-val a:hover { text-decoration: underline; }
+    .field-val.mono { font-family: var(--mono); }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .tag-item {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border2);
+      color: var(--text2);
+    }
+
+    .conf-bar {
+      height: 6px;
+      border-radius: 3px;
+      background: var(--border);
+      margin-top: 6px;
+      overflow: hidden;
+    }
+    .conf-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.4s ease;
+    }
+
+    .people-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .person-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .person-avatar {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .person-name { font-size: 13px; font-weight: 600; }
+    .person-name a { color: var(--blue); text-decoration: none; }
+    .person-name a:hover { text-decoration: underline; }
+    .person-title { font-size: 11px; color: var(--text3); }
+
+    .portfolio-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .conf-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 4px;
+    }
+
+    /* ── Scrollbar ───────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--text3); }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 768px) {
+      header { padding: 16px 20px; grid-template-columns: 1fr; }
+      .header-stats { justify-content: center; }
+      .header-right { justify-content: center; }
+      .sector-bar { padding: 10px 20px; }
+      .controls { padding: 12px 20px; }
+      .stats-bar { padding: 8px 20px; }
+      main { padding: 16px 20px; }
+      .modal-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="brand">
+    <div class="brand-logo">W</div>
+    <div>
+      <div class="brand-name">Washon</div>
+      <div class="brand-sub">Investor Intelligence</div>
+    </div>
+  </div>
+
+  <div class="header-stats">
+    <div class="stat-block">
+      <div class="stat-num" id="cntFirms">—</div>
+      <div class="stat-lbl">Firms</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num" id="cntSectors">—</div>
+      <div class="stat-lbl">Domains</div>
+    </div>
+    <div class="stat-block">
+      <div class="stat-num" id="cntStates">—</div>
+      <div class="stat-lbl">Contacts</div>
+    </div>
+  </div>
+
+  <div class="header-right">
+    <div id="accessBadge" class="badge-basic">BASIC</div>
+  </div>
+</header>
+
+<!-- Sector Pills -->
+<div class="sector-bar" id="sectorBar">
+  <div class="pill active" data-sector="">All</div>
+</div>
+
+<!-- Controls -->
+<div class="controls">
+  <div class="search-wrap">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+    </svg>
+    <input type="search" id="qSearch" placeholder="Search name, thesis, contacts…" />
+  </div>
+
+  <select id="fSector">
+    <option value="">All Sectors</option>
+    <option value="ai_hardware">AI Hardware</option>
+    <option value="ai_apps">AI Apps</option>
+    <option value="healthcare">Healthcare</option>
+    <option value="energy">Energy</option>
+    <option value="greentech">Greentech</option>
+    <option value="fintech">Fintech</option>
+    <option value="deep_tech">Deep Tech</option>
+    <option value="consumer">Consumer</option>
+  </select>
+
+  <select id="fType">
+    <option value="">All Types</option>
+    <option value="VC">VC</option>
+    <option value="PE">PE</option>
+    <option value="Corporate VC">Corporate VC</option>
+    <option value="Micro VC">Micro VC</option>
+    <option value="Family Office">Family Office</option>
+    <option value="Fund of Funds">Fund of Funds</option>
+    <option value="Accelerator">Accelerator</option>
+    <option value="Hedge Fund">Hedge Fund</option>
+    <option value="Gov Fund">Gov Fund</option>
+  </select>
+
+  <select id="fStage">
+    <option value="">All Stages</option>
+    <option value="pre_seed">Pre-Seed</option>
+    <option value="seed">Seed</option>
+    <option value="series_a">Series A</option>
+    <option value="series_b">Series B</option>
+    <option value="series_c">Series C</option>
+    <option value="series_c_plus">Series C+</option>
+    <option value="growth">Growth</option>
+    <option value="buyout">Buyout</option>
+  </select>
+
+  <select id="fConf">
+    <option value="">All Quality</option>
+    <option value="80">High (80+)</option>
+    <option value="50">Medium (50+)</option>
+    <option value="0">All</option>
+  </select>
+
+  <select id="fSort">
+    <option value="score_desc">Score ↓</option>
+    <option value="name_asc">Name A→Z</option>
+    <option value="name_desc">Name Z→A</option>
+  </select>
+
+  <button class="ctrl-btn" id="btnSaved" onclick="toggleSavedOnly()">
+    ☆ Saved
+  </button>
+
+  <div class="view-toggle">
+    <button class="vbtn active" id="vCard" onclick="setView('card')" title="Card view">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+        <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+      </svg>
+    </button>
+    <button class="vbtn" id="vTable" onclick="setView('table')" title="Table view">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- Stats Bar -->
+<div class="stats-bar">
+  <span id="resultCount">Loading…</span>
+  <span id="pageInfo"></span>
+</div>
+
+<!-- Main -->
+<main>
+  <div class="grid" id="gridView"></div>
+  <div class="table-wrap" id="tableView">
+    <table>
+      <thead>
+        <tr>
+          <th onclick="sortTable('display_name')">Firm</th>
+          <th onclick="sortTable('investor_type')">Type</th>
+          <th>Domain</th>
+          <th>Stage</th>
+          <th>Check Size</th>
+          <th onclick="sortTable('tier1_completeness')">Score</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+  <div class="pager" id="pager"></div>
+</main>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modalBox">
+    <div class="modal-header">
+      <div class="modal-title" id="mTitle"></div>
+      <div class="modal-badges" id="mBadges"></div>
+      <button class="modal-close" onclick="closeModalDirect()">×</button>
+    </div>
+    <div class="modal-body" id="mBody"></div>
+  </div>
+</div>
+
+<script>
+'use strict';
+
+// ── Constants ──────────────────────────────────────────────────────────────
+const isPro = new URLSearchParams(location.search).has('pro');
+const PAGE_SIZE = 50;
+const BOOKMARKS_KEY = 'washon_bookmarks_v2';
+
+const PRIMARY_DOMAINS = ['ai_hardware','ai_apps','healthcare','energy','greentech','fintech','deep_tech','consumer'];
+
+const TYPE_LABELS = {
+  vc:            'VC',
+  pe:            'PE',
+  cvc:           'Corporate VC',
+  micro_vc:      'Micro VC',
+  family_office: 'Family Office',
+  fund_of_funds: 'Fund of Funds',
+  accelerator:   'Accelerator',
+  hedge_fund:    'Hedge Fund',
+  government:    'Gov Fund',
+};
+
+const SECTOR_LABELS = {
+  ai_hardware:   'AI Hardware',
+  ai_apps:       'AI Apps',
+  healthcare:    'Healthcare',
+  energy:        'Energy',
+  greentech:     'Greentech',
+  fintech:       'Fintech',
+  deep_tech:     'Deep Tech',
+  consumer:      'Consumer',
+  ai_infra:      'AI Infra',
+  ai_ml:         'AI / ML',
+  b2b_saas:      'B2B SaaS',
+  devtools:      'Dev Tools',
+  cybersecurity: 'Cybersecurity',
+  healthtech:    'Health Tech',
+  biotech:       'Biotech',
+  bio:           'Bio',
+  cleantech:     'Cleantech',
+  climate:       'Climate',
+  agtech:        'AgTech',
+  mobility:      'Mobility',
+  hardware:      'Hardware',
+  robotics:      'Robotics',
+  semiconductor: 'Semiconductor',
+  deeptech:      'Deep Tech',
+  defense:       'Defense',
+  spacetech:     'Space Tech',
+  insurtech:     'Insurtech',
+  proptech:      'PropTech',
+  legaltech:     'LegalTech',
+  hrtech:        'HR Tech',
+  web3:          'Web3',
+  media:         'Media',
+  edtech:        'EdTech',
+};
+
+// ── State ──────────────────────────────────────────────────────────────────
+let allData = [];
+let currentPage = 1;
+let currentView = 'card';
+let savedOnly = false;
+let tableSortCol = null;
+let tableSortDir = 'asc';
+let activeSector = '';
+let bookmarks = new Set(JSON.parse(localStorage.getItem(BOOKMARKS_KEY) || '[]'));
+
+// ── Helpers ────────────────────────────────────────────────────────────────
+function stageArr(d) {
+  return Array.isArray(d.stages) ? d.stages : (d.stages ? [d.stages] : []);
+}
+
+function inferType(d) {
+  return TYPE_LABELS[d.investor_type] || '';
+}
+
+function getSource(d) {
+  if ((d.id || '').startsWith('adv_')) return { label: 'SEC', color: '#10b981' };
+  if ((d.id || '').startsWith('exa_')) return { label: 'EXA', color: '#3b82f6' };
+  return null;
+}
+
+function validContacts(d) {
+  return (d.partner_contacts || []).filter(p => p && p.name && !p.name.toLowerCase().includes('unknown'));
+}
+
+function confDot(conf) {
+  if (conf === null || conf === undefined) return '';
+  const color = conf >= 70 ? '#10b981' : conf >= 40 ? '#f59e0b' : '#6b7280';
+  return `<span class="conf-dot" style="background:${color}"></span>`;
+}
+
+function confColor(conf) {
+  if (!conf && conf !== 0) return '#6b7280';
+  return conf >= 70 ? '#10b981' : conf >= 40 ? '#f59e0b' : '#6b7280';
+}
+
+function esc(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function animateCount(el, target, dur = 900) {
+  const start = performance.now();
+  function step(now) {
+    const t = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - t, 3);
+    el.textContent = Math.round(target * ease).toLocaleString();
+    if (t < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// ── Filters ────────────────────────────────────────────────────────────────
+function getFiltered() {
+  const q      = document.getElementById('qSearch').value.toLowerCase().trim();
+  const fSec   = document.getElementById('fSector').value;
+  const fTyp   = document.getElementById('fType').value;
+  const fStage = document.getElementById('fStage').value;
+  const fConf  = document.getElementById('fConf').value;
+  const fSort  = document.getElementById('fSort').value;
+
+  let data = allData;
+
+  if (savedOnly) {
+    data = data.filter(d => bookmarks.has(d.name));
+  }
+
+  const secFilter = activeSector || fSec;
+  if (secFilter) {
+    data = data.filter(d => (d.primary_domains || []).includes(secFilter));
+  }
+
+  if (fTyp) {
+    data = data.filter(d => inferType(d) === fTyp);
+  }
+  if (fStage) {
+    data = data.filter(d => stageArr(d).includes(fStage));
+  }
+  if (fConf) {
+    const minConf = parseFloat(fConf);
+    data = data.filter(d => (d.tier1_completeness || 0) >= minConf);
+  }
+  if (q) {
+    data = data.filter(d =>
+      (d.display_name || d.name || '').toLowerCase().includes(q) ||
+      (d.thesis_text || '').toLowerCase().includes(q) ||
+      (d.partner_contacts || []).some(p => (p.name || '').toLowerCase().includes(q))
+    );
+  }
+
+  const col = tableSortCol;
+  data = [...data].sort((a, b) => {
+    if (col) {
+      let av, bv;
+      if (col === 'display_name') {
+        av = a.display_name || a.name || '';
+        bv = b.display_name || b.name || '';
+      } else if (col === 'investor_type') {
+        av = inferType(a); bv = inferType(b);
+      } else {
+        av = a[col]; bv = b[col];
+      }
+      if (typeof av === 'number' && typeof bv === 'number') return (av - bv) * (tableSortDir === 'asc' ? 1 : -1);
+      return String(av || '').localeCompare(String(bv || '')) * (tableSortDir === 'asc' ? 1 : -1);
+    }
+    if (fSort === 'name_asc')  return (a.display_name||a.name||'').localeCompare(b.display_name||b.name||'');
+    if (fSort === 'name_desc') return (b.display_name||b.name||'').localeCompare(a.display_name||a.name||'');
+    return (b.tier1_completeness||0) - (a.tier1_completeness||0);
+  });
+
+  return data;
+}
+
+// ── Render ─────────────────────────────────────────────────────────────────
+function render() {
+  const filtered = getFiltered();
+  const total = filtered.length;
+  const pages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+  if (currentPage > pages) currentPage = 1;
+
+  const start = (currentPage - 1) * PAGE_SIZE;
+  const slice = filtered.slice(start, start + PAGE_SIZE);
+
+  document.getElementById('resultCount').innerHTML =
+    `<b>${total.toLocaleString()}</b> of <b>${allData.length.toLocaleString()}</b> firms`;
+  document.getElementById('pageInfo').textContent =
+    total > PAGE_SIZE ? `Page ${currentPage} / ${pages}` : '';
+
+  if (currentView === 'card') {
+    document.getElementById('gridView').style.display = '';
+    document.getElementById('tableView').classList.remove('visible');
+    renderCards(slice);
+  } else {
+    document.getElementById('gridView').style.display = 'none';
+    document.getElementById('tableView').classList.add('visible');
+    renderTable(slice);
+  }
+
+  renderPager(pages);
+}
+
+function renderCards(items) {
+  const grid = document.getElementById('gridView');
+  if (!items.length) {
+    grid.innerHTML = `<div class="empty" style="grid-column:1/-1">
+      <div class="empty-icon">🔍</div>
+      <h3>No investors found</h3>
+      <p>Try adjusting your filters or search query.</p>
+    </div>`;
+    return;
+  }
+
+  const GEO_LABELS = {
+    sf_bay_area:'SF Bay Area', nyc:'NYC', boston:'Boston', la:'LA',
+    seattle:'Seattle', austin:'Austin', chicago:'Chicago', miami:'Miami',
+    us_agnostic:'US', global:'Global',
+  };
+  const STAGE_CLASS = {
+    pre_seed:'stage-early', seed:'stage-early', angel:'stage-early',
+    series_a:'stage-series', series_b:'stage-series', series_c:'stage-series', series_c_plus:'stage-series',
+    growth:'stage-late', buyout:'stage-late', pre_ipo:'stage-late',
+  };
+  const STAGE_LABEL = {
+    pre_seed:'Pre-Seed', seed:'Seed', angel:'Angel',
+    series_a:'Series A', series_b:'Series B', series_c:'Series C', series_c_plus:'Series C+',
+    growth:'Growth', buyout:'Buyout', pre_ipo:'Pre-IPO',
+  };
+
+  grid.innerHTML = items.map(d => {
+    const isSaved = bookmarks.has(d.name);
+    const displayName = d.display_name || d.name;
+    const typeLabel = inferType(d);
+
+    // Zone 1
+    const typeBadge = typeLabel
+      ? `<span class="card-type-badge">${esc(typeLabel)}</span>` : '';
+    const flagBadge = d.investor_type_flag
+      ? `<span class="badge" style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44" title="${esc((d.investor_type_flag||'').slice(0,60))}">⚠ Flagged</span>`
+      : '';
+    const geos = (d.geo_focus || []).slice(0, 2)
+      .map(g => `<span class="geo-pill">${esc(GEO_LABELS[g] || g)}</span>`).join('');
+    const checkSize = d.check_size_display
+      ? `<span class="check-size">${esc(d.check_size_display)}</span>` : '';
+
+    // Zone 2
+    const stageTags = stageArr(d).slice(0, 3).map(s =>
+      `<span class="stage-tag ${STAGE_CLASS[s] || 'stage-series'}">${esc(STAGE_LABEL[s] || s)}</span>`
+    ).join('');
+
+    const secs = d.sectors || [];
+    const sectorTags = secs.slice(0, 3).map(s =>
+      `<span class="sector-tag">${esc(SECTOR_LABELS[s] || s)}</span>`
+    ).join('') + (secs.length > 3 ? `<span class="sector-more">+${secs.length - 3}</span>` : '');
+
+    const raw = d.thesis_text || '';
+    const thesis = raw.length > 80 ? esc(raw.slice(0, 80)) + '…' : esc(raw);
+
+    // Zone 3
+    let leadHtml = '';
+    if (d.lead_investor === 'lead_only') leadHtml = `<span class="lead-icon" title="Leads rounds">⚡</span>`;
+    else if (d.lead_investor === 'follow_ok') leadHtml = `<span class="lead-icon" title="Co-invests">🤝</span>`;
+    else if (d.lead_investor === 'both') leadHtml = `<span class="lead-icon" title="Leads & co-invests">⚡🤝</span>`;
+
+    const avatars = validContacts(d).slice(0, 2).map(p => {
+      const parts = (p.name || '').trim().split(/\s+/);
+      const ini = parts.length > 1
+        ? (parts[0][0] + parts[parts.length - 1][0]).toUpperCase()
+        : (parts[0] || '?')[0].toUpperCase();
+      return `<div class="avatar" title="${esc(p.name || '')}">${ini}</div>`;
+    }).join('');
+
+    const applyBtn = d.submission_url
+      ? `<a class="apply-btn" href="${esc(d.submission_url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Apply →</a>`
+      : `<span class="no-portal">No portal</span>`;
+
+    return `<div class="card" onclick="openModal(allData[${allData.indexOf(d)}])">
+      <div class="card-z1">
+        <div class="card-z1-top">
+          <div class="card-name">${esc(displayName)}</div>
+          ${typeBadge}${flagBadge}
+          <button class="bm-btn${isSaved?' saved':''}" onclick="event.stopPropagation();toggleBookmark('${esc(d.name)}')" title="${isSaved?'Remove':'Save'}">${isSaved?'★':'☆'}</button>
+        </div>
+        <div class="card-z1-sub">${geos}${checkSize}</div>
+      </div>
+      <div class="card-z2">
+        ${stageTags || sectorTags ? `<div class="card-tags">${stageTags}${sectorTags}</div>` : ''}
+        ${thesis ? `<div class="card-thesis">${thesis}</div>` : ''}
+      </div>
+      <div class="card-z3">
+        <div class="card-z3-left">${leadHtml}${avatars}</div>
+        ${applyBtn}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderTable(slice) {
+  const body = document.getElementById('tableBody');
+  if (!slice.length) {
+    body.innerHTML = `<tr><td colspan="6" style="text-align:center;padding:40px;color:var(--text3)">No results</td></tr>`;
+    return;
+  }
+
+  document.querySelectorAll('thead th').forEach(th => th.classList.remove('sort-asc','sort-desc'));
+  if (tableSortCol) {
+    const cols = ['display_name','investor_type',null,null,null,'tier1_completeness'];
+    const idx = cols.indexOf(tableSortCol);
+    if (idx >= 0) {
+      const ths = document.querySelectorAll('thead th');
+      if (ths[idx]) ths[idx].classList.add(tableSortDir === 'asc' ? 'sort-asc' : 'sort-desc');
+    }
+  }
+
+  body.innerHTML = slice.map(d => {
+    const typeLabel = inferType(d);
+    const score = d.tier1_completeness;
+    return `<tr onclick="openModal(allData[${allData.indexOf(d)}])">
+      <td>${esc(d.display_name || d.name)}</td>
+      <td>${esc(typeLabel) || '—'}</td>
+      <td>${esc((d.primary_domains||[]).slice(0,2).map(s=>SECTOR_LABELS[s]||s).join(', ')) || '—'}</td>
+      <td>${esc(stageArr(d).slice(0,2).join(', ')) || '—'}</td>
+      <td style="font-family:var(--mono)">${esc(d.check_size_display) || '—'}</td>
+      <td>${confDot(score)}<span style="font-family:var(--mono)">${score ?? '—'}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+function sortTable(col) {
+  if (tableSortCol === col) {
+    tableSortDir = tableSortDir === 'asc' ? 'desc' : 'asc';
+  } else {
+    tableSortCol = col;
+    tableSortDir = 'asc';
+  }
+  render();
+}
+
+function renderPager(pages) {
+  const pager = document.getElementById('pager');
+  if (pages <= 1) { pager.innerHTML = ''; return; }
+
+  const cur = currentPage;
+  const toShow = new Set([1, 2, pages-1, pages]);
+  for (let i = Math.max(1, cur-2); i <= Math.min(pages, cur+2); i++) toShow.add(i);
+  const sorted = [...toShow].sort((a,b)=>a-b);
+
+  let html = '';
+  let prev = 0;
+  for (const p of sorted) {
+    if (p - prev > 1) html += `<button class="pager-btn dots">…</button>`;
+    html += `<button class="pager-btn${p===cur?' active':''}" onclick="goPage(${p})">${p}</button>`;
+    prev = p;
+  }
+
+  pager.innerHTML =
+    `<button class="pager-btn" onclick="goPage(${cur-1})" ${cur===1?'disabled':''}>‹</button>` +
+    html +
+    `<button class="pager-btn" onclick="goPage(${cur+1})" ${cur===pages?'disabled':''}>›</button>`;
+}
+
+function goPage(p) {
+  const filtered = getFiltered();
+  const pages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  if (p < 1 || p > pages) return;
+  currentPage = p;
+  render();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── View Toggle ────────────────────────────────────────────────────────────
+function setView(v) {
+  currentView = v;
+  document.getElementById('vCard').classList.toggle('active', v === 'card');
+  document.getElementById('vTable').classList.toggle('active', v === 'table');
+  render();
+}
+
+// ── Bookmarks ──────────────────────────────────────────────────────────────
+function toggleBookmark(name) {
+  if (bookmarks.has(name)) bookmarks.delete(name);
+  else bookmarks.add(name);
+  localStorage.setItem(BOOKMARKS_KEY, JSON.stringify([...bookmarks]));
+  render();
+}
+
+function toggleSavedOnly() {
+  savedOnly = !savedOnly;
+  document.getElementById('btnSaved').classList.toggle('active', savedOnly);
+  currentPage = 1;
+  render();
+}
+
+// ── Modal ──────────────────────────────────────────────────────────────────
+function openModal(d) {
+  if (!d) return;
+  const typeLabel = inferType(d);
+  const stages = stageArr(d);
+  const score = d.tier1_completeness;
+  const src = getSource(d);
+  const isSaved = bookmarks.has(d.name);
+
+  document.getElementById('mTitle').textContent = d.display_name || d.name || '—';
+
+  const badges = [];
+  if (src) badges.push(`<span class="badge" style="background:${src.color}22;color:${src.color};border:1px solid ${src.color}44">${src.label}</span>`);
+  if (typeLabel) badges.push(`<span class="badge" style="background:rgba(255,255,255,0.06);color:var(--text2);border:1px solid var(--border2)">${esc(typeLabel)}</span>`);
+  if (d.investor_type_flag) badges.push(`<span class="badge" style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44" title="${esc((d.investor_type_flag||'').slice(0,60))}">⚠ Flagged</span>`);
+  (d.primary_domains || []).slice(0, 2).forEach(dom => {
+    badges.push(`<span class="badge" style="background:rgba(59,130,246,0.1);color:var(--blue);border:1px solid rgba(59,130,246,0.3)">${esc(SECTOR_LABELS[dom]||dom)}</span>`);
+  });
+  badges.push(`<button class="ctrl-btn${isSaved?' active':''}" style="font-size:12px;padding:4px 10px" onclick="toggleBookmark('${esc(d.name)}')">${isSaved?'★ Saved':'☆ Save'}</button>`);
+  document.getElementById('mBadges').innerHTML = badges.join('');
+
+  let html = '';
+
+  // Section 1: Overview
+  html += `<div class="modal-section">
+    <div class="section-label">Overview</div>
+    <div class="modal-grid">
+      <div class="modal-field"><span class="field-key">Check Size</span><span class="field-val mono">${esc(d.check_size_display) || '—'}</span></div>
+      <div class="modal-field"><span class="field-key">Lead Investor</span><span class="field-val">${esc(d.lead_investor) || '—'}</span></div>
+      ${d.official_website ? `<div class="modal-field" style="grid-column:1/-1"><span class="field-key">Website</span><span class="field-val"><a href="${esc(d.official_website)}" target="_blank" rel="noopener">${esc(d.official_website)}</a></span></div>` : ''}
+    </div>
+    ${(d.geo_focus && d.geo_focus.length) ? `<div style="margin-top:12px">
+      <div class="field-key" style="margin-bottom:6px">Geo Focus</div>
+      <div class="tag-list">${d.geo_focus.map(g=>`<span class="tag-item">${esc(g)}</span>`).join('')}</div>
+    </div>` : ''}
+  </div>`;
+
+  // Section 2: Investment Profile
+  html += `<div class="modal-section">
+    <div class="section-label">Investment Profile</div>
+    <div class="modal-grid">
+      <div class="modal-field"><span class="field-key">Stages</span>
+        <div class="tag-list">${stages.length ? stages.map(s=>`<span class="tag-item">${esc(s)}</span>`).join('') : '<span style="color:var(--text3)">—</span>'}</div>
+      </div>
+      <div class="modal-field"><span class="field-key">Sectors</span>
+        <div class="tag-list">${
+          (Array.isArray(d.sectors) && d.sectors.length ? d.sectors : [])
+          .map(s=>`<span class="tag-item">${esc(SECTOR_LABELS[s]||s)}</span>`).join('') || '<span style="color:var(--text3)">—</span>'
+        }</div>
+      </div>
+    </div>
+  </div>`;
+
+  // Section 3: About
+  if (d.thesis_text) {
+    html += `<div class="modal-section">
+      <div class="section-label">About</div>
+      <p style="font-size:13px;color:var(--text2);line-height:1.65">${esc(d.thesis_text)}</p>
+    </div>`;
+  }
+
+  // Section 4: Key People
+  const people = validContacts(d);
+  if (people.length) {
+    html += `<div class="modal-section">
+      <div class="section-label">Key People</div>
+      <div class="people-list">
+        ${people.slice(0,8).map(p => {
+          const initials = (p.name||'?').split(' ').map(w=>w[0]).filter(Boolean).slice(0,2).join('').toUpperCase();
+          const nameHtml = p.linkedin_url
+            ? `<a href="${esc(p.linkedin_url)}" target="_blank" rel="noopener">${esc(p.name)}</a>`
+            : esc(p.name);
+          return `<div class="person-row">
+            <div class="person-avatar">${initials}</div>
+            <div>
+              <div class="person-name">${nameHtml}</div>
+              <div class="person-title">${esc(p.title||'')}</div>
+            </div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+  }
+
+  // Section 5: Portfolio
+  const portfolio = Array.isArray(d.portfolio_companies) ? d.portfolio_companies.filter(Boolean) : [];
+  if (portfolio.length) {
+    html += `<div class="modal-section">
+      <div class="section-label">Portfolio Companies</div>
+      <div class="portfolio-wrap">
+        ${portfolio.slice(0,30).map(p => {
+          const name = typeof p === 'string' ? p : (p.name || '');
+          const sector = typeof p === 'object' ? (p.sector || '') : '';
+          return `<span class="tag-item"${sector ? ` title="${esc(sector)}"` : ''}>${esc(name)}</span>`;
+        }).join('')}
+        ${portfolio.length > 30 ? `<span class="tag-item" style="color:var(--text3)">+${portfolio.length-30} more</span>` : ''}
+      </div>
+    </div>`;
+  }
+
+  // Section 6: Data Quality
+  html += `<div class="modal-section">
+    <div class="section-label">Data Quality</div>
+    <div class="modal-grid">
+      <div class="modal-field">
+        <span class="field-key">Completeness Score</span>
+        <span class="field-val mono" style="color:${confColor(score)}">${score !== null && score !== undefined ? score + ' / 100' : '—'}</span>
+        ${score !== null && score !== undefined ? `<div class="conf-bar"><div class="conf-fill" style="width:${score}%;background:${confColor(score)}"></div></div>` : ''}
+      </div>
+      <div class="modal-field">
+        <span class="field-key">Data Source</span>
+        <span class="field-val">${src ? src.label : '—'}</span>
+      </div>
+    </div>
+  </div>`;
+
+  document.getElementById('mBody').innerHTML = html;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModalDirect();
+}
+function closeModalDirect() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModalDirect();
+});
+
+// ── Sector Pills ───────────────────────────────────────────────────────────
+function buildSectorPills() {
+  const counts = {};
+  for (const d of allData) {
+    for (const dom of (d.primary_domains || [])) {
+      if (PRIMARY_DOMAINS.includes(dom)) counts[dom] = (counts[dom] || 0) + 1;
+    }
+  }
+
+  const bar = document.getElementById('sectorBar');
+  const pills = PRIMARY_DOMAINS
+    .filter(dom => counts[dom])
+    .map(dom => {
+      const label = SECTOR_LABELS[dom] || dom;
+      return `<div class="pill" data-sector="${dom}" onclick="setSector('${dom}')">${label} <span style="opacity:0.6;font-size:10px">${counts[dom]}</span></div>`;
+    });
+
+  bar.innerHTML =
+    `<div class="pill active" data-sector="" onclick="setSector('')">All <span style="opacity:0.6;font-size:10px">${allData.length.toLocaleString()}</span></div>` +
+    pills.join('');
+}
+
+function setSector(s) {
+  activeSector = s;
+  document.getElementById('fSector').value = '';
+  document.querySelectorAll('.pill').forEach(p => {
+    p.classList.toggle('active', p.dataset.sector === s);
+  });
+  currentPage = 1;
+  render();
+}
+
+// ── Init ───────────────────────────────────────────────────────────────────
+function bindControls() {
+  ['qSearch','fSector','fType','fStage','fConf','fSort'].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener('input',  () => { currentPage = 1; tableSortCol = null; render(); });
+    el.addEventListener('change', () => { currentPage = 1; tableSortCol = null; render(); });
+  });
+  document.getElementById('fSector').addEventListener('change', () => {
+    if (activeSector) {
+      activeSector = '';
+      document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+      document.querySelector('.pill[data-sector=""]').classList.add('active');
+    }
+  });
+}
+
+async function init() {
+  document.getElementById('accessBadge').className = isPro ? 'badge-pro' : 'badge-basic';
+  document.getElementById('accessBadge').textContent = isPro ? 'PRO' : 'BASIC';
+
+  try {
+    const res = await fetch('active.jsonl');
+    const text = await res.text();
+    allData = text.trim().split('\n').filter(Boolean).map(line => JSON.parse(line));
+  } catch (e) {
+    document.getElementById('gridView').innerHTML =
+      `<div class="empty" style="grid-column:1/-1"><div class="empty-icon">⚠️</div><h3>Could not load investor data</h3><p>${e.message}</p></div>`;
+    return;
+  }
+
+  const domains = new Set(allData.flatMap(d => d.primary_domains || []));
+  const contactsCount = allData.filter(d => validContacts(d).length > 0).length;
+  animateCount(document.getElementById('cntFirms'),   allData.length);
+  animateCount(document.getElementById('cntSectors'), domains.size);
+  animateCount(document.getElementById('cntStates'),  contactsCount);
+
+  buildSectorPills();
+  bindControls();
+  render();
+}
+
+init();
+</script>
+</body>
+</html>

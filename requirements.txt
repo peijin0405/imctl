@@ -1,2 +1,37 @@
-exa-py
+# Web framework
+gunicorn
+flask
+flask-login
+flask-bcrypt
+flask-sqlalchemy
+flask-migrate
+
+# Database
+psycopg2-binary
+
+# Task queue
+celery
+redis
+
+# Monitoring
+sentry-sdk
+
+# Environment
 python-dotenv
+
+# AI / LLM
+anthropic
+google-generativeai
+
+# Search & data
+exa-py
+sec-api
+requests
+
+# Document parsing
+python-docx
+pymupdf
+pypdf
+
+# Embeddings
+voyageai
