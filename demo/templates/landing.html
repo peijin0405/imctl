@@ -346,78 +346,171 @@ footer{
 (function () {
   const canvas = document.getElementById('bg-canvas');
   const ctx    = canvas.getContext('2d');
-  const COUNT  = 65;   // particle count
-  const MAXD   = 130;  // max connection distance (px)
-  const MAXDSQ = MAXD * MAXD;
-  let W, H, pts;
+  const TAU    = Math.PI * 2;
+
+  // ── CONFIG (tune here) ────────────────────────────────────────────────
+  const COUNT     = 120;   // particle count
+  const MAXD      = 145;   // max connection distance px
+  const MAXDSQ    = MAXD * MAXD;
+  const D1SQ      = MAXDSQ * .11;  // (MAXD/3)²  — near bucket
+  const D2SQ      = MAXDSQ * .44;  // (MAXD*2/3)² — mid bucket
+  const BEAM_N    = 6;
+  const MOUSE_R   = 160;
+  const MOUSE_RSQ = MOUSE_R * MOUSE_R;
+
+  let W, H, pts, beams;
+  let mx = -9999, my = -9999;
+
+  // ── helpers ───────────────────────────────────────────────────────────
+  const rnd = (a, b) => a + Math.random() * (b - a);
 
   function resize() {
     W = canvas.width  = window.innerWidth;
     H = canvas.height = window.innerHeight;
   }
 
+  // ── particle factory ──────────────────────────────────────────────────
   function mkPt() {
     return {
-      x:  Math.random() * W,
-      y:  Math.random() * H,
-      vx: (Math.random() - .5) * .35,
-      vy: (Math.random() - .5) * .35,
-      r:  Math.random() * 1.2 + .8,   // base radius 0.8–2px
-      ph: Math.random() * Math.PI * 2  // breathing phase offset
+      x:   rnd(0, W),
+      y:   rnd(0, H),
+      vx:  rnd(-.3, .3),
+      vy:  rnd(-.3, .3),
+      r:   rnd(1, 3.5),           // 1–3.5 px radius
+      hue: rnd(220, 285),         // indigo–violet range
+      dh:  rnd(-4, 4),            // hue drift °/s
+      ph:  rnd(0, TAU),           // breathing phase
+      alp: rnd(.32, .68),         // base opacity
     };
   }
 
-  function init() {
-    resize();
-    pts = Array.from({ length: COUNT }, mkPt);
+  // ── beam factory ─────────────────────────────────────────────────────
+  function mkBeam() {
+    return {
+      x:     rnd(-W * .5, W * 1.5),
+      ang:   rnd(28, 55) * Math.PI / 180,
+      speed: rnd(.04, .13),
+      w:     rnd(1, 2.8),
+      alp:   rnd(.025, .06),
+    };
   }
 
+  // ── init ──────────────────────────────────────────────────────────────
+  function init() {
+    resize();
+    pts   = Array.from({ length: COUNT }, mkPt);
+    beams = Array.from({ length: BEAM_N }, mkBeam);
+  }
+
+  // ── frame loop ────────────────────────────────────────────────────────
   function frame(ts) {
     ctx.clearRect(0, 0, W, H);
-    const t = ts * .001;  // seconds
+    const t = ts * .001;
 
-    // ── move particles (wrap at edges) ────────────────────────────────
-    for (const p of pts) {
-      p.x += p.vx;
-      p.y += p.vy;
-      if (p.x < -20)   p.x = W + 20;
-      if (p.x > W + 20) p.x = -20;
-      if (p.y < -20)   p.y = H + 20;
-      if (p.y > H + 20) p.y = -20;
+    // global breath: amplitude 0→1→0 over ~6.3 s period
+    const gPulse = .5 + Math.sin(t) * .5;
+
+    // ── 1. light beams ───────────────────────────────────────────────────
+    for (const b of beams) {
+      b.x += b.speed;
+      if (b.x > W * 1.5) b.x = -W * .5;
+
+      const dx = H * Math.tan(b.ang);
+      const x0 = b.x,      y0 = -60;
+      const x1 = b.x + dx, y1 = H + 60;
+
+      // gradient fades at beam tips → "laser scanning glass" look
+      const g = ctx.createLinearGradient(x0, y0, x1, y1);
+      g.addColorStop(0,   'rgba(170,150,255,0)');
+      g.addColorStop(.18, `rgba(170,150,255,${b.alp})`);
+      g.addColorStop(.82, `rgba(170,150,255,${b.alp})`);
+      g.addColorStop(1,   'rgba(170,150,255,0)');
+
+      ctx.lineWidth   = b.w;
+      ctx.strokeStyle = g;
+      ctx.beginPath();
+      ctx.moveTo(x0, y0);
+      ctx.lineTo(x1, y1);
+      ctx.stroke();
     }
 
-    // ── draw connection lines ─────────────────────────────────────────
-    ctx.lineWidth = .6;
+    // ── 2. update particles ──────────────────────────────────────────────
+    for (const p of pts) {
+      // mouse repulsion
+      const ex = p.x - mx, ey = p.y - my;
+      const ed = ex * ex + ey * ey;
+      if (ed < MOUSE_RSQ && ed > 1) {
+        const em   = Math.sqrt(ed);
+        const push = (1 - em / MOUSE_R) * .7;
+        p.vx += (ex / em) * push * .05;
+        p.vy += (ey / em) * push * .05;
+      }
+      // damping + speed cap
+      p.vx *= .965;
+      p.vy *= .965;
+      const spd = p.vx * p.vx + p.vy * p.vy;
+      if (spd > 2.25) { const s = 1.5 / Math.sqrt(spd); p.vx *= s; p.vy *= s; }
+
+      p.x  += p.vx;
+      p.y  += p.vy;
+      p.hue = (p.hue + p.dh * .016 + 360) % 360;
+
+      // wrap at edges
+      if (p.x < -25)    p.x = W + 25;
+      if (p.x > W + 25) p.x = -25;
+      if (p.y < -25)    p.y = H + 25;
+      if (p.y > H + 25) p.y = -25;
+    }
+
+    // ── 3. connection lines — single O(n²) pass into 3 Path2D buckets ────
+    //    3 stroke() calls replaces thousands of individual stroke() calls
+    const lA = [
+      (.30 + gPulse * .09).toFixed(3),   // near  — brightest
+      (.13 + gPulse * .04).toFixed(3),   // mid
+      (.05 + gPulse * .01).toFixed(3),   // far   — faintest
+    ];
+    const near = new Path2D(), mid = new Path2D(), far = new Path2D();
+    const bkts = [near, mid, far];
+
     for (let i = 0; i < COUNT; i++) {
       for (let j = i + 1; j < COUNT; j++) {
         const dx = pts[i].x - pts[j].x;
         const dy = pts[i].y - pts[j].y;
         const d2 = dx * dx + dy * dy;
-        if (d2 < MAXDSQ) {
-          // alpha fades with distance: max ~0.18 at d=0, 0 at d=MAXD
-          const alpha = (1 - Math.sqrt(d2) / MAXD) * .18;
-          ctx.strokeStyle = 'rgba(99,102,241,' + alpha.toFixed(3) + ')';
-          ctx.beginPath();
-          ctx.moveTo(pts[i].x, pts[i].y);
-          ctx.lineTo(pts[j].x, pts[j].y);
-          ctx.stroke();
-        }
+        if (d2 >= MAXDSQ) continue;
+        const bk = d2 < D1SQ ? 0 : d2 < D2SQ ? 1 : 2;
+        bkts[bk].moveTo(pts[i].x, pts[i].y);
+        bkts[bk].lineTo(pts[j].x, pts[j].y);
       }
     }
+    ctx.lineWidth   = .7;
+    ctx.strokeStyle = `rgba(130,118,255,${lA[0]})`; ctx.stroke(near);
+    ctx.strokeStyle = `rgba(130,118,255,${lA[1]})`; ctx.stroke(mid);
+    ctx.strokeStyle = `rgba(130,118,255,${lA[2]})`; ctx.stroke(far);
 
-    // ── draw particles with breathing pulse ───────────────────────────
-    ctx.fillStyle = 'rgba(99,102,241,.48)';
+    // ── 4. particles — shadowBlur glow + hue shift + breathing ───────────
+    ctx.shadowBlur = 8;
     for (const p of pts) {
-      const pulse = p.r + Math.sin(t * .9 + p.ph) * .45;
+      const pr = Math.max(.5, p.r + Math.sin(t * .9 + p.ph) * p.r * .28);
+      const a  = (p.alp * (.80 + gPulse * .20)).toFixed(3);
+      const h  = p.hue | 0;
+      ctx.shadowColor = `hsla(${h},85%,68%,.5)`;
+      ctx.fillStyle   = `hsla(${h},72%,82%,${a})`;
       ctx.beginPath();
-      ctx.arc(p.x, p.y, pulse, 0, 6.2832);
+      ctx.arc(p.x, p.y, pr, 0, TAU);
       ctx.fill();
     }
+    ctx.shadowBlur  = 0;
+    ctx.shadowColor = 'transparent';
 
     requestAnimationFrame(frame);
   }
 
-  window.addEventListener('resize', resize);
+  // ── event listeners ───────────────────────────────────────────────────
+  window.addEventListener('resize',    resize);
+  window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  window.addEventListener('mouseleave',  () => { mx = -9999;  my = -9999; });
+
   init();
   requestAnimationFrame(frame);
 })();
