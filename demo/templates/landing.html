@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Washon Capital — Fund &amp; Capital Platform</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0a;--nav:#0d0d0d;--card:#111111;--card2:#161616;
+  --border:#222222;--border2:#2a2a2a;
+  --accent:#6366f1;--accent2:#818cf8;--accent-dim:rgba(99,102,241,.12);
+  --text:#e5e7eb;--text2:#9ca3af;--text3:#4b5563;
+  --green:#10b981;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:system-ui,-apple-system,sans-serif;
+  font-size:14px;line-height:1.5;min-height:100vh;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────────────────────── */
+.navbar{
+  position:sticky;top:0;z-index:100;
+  background:rgba(13,13,13,.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 36px;height:60px;
+}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.nav-logo{
+  width:32px;height:32px;border-radius:8px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--accent),#a78bfa);
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;font-weight:800;color:#fff;
+}
+.nav-brand h1{font-size:.9rem;font-weight:700;color:var(--text);letter-spacing:.02em}
+.nav-brand p{font-size:.65rem;color:var(--text3);margin-top:1px}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-link{
+  display:flex;align-items:center;gap:6px;
+  padding:6px 11px;border-radius:8px;
+  color:var(--text2);text-decoration:none;font-size:.82rem;font-weight:500;
+  transition:background .14s,color .14s;white-space:nowrap;
+}
+.nav-link:hover{background:#1a1a1a;color:var(--text)}
+.nav-badge{
+  font-size:.57rem;font-weight:700;
+  background:var(--accent);color:#fff;border-radius:4px;padding:1px 5px;
+}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-left:10px;padding:7px 16px;border-radius:8px;border:none;
+  background:var(--accent);color:#fff;font-size:.82rem;font-weight:600;
+  text-decoration:none;transition:opacity .15s;white-space:nowrap;
+}
+.nav-cta:hover{opacity:.88}
+
+/* ── HERO ────────────────────────────────────────────────────────────── */
+.hero{
+  text-align:center;
+  padding:100px 36px 88px;
+  background:radial-gradient(ellipse 70% 55% at 50% -5%,rgba(99,102,241,.15),transparent 70%);
+  border-bottom:1px solid var(--border);
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-bottom:22px;font-size:.7rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);
+  border:1px solid rgba(99,102,241,.3);border-radius:20px;
+  padding:4px 14px;background:var(--accent-dim);
+}
+.hero-kicker::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--green);flex-shrink:0;
+  box-shadow:0 0 6px var(--green);
+}
+.hero h2{
+  font-size:clamp(2rem,5vw,3.1rem);font-weight:800;line-height:1.13;
+  letter-spacing:-.04em;color:var(--text);margin-bottom:22px;
+}
+.hero h2 em{
+  font-style:normal;
+  background:linear-gradient(135deg,var(--accent2) 0%,#a78bfa 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{
+  max-width:520px;margin:0 auto 40px;
+  color:var(--text2);font-size:.95rem;line-height:1.75;
+}
+.hero-actions{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 28px;border-radius:10px;border:none;
+  background:var(--accent);color:#fff;font-size:.9rem;font-weight:700;
+  text-decoration:none;transition:opacity .15s,transform .15s;
+}
+.btn-primary:hover{opacity:.88;transform:translateY(-1px)}
+.btn-primary .arrow{transition:transform .15s}
+.btn-primary:hover .arrow{transform:translateX(3px)}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 24px;border-radius:10px;
+  border:1px solid var(--border2);background:transparent;
+  color:var(--text2);font-size:.9rem;font-weight:500;
+  text-decoration:none;transition:border-color .15s,color .15s;
+}
+.btn-ghost:hover{border-color:var(--accent2);color:var(--text)}
+
+/* ── STATS STRIP ─────────────────────────────────────────────────────── */
+.stats{
+  display:flex;align-items:stretch;justify-content:center;
+  border-bottom:1px solid var(--border);
+  overflow:hidden;
+}
+.stat{
+  flex:1;max-width:240px;padding:28px 24px;text-align:center;
+  border-right:1px solid var(--border);
+}
+.stat:last-child{border-right:none}
+.stat-val{
+  font-size:1.8rem;font-weight:800;line-height:1;
+  background:linear-gradient(135deg,var(--text) 30%,var(--text2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.stat-label{font-size:.72rem;color:var(--text3);margin-top:6px;letter-spacing:.02em}
+
+/* ── FEATURES ────────────────────────────────────────────────────────── */
+.features{padding:80px 36px;max-width:980px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:52px}
+.section-eyebrow{
+  font-size:.65rem;text-transform:uppercase;letter-spacing:.14em;
+  color:var(--text3);font-weight:600;margin-bottom:12px;
+}
+.section-header h3{font-size:1.6rem;font-weight:800;color:var(--text);letter-spacing:-.02em}
+.section-header p{color:var(--text2);margin-top:10px;font-size:.88rem}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+.card{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:28px 26px 24px;text-decoration:none;color:inherit;
+  display:flex;flex-direction:column;gap:12px;
+  transition:border-color .18s,background .18s,transform .2s;
+  position:relative;overflow:hidden;
+}
+.card::after{
+  content:'';position:absolute;inset:0;border-radius:14px;
+  background:radial-gradient(circle at 0% 0%,rgba(99,102,241,.06),transparent 60%);
+  opacity:0;transition:opacity .2s;pointer-events:none;
+}
+.card:hover{border-color:rgba(99,102,241,.45);background:#121212;transform:translateY(-2px)}
+.card:hover::after{opacity:1}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.card-icon{
+  width:42px;height:42px;border-radius:10px;flex-shrink:0;
+  background:var(--accent-dim);border:1px solid rgba(99,102,241,.2);
+  display:flex;align-items:center;justify-content:center;font-size:1.15rem;
+}
+.card-badge{
+  font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--card2);border:1px solid var(--border2);border-radius:5px;
+  padding:3px 9px;color:var(--text3);flex-shrink:0;
+}
+.card h4{font-size:.95rem;font-weight:700;color:var(--text);letter-spacing:-.01em}
+.card p{font-size:.81rem;color:var(--text2);line-height:1.65;flex:1}
+.card-link{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:.77rem;font-weight:600;color:var(--accent2);
+  margin-top:2px;transition:gap .15s;
+}
+.card:hover .card-link{gap:7px}
+
+/* ── FOOTER ──────────────────────────────────────────────────────────── */
+footer{
+  border-top:1px solid var(--border);background:var(--nav);
+  padding:36px;display:flex;align-items:center;
+  justify-content:space-between;flex-wrap:wrap;gap:20px;
+}
+.footer-left{display:flex;align-items:center;gap:14px}
+.footer-logo{
+  width:30px;height:30px;border-radius:8px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--accent),#a78bfa);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:800;color:#fff;
+}
+.footer-info{font-size:.75rem;color:var(--text3);line-height:1.75}
+.footer-info strong{color:var(--text2);font-weight:600;font-size:.8rem}
+.footer-info a{color:var(--text2);text-decoration:none;transition:color .14s}
+.footer-info a:hover{color:var(--accent2)}
+.footer-copy{font-size:.72rem;color:var(--text3)}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────────── */
+@media(max-width:760px){
+  .navbar{padding:0 18px}
+  .nav-link span:not(.nav-badge){display:none}
+  .hero{padding:64px 20px 56px}
+  .stats{flex-wrap:wrap}
+  .stat{border-right:none;border-bottom:1px solid var(--border);min-width:50%}
+  .stat:last-child{border-bottom:none}
+  .features{padding:52px 20px}
+  .cards{grid-template-columns:1fr}
+  footer{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:480px){
+  .nav-link{display:none}
+  .nav-cta{display:inline-flex}
+  .hero-sub{font-size:.88rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAVBAR ─────────────────────────────────────────────────────────── -->
+<header class="navbar">
+  <a href="/" class="nav-brand">
+    <div class="nav-logo">W</div>
+    <div>
+      <h1>Washon Capital</h1>
+      <p>Fund &amp; Capital Platform</p>
+    </div>
+  </a>
+  <nav class="nav-links" aria-label="Platform modules">
+    <a href="/m1"  class="nav-link"><span>📄</span><span>BP Analyzer</span><span class="nav-badge">M1</span></a>
+    <a href="/m4"  class="nav-link"><span>🗄️</span><span>Investor DB</span><span class="nav-badge">M4</span></a>
+    <a href="/m9"  class="nav-link"><span>🎯</span><span>Fundraising</span><span class="nav-badge">M9</span></a>
+    <a href="/m10" class="nav-link"><span>📊</span><span>Analytics</span><span class="nav-badge">M10</span></a>
+    <a href="/m1"  class="nav-cta">Launch Platform →</a>
+  </nav>
+</header>
+
+<!-- ── HERO ────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-kicker">Washon Capital — Internal Platform</div>
+  <h2>AI-Powered<br><em>Investment Intelligence</em></h2>
+  <p class="hero-sub">
+    From deal flow to portfolio analysis — Washon Capital's internal AI platform
+    built for investment managers.
+  </p>
+  <div class="hero-actions">
+    <a href="/m1" class="btn-primary">Launch Platform <span class="arrow">→</span></a>
+    <a href="/m4" class="btn-ghost">Browse Investors</a>
+  </div>
+</section>
+
+<!-- ── STATS STRIP ──────────────────────────────────────────────────────── -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-val">485+</div>
+    <div class="stat-label">Curated Investors</div>
+  </div>
+  <div class="stat">
+    <div class="stat-val">3-Tier</div>
+    <div class="stat-label">AI Matching Engine</div>
+  </div>
+  <div class="stat">
+    <div class="stat-val">6-Stage</div>
+    <div class="stat-label">Pipeline Tracking</div>
+  </div>
+  <div class="stat">
+    <div class="stat-val">Real-Time</div>
+    <div class="stat-label">Email Generation</div>
+  </div>
+</div>
+
+<!-- ── FEATURE CARDS ────────────────────────────────────────────────────── -->
+<section class="features">
+  <div class="section-header">
+    <div class="section-eyebrow">Platform Modules</div>
+    <h3>Everything you need to manage capital</h3>
+    <p>Four integrated tools. One unified investment workspace.</p>
+  </div>
+
+  <div class="cards">
+
+    <a href="/m1" class="card">
+      <div class="card-top">
+        <div class="card-icon">📄</div>
+        <span class="card-badge">M1</span>
+      </div>
+      <h4>BP Analyzer</h4>
+      <p>Upload pitch decks and business plans. Extract funding stage, sector, traction, and team metrics with AI — then match against our curated investor database instantly.</p>
+      <span class="card-link">Open BP Analyzer →</span>
+    </a>
+
+    <a href="/m4" class="card">
+      <div class="card-top">
+        <div class="card-icon">🗄️</div>
+        <span class="card-badge">M4</span>
+      </div>
+      <h4>Investor Database</h4>
+      <p>Search and filter from a curated global investor network. Browse by sector, stage, geography, and check size — with enriched thesis data for precise matching.</p>
+      <span class="card-link">Open Investor Database →</span>
+    </a>
+
+    <a href="/m9" class="card">
+      <div class="card-top">
+        <div class="card-icon">🎯</div>
+        <span class="card-badge">M9</span>
+      </div>
+      <h4>Fundraising Funnel</h4>
+      <p>Manage investor outreach across six pipeline stages. Generate personalized outreach emails with AI, log meetings and notes, and receive 7-day inactivity alerts.</p>
+      <span class="card-link">Open Fundraising Funnel →</span>
+    </a>
+
+    <a href="/m10" class="card">
+      <div class="card-top">
+        <div class="card-icon">📊</div>
+        <span class="card-badge">M10</span>
+      </div>
+      <h4>Portfolio Analytics</h4>
+      <p>Review historical investment analyses and deal profiles. Track confidence scores across parsed business plans and export structured data for reporting.</p>
+      <span class="card-link">Open Portfolio Analytics →</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ───────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-left">
+    <div class="footer-logo">W</div>
+    <div class="footer-info">
+      <div><strong>Washon Capital</strong></div>
+      <div>8229 Boone Blvd, Suite 280, Vienna, VA 22182</div>
+      <div><a href="mailto:info@washoncapital.com">info@washoncapital.com</a></div>
+    </div>
+  </div>
+  <div class="footer-copy">© 2026 Washon Capital. All rights reserved.</div>
+</footer>
+
+</body>
+</html>

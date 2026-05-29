@@ -14,7 +14,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 load_dotenv()
 
-from flask import Flask, Response, jsonify, redirect, render_template_string, request, send_file, stream_with_context
+from flask import Flask, Response, jsonify, redirect, render_template, render_template_string, request, send_file, stream_with_context
 
 try:
     import anthropic as _anthropic
@@ -2055,7 +2055,12 @@ m10Load();
 
 @app.route("/")
 def index():
-    return redirect("/m1")
+    return render_template("landing.html")
+
+
+@app.route("/home")
+def home():
+    return render_template("landing.html")
 
 
 # ── M1 ──────────────────────────────────────────────────────────────────
