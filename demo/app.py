@@ -300,6 +300,7 @@ M1_CONTENT = """\
 .fl-dot.present{background:var(--green)}
 .fl-dot.missing{background:var(--text3)}
 .fl-dot.absent{background:var(--amber)}
+.fl-dot.danger{background:var(--red)}
 .fv{font-size:.84rem;line-height:1.55;color:var(--text)}
 .fv.null{color:var(--text3);font-style:italic}
 .bar{height:2px;background:var(--border);border-radius:1px;margin-top:12px;overflow:hidden}
@@ -534,21 +535,39 @@ function renderResults(data) {
     return !EMPTY_SIGNALS.some(sig => s.includes(sig));
   }
 
+  function capitalNeedMissing(val) {
+    if (!isPresent(val)) return true;
+    return !/[\d$£€¥KkMmBb]/.test(String(val));
+  }
+
   FIELDS.forEach(({key, label, wide}) => {
     const val     = d[key];
     const present = isPresent(val);
     const card    = document.createElement('div');
     card.className = 'field-card' + (wide ? ' full-width' : '');
-    if (!present) card.style.borderLeft = '3px solid var(--amber)';
-    else card.style.borderLeft = '';
-    const color = present ? 'var(--green)' : 'var(--amber)';
-    card.innerHTML = `
-      <div class="fl">
-        <span class="fl-key">${label}</span>
-        <span class="fl-dot ${present ? 'present' : 'absent'}"></span>
-      </div>
-      <div class="fv ${present ? '' : 'null'}" ${present ? '' : 'style="color:var(--amber)"'}>${present ? escHtml(val) : 'Not extracted — add to BP to improve match quality'}</div>
-      <div class="bar"><div class="bar-fill" style="width:${present?100:0}%;background:${color}"></div></div>`;
+
+    if (key === 'capital_need' && capitalNeedMissing(val)) {
+      card.style.borderLeft = '3px solid var(--red)';
+      card.innerHTML = `
+        <div class="fl">
+          <span class="fl-key" style="color:var(--red)">${label}</span>
+          <span class="fl-dot danger"></span>
+        </div>
+        <div class="fv null" style="color:var(--text3)">${present ? escHtml(val) : 'Not extracted — add to BP to improve match quality'}</div>
+        <div style="font-size:.71rem;color:rgba(239,68,68,.7);margin-top:4px">Add a target raise amount to improve investor matching</div>
+        <div class="bar"><div class="bar-fill" style="width:0%;background:var(--red)"></div></div>`;
+    } else {
+      if (!present) card.style.borderLeft = '3px solid var(--amber)';
+      else card.style.borderLeft = '';
+      const color = present ? 'var(--green)' : 'var(--amber)';
+      card.innerHTML = `
+        <div class="fl">
+          <span class="fl-key">${label}</span>
+          <span class="fl-dot ${present ? 'present' : 'absent'}"></span>
+        </div>
+        <div class="fv ${present ? '' : 'null'}" ${present ? '' : 'style="color:var(--amber)"'}>${present ? escHtml(val) : 'Not extracted — add to BP to improve match quality'}</div>
+        <div class="bar"><div class="bar-fill" style="width:${present?100:0}%;background:${color}"></div></div>`;
+    }
     grid.appendChild(card);
   });
 
