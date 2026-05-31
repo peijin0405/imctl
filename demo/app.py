@@ -2132,6 +2132,7 @@ function m10View(i){
     ['Funding Stage',  p.funding_stage],
     ['Capital Need',   p.capital_need],
     ['Sector',         toStr(p.sector)],
+    ['Sub-Sector',     toStr(p.sub_sector_tags)],
     ['Geography',      p.geography],
     ['Business Model', toStr(p.business_model)],
     ['Use of Funds',   p.use_of_funds],
