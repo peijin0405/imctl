@@ -197,8 +197,11 @@ nav{
 .nav-link.active{background:var(--accent-dim);color:var(--accent2)}
 .nav-link .badge{
   margin-left:auto;font-size:.58rem;font-weight:700;
-  background:var(--accent);color:#fff;border-radius:4px;padding:2px 6px;
+  border-radius:4px;padding:2px 6px;
 }
+.badge-new  {background:#1a4a2e;color:#4ade80}
+.badge-count{background:#1e1e2e;color:#6b7280}
+.badge-beta {background:#3d2e0a;color:#f59e0b}
 .nav-icon{font-size:.95rem;width:18px;text-align:center;flex-shrink:0}
 
 .nav-footer{
@@ -237,19 +240,18 @@ main{margin-left:var(--nav-w);flex:1;min-height:100vh}
     <div class="nav-section">Tools</div>
     <a href="/m1" class="nav-link {{ 'active' if active=='m1' else '' }}">
       <span class="nav-icon">📄</span> BP Parser
-      <span class="badge" onclick="event.stopPropagation();location.href='{{ url_for('index') }}'">M1</span>
+      <span class="badge badge-new">NEW</span>
     </a>
     <a href="/m4" class="nav-link {{ 'active' if active=='m4' else '' }}">
       <span class="nav-icon">🗄️</span> Investor DB
-      <span class="badge" onclick="event.stopPropagation();location.href='{{ url_for('index') }}'">M4</span>
+      <span class="badge badge-count">485</span>
     </a>
     <a href="/m10" class="nav-link {{ 'active' if active=='m10' else '' }}">
       <span class="nav-icon">📋</span> Saved Analyses
-      <span class="badge" onclick="event.stopPropagation();location.href='{{ url_for('index') }}'">M10</span>
     </a>
     <a href="/m9" class="nav-link {{ 'active' if active=='m9' else '' }}">
       <span class="nav-icon">🎯</span> Pitching Guide
-      <span class="badge" onclick="event.stopPropagation();location.href='{{ url_for('index') }}'">M9</span>
+      <span class="badge badge-beta">BETA</span>
     </a>
   </div>
 
