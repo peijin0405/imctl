@@ -41,7 +41,7 @@ app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
 app.config["SESSION_COOKIE_SECURE"] = os.environ.get("RAILWAY_ENVIRONMENT") is not None
 app.config["REMEMBER_COOKIE_DURATION"] = 86400 * 7  # 7 days
 
-from demo.database import init_db
+from demo.database import init_db, db as _db
 from demo.extensions import init_extensions
 from demo.routes.auth import auth as auth_blueprint
 
@@ -49,30 +49,92 @@ init_db(app)
 init_extensions(app)
 app.register_blueprint(auth_blueprint)
 
+from demo.models.analysis import Analysis as AnalysisModel   # noqa: E402
+from demo.models.pipeline import Pipeline as PipelineModel   # noqa: E402
+from demo.models.user    import User                         # noqa: E402
+
 ALLOWED = {".pdf", ".docx", ".doc"}
 
-M9_PIPELINE  = DATA_DIR / "m9_pipeline.json"
-M1_ANALYSES  = DATA_DIR / "m1_analyses.json"
+# ── Per-user ORM helpers ───────────────────────────────────────────────────
 
-def _load_pipeline():
-    if M9_PIPELINE.exists():
-        with open(M9_PIPELINE) as f:
-            return json.load(f)
-    return {"investors": []}
+def _analysis_to_dict(row):
+    """Convert an Analysis ORM row to the dict format used throughout the app."""
+    d = dict(row.result) if row.result else {}
+    d["id"] = str(row.id)
+    if not d.get("company_name"):
+        d["company_name"] = row.company or "Unknown"
+    if not d.get("created_at") and row.created_at:
+        d["created_at"] = row.created_at.isoformat() + "Z"
+    return d
 
-def _save_pipeline(data):
-    with open(M9_PIPELINE, "w") as f:
-        json.dump(data, f, indent=2)
 
 def _load_analyses():
-    if M1_ANALYSES.exists():
-        with open(M1_ANALYSES) as f:
-            return json.load(f)
-    return {"analyses": []}
+    """Return {"analyses": [...]} for the currently logged-in user only."""
+    rows = AnalysisModel.query.filter_by(user_id=current_user.id) \
+                              .order_by(AnalysisModel.created_at.desc()).all()
+    return {"analyses": [_analysis_to_dict(r) for r in rows]}
 
-def _save_analyses(data):
-    with open(M1_ANALYSES, "w") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
+
+def _load_pipeline():
+    """Return {"investors": [...]} for the currently logged-in user only."""
+    rows = PipelineModel.query.filter_by(user_id=current_user.id) \
+                              .order_by(PipelineModel.created_at.asc()).all()
+    investors = []
+    for row in rows:
+        try:
+            inv = json.loads(row.note or "{}")
+        except (json.JSONDecodeError, TypeError):
+            inv = {}
+        investors.append(inv)
+    return {"investors": investors}
+
+
+def _save_pipeline(data):
+    """Sync {"investors": [...]} to the database for the current user (replace-all)."""
+    PipelineModel.query.filter_by(user_id=current_user.id).delete()
+    for inv in data.get("investors", []):
+        row = PipelineModel(
+            user_id=current_user.id,
+            investor_id=inv.get("id", ""),
+            firm_name=inv.get("company", ""),
+            stage=str(inv.get("step", "")),
+            note=json.dumps(inv, ensure_ascii=False),
+        )
+        _db.session.add(row)
+    _db.session.commit()
+
+
+def _migrate_json_to_orm():
+    """One-time: import legacy m1_analyses.json records into the Analysis table."""
+    legacy = DATA_DIR / "m1_analyses.json"
+    if not legacy.exists():
+        return
+    first_user = User.query.order_by(User.id.asc()).first()
+    if not first_user:
+        return
+    try:
+        existing = json.loads(legacy.read_text(encoding="utf-8"))
+    except Exception:
+        return
+    migrated = 0
+    for record in existing.get("analyses", []):
+        a = AnalysisModel(
+            user_id=first_user.id,
+            filename=record.get("filename", "unknown"),
+            company=record.get("company_name", "Unknown"),
+            stage=record.get("funding_stage", ""),
+            sector=record.get("sector", ""),
+            result=record,
+        )
+        _db.session.add(a)
+        migrated += 1
+    _db.session.commit()
+    legacy.rename(legacy.with_suffix(".migrated"))
+    print(f"[migration] Imported {migrated} legacy analyses into DB", flush=True)
+
+
+with app.app_context():
+    _migrate_json_to_orm()
 
 # ══════════════════════════════════════════════════════════════════════════
 # Shared shell
@@ -2257,9 +2319,8 @@ def m1_parse():
         filled = sum(1 for f in scored_fields if _is_filled(f))
         flat["overall_confidence"] = round(filled / len(scored_fields), 2)
 
-        # Persist analysis
+        # Persist analysis (per-user, ORM)
         analysis = {
-            "id":                 uuid.uuid4().hex,
             "company_name":       flat.get("company_name") or "Unknown",
             "created_at":         datetime.utcnow().isoformat() + "Z",
             "filename":           f.filename or "unknown",
@@ -2270,9 +2331,16 @@ def m1_parse():
             "profile":            flat,
             "matches":            matches,
         }
-        db = _load_analyses()
-        db["analyses"].insert(0, analysis)
-        _save_analyses(db)
+        a_row = AnalysisModel(
+            user_id=current_user.id,
+            filename=analysis["filename"],
+            company=analysis["company_name"],
+            stage=analysis["funding_stage"],
+            sector=analysis["sector"],
+            result=analysis,
+        )
+        _db.session.add(a_row)
+        _db.session.commit()
 
         return jsonify({"profile": flat, "matches": matches})
     except Exception as e:
@@ -3714,18 +3782,24 @@ def m10_delete():
     aid  = body.get("id")
     if not aid:
         return jsonify({"error": "id required"}), 400
-    db = _load_analyses()
-    db["analyses"] = [a for a in db["analyses"] if a.get("id") != aid]
-    _save_analyses(db)
+    try:
+        row_id = int(aid)
+    except (ValueError, TypeError):
+        return jsonify({"error": "invalid id"}), 400
+    row = AnalysisModel.query.filter_by(id=row_id, user_id=current_user.id).first_or_404()
+    _db.session.delete(row)
+    _db.session.commit()
     return jsonify({"ok": True})
 
 
 @app.route("/m10/export/<aid>")
 def m10_export(aid):
-    db = _load_analyses()
-    analysis = next((a for a in db["analyses"] if a.get("id") == aid), None)
-    if not analysis:
+    try:
+        row_id = int(aid)
+    except (ValueError, TypeError):
         return jsonify({"error": "not found"}), 404
+    row = AnalysisModel.query.filter_by(id=row_id, user_id=current_user.id).first_or_404()
+    analysis = _analysis_to_dict(row)
     name = analysis.get("company_name", "analysis").replace(" ", "_")
     resp = app.response_class(
         response=json.dumps(analysis, indent=2, ensure_ascii=False),
