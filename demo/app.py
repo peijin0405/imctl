@@ -368,6 +368,16 @@ M1_CONTENT = """\
 .bar{height:2px;background:var(--border);border-radius:1px;margin-top:12px;overflow:hidden}
 .bar-fill{height:100%;border-radius:1px;transition:width .6s ease}
 
+/* Add-to-pipeline button on match cards */
+.pip-btn{
+  margin-left:8px;padding:2px 8px;font-size:.68rem;font-weight:600;
+  border:1px solid var(--border2);border-radius:4px;background:transparent;
+  color:var(--text3);cursor:pointer;transition:border-color .15s,color .15s;
+  vertical-align:middle;white-space:nowrap;
+}
+.pip-btn:hover:not(:disabled){border-color:#10b981;color:#10b981}
+.pip-btn:disabled{cursor:default;opacity:.7}
+
 /* Reset btn */
 .reset-btn{
   display:inline-flex;align-items:center;gap:6px;margin-top:4px;
@@ -683,6 +693,8 @@ function renderResults(data) {
           <div class="fl" style="margin-bottom:10px">
             <div>
               <span style="font-size:.88rem;font-weight:700">${nameHtml}</span>
+              <button class="pip-btn" id="pip-btn-${idx}"
+                onclick="addToPipeline(this,${JSON.stringify(m.name||'')})">+ Pipeline</button>
               <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:5px">
                 ${stages          ? `<span class="conf-meta-tag">${escHtml(stages)}</span>`          : ''}
                 ${m.check_size    ? `<span class="conf-meta-tag">${escHtml(m.check_size)}</span>`    : ''}
@@ -851,6 +863,46 @@ function renderResults(data) {
 
 function escHtml(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function addToPipeline(btn, investorName) {
+  if (btn.disabled) return;
+  btn.disabled = true;
+  btn.textContent = '…';
+  fetch('/api/pipeline/add', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({investor_name: investorName, source: 'match'}),
+  })
+  .then(r => r.json())
+  .then(d => {
+    if (d.success) {
+      btn.textContent = '✓ Added';
+      btn.style.borderColor = '#10b981';
+      btn.style.color = '#10b981';
+    } else {
+      btn.textContent = 'Failed';
+      btn.style.borderColor = '#ef4444';
+      btn.style.color = '#ef4444';
+      setTimeout(() => {
+        btn.textContent = '+ Pipeline';
+        btn.style.borderColor = '';
+        btn.style.color = '';
+        btn.disabled = false;
+      }, 2000);
+    }
+  })
+  .catch(() => {
+    btn.textContent = 'Failed';
+    btn.style.borderColor = '#ef4444';
+    btn.style.color = '#ef4444';
+    setTimeout(() => {
+      btn.textContent = '+ Pipeline';
+      btn.style.borderColor = '';
+      btn.style.color = '';
+      btn.disabled = false;
+    }, 2000);
+  });
 }
 </script>
 """
@@ -2435,6 +2487,32 @@ def m9_add():
     data["investors"].append(investor)
     _save_pipeline(data)
     return jsonify(investor)
+
+
+@app.route("/api/pipeline/add", methods=["POST"])
+@login_required
+def api_pipeline_add():
+    body = request.get_json(force=True) or {}
+    investor_name = (body.get("investor_name") or "").strip()
+    if not investor_name:
+        return jsonify({"success": False, "error": "investor_name is required"}), 400
+    data = _load_pipeline()
+    now  = datetime.utcnow().isoformat()
+    investor = {
+        "id":               uuid.uuid4().hex,
+        "company":          investor_name,
+        "contact":          "",
+        "email":            "",
+        "step":             1,
+        "status":           _STEP_STATUSES[0],
+        "logs":             [],
+        "created_at":       now,
+        "updated_at":       now,
+        "investor_profile": {"source": body.get("source", "match")},
+    }
+    data["investors"].append(investor)
+    _save_pipeline(data)
+    return jsonify({"success": True, "pipeline_id": investor["id"]})
 
 
 @app.route("/m9/update", methods=["POST"])
