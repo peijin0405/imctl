@@ -24,6 +24,9 @@ venv/
 # macOS
 .DS_Store
 
+# Claude Code local settings
+.claude/
+
 # Data pipeline outputs (not needed for app runtime)
 data/
 BP_exa/

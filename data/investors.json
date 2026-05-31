@@ -4,9 +4,7 @@
     "description": null,
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "GaN"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [
       "More Co"
@@ -23,8 +21,6 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "EHR",
-      "GaN",
       "biotech",
       "digital health"
     ],
@@ -44,9 +40,7 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "artificial intelligence",
-      "diagnostics",
-      "machine learning"
+      "diagnostics"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -64,8 +58,6 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "GaN",
-      "artificial intelligence",
       "diagnostics"
     ],
     "sector": "healthcare",
@@ -84,7 +76,6 @@
     "stage": "Pre-A",
     "region": "Europe",
     "focus": [
-      "SiC",
       "biotech",
       "drug discovery"
     ],
@@ -109,9 +100,7 @@
     "stage": "Pre-IPO",
     "region": "North America",
     "focus": [
-      "GaN",
-      "biotech",
-      "robotics"
+      "biotech"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -127,7 +116,6 @@
     "stage": "Pre-IPO",
     "region": "North America",
     "focus": [
-      "GaN",
       "biotech"
     ],
     "sector": "healthcare",
@@ -150,7 +138,6 @@
     "stage": "Pre-IPO",
     "region": "North America",
     "focus": [
-      "GaN",
       "diagnostics",
       "digital health"
     ],
@@ -171,9 +158,7 @@
     "description": "Additionally, 8VC participated in a $30 million funding round for Even Healthcare.",
     "stage": "Pre-IPO",
     "region": "North America",
-    "focus": [
-      "GaN"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [
@@ -190,7 +175,6 @@
     "stage": "Pre-IPO",
     "region": "North America",
     "focus": [
-      "GaN",
       "biotech"
     ],
     "sector": "healthcare",
@@ -213,7 +197,6 @@
     "stage": "Pre-IPO",
     "region": "North America",
     "focus": [
-      "GaN",
       "biotech"
     ],
     "sector": "healthcare",
@@ -235,7 +218,6 @@
     "stage": "Angel",
     "region": "North America",
     "focus": [
-      "GaN",
       "biotech",
       "genomics"
     ],
@@ -257,9 +239,7 @@
     "description": null,
     "stage": "Pre-A",
     "region": "Europe",
-    "focus": [
-      "GaN"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [
       "More Co"
@@ -276,7 +256,6 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "GaN",
       "drug discovery",
       "population health"
     ],
@@ -300,10 +279,7 @@
     "description": null,
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "GaN",
-      "SiC"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [
@@ -321,8 +297,6 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "GaN",
-      "artificial intelligence",
       "biotech"
     ],
     "sector": "healthcare",
@@ -341,7 +315,6 @@
     "stage": "Pre-IPO",
     "region": "North America",
     "focus": [
-      "GaN",
       "biotech",
       "digital health"
     ],
@@ -360,9 +333,7 @@
     "description": null,
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "GaN"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [
@@ -379,10 +350,7 @@
     "stage": "Series B",
     "region": "North America",
     "focus": [
-      "GaN",
-      "artificial intelligence",
-      "diagnostics",
-      "machine learning"
+      "diagnostics"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -400,10 +368,7 @@
     "description": "Get the full list » ### News about Conviction Partners - NEWS | May 27, 2025Cathay Innovation raises record $1B fund for vertical AI startupsThe fund is Europe's largest VC vehicle dedicated solely to investing in AI startups.",
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "GaN",
-      "artificial intelligence"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [
@@ -421,8 +386,6 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "AI agent",
-      "SiC",
       "mental health"
     ],
     "sector": "healthcare",
@@ -460,7 +423,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "GaN",
       "digital health",
       "mental health"
     ],
@@ -484,12 +446,6 @@
     "stage": "Series A",
     "region": "Middle East",
     "focus": [
-      "DeFi",
-      "EDA",
-      "GaN",
-      "NPU",
-      "SiC",
-      "artificial intelligence",
       "digital health"
     ],
     "sector": "healthcare",
@@ -512,11 +468,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
-      "SiC",
       "diagnostics",
-      "drone",
-      "generative AI",
       "mental health",
       "telehealth"
     ],
@@ -540,8 +492,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
-      "artificial intelligence",
       "genomics",
       "oncology",
       "precision medicine"
@@ -576,7 +526,6 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "DeFi",
       "precision medicine"
     ],
     "sector": "healthcare",
@@ -596,11 +545,7 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "GaN",
-      "SiC",
-      "blockchain",
       "digital health",
-      "fintech",
       "health insurance"
     ],
     "sector": "healthcare",
@@ -649,14 +594,9 @@
     "stage": "Angel",
     "region": null,
     "focus": [
-      "DeFi",
       "diagnostics",
-      "machine learning",
-      "natural language processing",
       "oncology",
-      "precision medicine",
-      "robotics",
-      "wearables"
+      "precision medicine"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -674,7 +614,6 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "SiC",
       "biotech",
       "digital health",
       "mental health"
@@ -699,10 +638,7 @@
     "description": "Skip to content - Get in Touch - ## Our Companies Echo Health Ventures partners with innovative companies that are also thinking differently.",
     "stage": "Pre-IPO",
     "region": "North America",
-    "focus": [
-      "GaN",
-      "generative AI"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [
       "Jeff Wessler"
@@ -726,7 +662,6 @@
     "stage": "Angel",
     "region": null,
     "focus": [
-      "edtech",
       "medtech"
     ],
     "sector": "healthcare",
@@ -766,9 +701,7 @@
     "description": "About | Cade Partners About Cade # Built for the hard parts of healthcare growth.",
     "stage": null,
     "region": null,
-    "focus": [
-      "SiC"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [
@@ -799,12 +732,9 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "artificial intelligence",
       "biotech",
       "drug discovery",
-      "generative AI",
-      "genomics",
-      "machine learning"
+      "genomics"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -842,9 +772,7 @@
     "description": "ACP Healthtech Fund I # Rewriting Healthcare with the Right Technology.",
     "stage": null,
     "region": "Europe",
-    "focus": [
-      "artificial intelligence"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [],
@@ -859,8 +787,6 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "AI agent",
-      "DeFi",
       "diagnostics"
     ],
     "sector": "healthcare",
@@ -885,10 +811,7 @@
     "description": "$750K Pre-Seed $110B TAM 5,000+ LOI Pregnancies Runner-Up ### ParkSense AI Edge AI Spatial Intelligence Zero-latency computer vision for parking and security.",
     "stage": "Angel",
     "region": null,
-    "focus": [
-      "EDA",
-      "edge AI"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [
@@ -909,8 +832,7 @@
     "focus": [
       "biotech",
       "diagnostics",
-      "drug discovery",
-      "machine learning"
+      "drug discovery"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -925,10 +847,7 @@
     "description": "Home - Innospark Ventures # Expertise Unlocks AI At Innospark Ventures, we back founders tackling intractable problems with Artificial Intelligence.",
     "stage": null,
     "region": null,
-    "focus": [
-      "DeFi",
-      "artificial intelligence"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [
@@ -966,12 +885,8 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "GaN",
-      "SiC",
       "digital health",
-      "edtech",
-      "medtech",
-      "robotics"
+      "medtech"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -995,8 +910,6 @@
       "diagnostics",
       "digital health",
       "drug discovery",
-      "edtech",
-      "machine learning",
       "medtech"
     ],
     "sector": "healthcare",
@@ -1018,8 +931,6 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "DeFi",
-      "NPU",
       "digital health",
       "oncology"
     ],
@@ -1044,10 +955,6 @@
     "stage": "Series A",
     "region": "Asia Pacific",
     "focus": [
-      "AI infrastructure",
-      "DeFi",
-      "EDA",
-      "artificial intelligence",
       "biotech",
       "drug discovery",
       "precision medicine"
@@ -1073,8 +980,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
-      "EDA",
       "biotech",
       "diagnostics",
       "precision medicine"
@@ -1093,13 +998,10 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
       "biotech",
       "diagnostics",
       "digital health",
       "drug discovery",
-      "medical imaging",
-      "natural language processing",
       "oncology",
       "precision medicine"
     ],
@@ -1124,10 +1026,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
-      "drug discovery",
-      "foundation model",
-      "machine learning"
+      "drug discovery"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -1185,9 +1084,7 @@
     "description": "DCVC | Avicenna Biosciences First Investment: 2022 The discovery, design, and testing of new drug is a high-risk, low-yield science, in part because so many candidate drugs turn out to be toxic.",
     "stage": null,
     "region": null,
-    "focus": [
-      "machine learning"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [
@@ -1209,10 +1106,8 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "GaN",
       "biotech",
-      "cell therapy",
-      "foundation model"
+      "cell therapy"
     ],
     "sector": "healthcare",
     "key_people": [
@@ -1237,7 +1132,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "artificial intelligence",
       "drug discovery"
     ],
     "sector": "healthcare",
@@ -1259,7 +1153,6 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "drone",
       "drug discovery",
       "oncology"
     ],
@@ -1280,8 +1173,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
-      "biopharmaceutical",
       "drug discovery",
       "gene therapy",
       "genomics",
@@ -1309,14 +1200,10 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "GaN",
-      "artificial intelligence",
       "biotech",
       "digital health",
       "drug discovery",
-      "machine learning",
-      "mental health",
-      "wearables"
+      "mental health"
     ],
     "sector": "healthcare",
     "key_people": [
@@ -1382,9 +1269,6 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "GaN",
-      "SiC",
-      "artificial intelligence",
       "mental health"
     ],
     "sector": "healthcare",
@@ -1420,8 +1304,6 @@
     "stage": "Pre-A",
     "region": "Europe",
     "focus": [
-      "DeFi",
-      "GaN",
       "mental health"
     ],
     "sector": "healthcare",
@@ -1498,7 +1380,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
       "digital health"
     ],
     "sector": "healthcare",
@@ -1541,7 +1422,6 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "GaN",
       "diagnostics",
       "digital health",
       "mental health",
@@ -1588,12 +1468,10 @@
     "stage": null,
     "region": null,
     "focus": [
-      "SiC",
       "biotech",
       "digital health",
       "drug discovery",
-      "mental health",
-      "wearables"
+      "mental health"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -1635,7 +1513,6 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "DeFi",
       "biotech",
       "cell therapy",
       "gene therapy",
@@ -1705,7 +1582,6 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "GaN",
       "biotech"
     ],
     "sector": "healthcare",
@@ -1726,9 +1602,7 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "biopharmaceutical",
-      "drug discovery",
-      "machine learning"
+      "drug discovery"
     ],
     "sector": "healthcare",
     "key_people": [
@@ -1752,8 +1626,7 @@
     "region": null,
     "focus": [
       "biotech",
-      "drug discovery",
-      "edge AI"
+      "drug discovery"
     ],
     "sector": "healthcare",
     "key_people": [
@@ -1779,7 +1652,6 @@
     "stage": "Series B",
     "region": "North America",
     "focus": [
-      "GaN",
       "oncology"
     ],
     "sector": "healthcare",
@@ -1798,7 +1670,6 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "biopharmaceutical",
       "biotech"
     ],
     "sector": "healthcare",
@@ -1865,8 +1736,6 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "DeFi",
-      "carbon capture",
       "drug discovery"
     ],
     "sector": "healthcare",
@@ -1903,8 +1772,7 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "drug discovery",
-      "lending"
+      "drug discovery"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -1922,11 +1790,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "AI infrastructure",
-      "EDA",
-      "artificial intelligence",
-      "biotech",
-      "machine learning"
+      "biotech"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -1966,7 +1830,6 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "GaN",
       "biotech",
       "cell therapy"
     ],
@@ -1989,7 +1852,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "biopharmaceutical",
       "cell therapy"
     ],
     "sector": "healthcare",
@@ -2009,7 +1871,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "SiC",
       "cell therapy"
     ],
     "sector": "healthcare",
@@ -2029,11 +1890,9 @@
     "stage": "Angel",
     "region": null,
     "focus": [
-      "DeFi",
       "biotech",
       "cell therapy",
-      "gene therapy",
-      "machine learning"
+      "gene therapy"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -2055,7 +1914,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
       "cell therapy"
     ],
     "sector": "healthcare",
@@ -2072,7 +1930,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "biopharmaceutical",
       "cell therapy"
     ],
     "sector": "healthcare",
@@ -2089,8 +1946,6 @@
     "stage": "Series C",
     "region": "North America",
     "focus": [
-      "GaN",
-      "SiC",
       "biotech",
       "cell therapy",
       "oncology"
@@ -2129,28 +1984,11 @@
     "scraped_at": "2026-04-30T11:15:51Z"
   },
   {
-    "name": "Next-Generation CAR-T Cell Therapies for Cancer",
-    "description": "Next-Generation CAR-T Cell Therapies for Cancer | Lyell # The Future of Cell Therapy – Today At Lyell, we are advancing next-generation CAR T-cell product candidates for patients with cancer.",
-    "stage": null,
-    "region": null,
-    "focus": [
-      "cell therapy"
-    ],
-    "sector": "healthcare",
-    "key_people": [],
-    "portfolio": [],
-    "founded_year": null,
-    "website": "https://lyell.com",
-    "source_url": "https://lyell.com/",
-    "scraped_at": "2026-04-30T11:15:51Z"
-  },
-  {
     "name": "Chimeron Bio",
     "description": "Home - Chimeron Bio | Pioneering In-Vivo CAR-T Therapy # Pioneering MultiPlex In-Vivo CAR-T Therapy ### A new wave in genetic medicine - multiplexed, precise, and delivered at scale.",
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
       "biotech",
       "cell therapy",
       "oncology"
@@ -2175,8 +2013,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "GaN",
-      "SiC",
       "cell therapy"
     ],
     "sector": "healthcare",
@@ -2214,7 +2050,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
       "cell therapy"
     ],
     "sector": "healthcare",
@@ -2294,13 +2129,8 @@
     "stage": null,
     "region": null,
     "focus": [
-      "AI agent",
-      "autonomous systems",
       "diagnostics",
-      "edtech",
-      "medtech",
-      "robotics",
-      "surgical robotics"
+      "medtech"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -2318,10 +2148,8 @@
     "stage": null,
     "region": null,
     "focus": [
-      "SiC",
       "diagnostics",
       "digital health",
-      "edtech",
       "medtech"
     ],
     "sector": "healthcare",
@@ -2337,10 +2165,7 @@
     "description": "The company’s Dexter robotic platform allows hospitals and surgeons to benefit from the best of all worlds in surgical robotics and laparoscopy.",
     "stage": null,
     "region": null,
-    "focus": [
-      "robotics",
-      "surgical robotics"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [
@@ -2358,11 +2183,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "SiC",
-      "edtech",
-      "medtech",
-      "robotics",
-      "surgical robotics"
+      "medtech"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -2383,9 +2204,7 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "edtech",
-      "medtech",
-      "robotics"
+      "medtech"
     ],
     "sector": "healthcare",
     "key_people": [
@@ -2403,11 +2222,7 @@
     "description": "We focus on advancing innovation in Robotics, AI, and Medical Devices, with a global reach spanning the UK, Europe, and the US.",
     "stage": null,
     "region": "Europe",
-    "focus": [
-      "DeFi",
-      "artificial intelligence",
-      "robotics"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [
@@ -2428,14 +2243,9 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
-      "artificial intelligence",
       "diagnostics",
-      "edtech",
-      "machine learning",
       "medtech",
-      "oncology",
-      "robotics"
+      "oncology"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -2450,9 +2260,7 @@
     "description": "Revival Healthcare Capital (Revival) led the round with participation from 415 CAPITAL (415), as well as existing investors.",
     "stage": "Pre-IPO",
     "region": "North America",
-    "focus": [
-      "robotics"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [],
@@ -2483,9 +2291,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "SiC",
       "diagnostics",
-      "edtech",
       "medtech"
     ],
     "sector": "healthcare",
@@ -2503,9 +2309,7 @@
     "description": "Their technology combines AI guidance with off-the-shelf robotic arms to improve surgical outcomes and efficiency while reducing the steep learning curve for surgeons.",
     "stage": "Pre-A",
     "region": null,
-    "focus": [
-      "EDA"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [],
@@ -2520,12 +2324,8 @@
     "stage": null,
     "region": null,
     "focus": [
-      "artificial intelligence",
       "diagnostics",
-      "edtech",
-      "medtech",
-      "remote patient monitoring",
-      "robotics"
+      "medtech"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -2541,12 +2341,8 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "GaN",
       "biotech",
-      "edtech",
-      "medtech",
-      "robotics",
-      "surgical robotics"
+      "medtech"
     ],
     "sector": "healthcare",
     "key_people": [
@@ -2565,34 +2361,11 @@
     "scraped_at": "2026-04-30T11:15:51Z"
   },
   {
-    "name": "Transforming Health through Data &amp; Digital",
-    "description": "Areas of Interest !Novartis Using big data, analytics, ML, AI to improve treatment development, clinical decision support, and disease prevention.",
-    "stage": null,
-    "region": null,
-    "focus": [
-      "digital health",
-      "drug discovery",
-      "wearables"
-    ],
-    "sector": "healthcare",
-    "key_people": [],
-    "portfolio": [
-      "Transforming Health"
-    ],
-    "founded_year": null,
-    "website": "https://drxcapital.com",
-    "source_url": "https://drxcapital.com/",
-    "scraped_at": "2026-04-30T11:15:51Z"
-  },
-  {
     "name": "Ventures Investments",
     "description": "Our Investment in Nimbus Health | 2048 Ventures Investments Jun 13, 2025 # Our Investment in Nimbus Health Nimbus Health is building the future of pulmonology.",
     "stage": null,
     "region": "North America",
-    "focus": [
-      "DeFi",
-      "SiC"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [
@@ -2612,12 +2385,7 @@
     "description": "Dexcom Ventures ## investing in transformative technology Accelerating innovation in biosensing and data-driven healthcare Dexcom Ventures builds upon the foundation of excellence established by Dexcom, a leader of diabetes care technology.",
     "stage": null,
     "region": null,
-    "focus": [
-      "DeFi",
-      "health data",
-      "remote patient monitoring",
-      "wearables"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [
       "Jason Halac"
@@ -2634,10 +2402,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "GaN",
-      "SiC",
-      "digital health",
-      "remote patient monitoring"
+      "digital health"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -2657,10 +2422,8 @@
     "stage": null,
     "region": null,
     "focus": [
-      "GaN",
       "biotech",
-      "diagnostics",
-      "health data"
+      "diagnostics"
     ],
     "sector": "healthcare",
     "key_people": [
@@ -2689,7 +2452,6 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "payments",
       "telehealth"
     ],
     "sector": "healthcare",
@@ -2730,7 +2492,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "biopharmaceutical",
       "diagnostics",
       "genomics"
     ],
@@ -2757,10 +2518,7 @@
     "description": "Our areas of focus include: ## OUR PORTFOLIO Aspen Neuroscience Active Immunitas Therapeutics Active Nobias Therapeutics Active ProJenX Active ## NEWS & BLOG View the latest posts and investment news from MEC.",
     "stage": "Pre-A",
     "region": null,
-    "focus": [
-      "SiC",
-      "artificial intelligence"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [
@@ -2798,14 +2556,10 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "GaN",
-      "biopharmaceutical",
       "gene therapy",
       "genomics",
       "mental health",
-      "precision medicine",
-      "robotics",
-      "wearables"
+      "precision medicine"
     ],
     "sector": "healthcare",
     "key_people": [
@@ -2854,10 +2608,8 @@
     "stage": "Pre-IPO",
     "region": "North America",
     "focus": [
-      "GaN",
       "diagnostics",
       "digital health",
-      "edtech",
       "medtech"
     ],
     "sector": "healthcare",
@@ -2888,7 +2640,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "SiC",
       "cell therapy",
       "drug discovery",
       "gene therapy"
@@ -2910,12 +2661,8 @@
     "stage": "Pre-IPO",
     "region": null,
     "focus": [
-      "EDA",
-      "LLM",
-      "SiC",
       "diagnostics",
       "drug discovery",
-      "edtech",
       "medtech"
     ],
     "sector": "healthcare",
@@ -2982,7 +2729,6 @@
     "stage": "Angel",
     "region": null,
     "focus": [
-      "SiC",
       "mental health"
     ],
     "sector": "healthcare",
@@ -3003,9 +2749,7 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "SiC",
-      "diagnostics",
-      "wearables"
+      "diagnostics"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -3023,8 +2767,6 @@
     "stage": "Pre-IPO",
     "region": "Europe",
     "focus": [
-      "GaN",
-      "artificial intelligence",
       "mental health"
     ],
     "sector": "healthcare",
@@ -3038,38 +2780,13 @@
     "scraped_at": "2026-04-30T11:15:51Z"
   },
   {
-    "name": "Wearable That Actively Improves Mental Health",
-    "description": "Led by Noetic Fund, the funding will help Apollo Neuro reach new global users who want to feel like a healthier, better version of themselves.",
-    "stage": "Series A",
-    "region": "North America",
-    "focus": [
-      "SiC",
-      "mental health",
-      "wearables"
-    ],
-    "sector": "healthcare",
-    "key_people": [],
-    "portfolio": [
-      "That Actively Improves Mental Health",
-      "Not Health"
-    ],
-    "founded_year": null,
-    "website": "https://www.businesswire.com",
-    "source_url": "https://www.businesswire.com/news/home/20220317005356/en/Apollo-Neuro-Raises-%2415M-Series-A-to-Elevate-the-First-Wellness-Wearable-That-Actively-Improves-Mental-Health",
-    "scraped_at": "2026-04-30T11:15:51Z"
-  },
-  {
     "name": "Aura Ventures",
     "description": "With a recent A$1.75M seed round led by Aura Ventures and participation from Antler, Sahha aims to redefine personalised healthcare.",
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "DeFi",
       "biotech",
-      "fintech",
-      "health data",
-      "mental health",
-      "wearables"
+      "mental health"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -3087,8 +2804,6 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "GaN",
-      "SiC",
       "digital health",
       "mental health"
     ],
@@ -3113,7 +2828,6 @@
     "region": null,
     "focus": [
       "digital health",
-      "machine learning",
       "mental health"
     ],
     "sector": "healthcare",
@@ -3153,10 +2867,7 @@
     "description": "With this broader portfolio, Vista AI will create the first comprehensive platform for automated MRI scanning—reducing scan variability and complexity while expanding access to advanced imaging.",
     "stage": "Series B",
     "region": "North America",
-    "focus": [
-      "EDA",
-      "GaN"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [
       "Daniel Hawkins",
@@ -3180,11 +2891,7 @@
     "description": "Customers love Rad AI and we are proud to partner with their team.”-Vinay Shah, partner at Transformation Capital Rad AI pioneered the development of the first generative AI solution in healthcare in 2018, Rad AI Impressions.",
     "stage": "Series C",
     "region": "North America",
-    "focus": [
-      "SiC",
-      "generative AI",
-      "medical imaging"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [
       "Scott Bundy"
@@ -3203,11 +2910,7 @@
     "description": "The round was led by Artis Ventures with participation from several existing investors, including OCV Partners, Kickstart Fund, and Gradient Ventures (Google’s AI-focused fund).",
     "stage": "Series A",
     "region": "North America",
-    "focus": [
-      "artificial intelligence",
-      "machine learning",
-      "medical imaging"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [],
@@ -3222,11 +2925,8 @@
     "stage": "Series A",
     "region": "Europe",
     "focus": [
-      "DeFi",
       "diagnostics",
-      "edtech",
       "genomics",
-      "medical imaging",
       "medtech",
       "precision medicine"
     ],
@@ -3243,13 +2943,7 @@
     "description": "The round was led by Transformation Capital, with participation from existing investors including Cone Health, World Innovation Lab, Khosla Ventures, Kickstart Fund, UP2398, and OCV Partners.",
     "stage": "Series C",
     "region": "Europe",
-    "focus": [
-      "SiC",
-      "foundation model",
-      "generative AI",
-      "medical imaging",
-      "multimodal AI"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [
@@ -3268,11 +2962,7 @@
     "description": null,
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "artificial intelligence",
-      "medical imaging",
-      "radiology AI"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [],
@@ -3287,9 +2977,7 @@
     "stage": "Series B",
     "region": "North America",
     "focus": [
-      "DeFi",
-      "diagnostics",
-      "medical imaging"
+      "diagnostics"
     ],
     "sector": "healthcare",
     "key_people": [],
@@ -3308,12 +2996,7 @@
     "description": "“Our vision is to democratize access to high-performing, trustworthy imaging AI by giving developers the tools, data, and compliant environment they need to fine-tune models safely and at scale.",
     "stage": "Series A",
     "region": "North America",
-    "focus": [
-      "AI infrastructure",
-      "SiC",
-      "foundation model",
-      "medical imaging"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [
       "Khan Siddiqui",
@@ -3333,11 +3016,7 @@
     "description": "Existing investors Credo Ventures, Seedcamp, LDV Capital, Accomplice, Founders Future, Vlad Tenev, Anne Wojcicki, and Esther Dyson also participated.",
     "stage": "Pre-IPO",
     "region": "North America",
-    "focus": [
-      "GaN",
-      "artificial intelligence",
-      "medical imaging"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [
       "Emi Gal",
@@ -3357,10 +3036,7 @@
     "description": "Today, I'm incredibly excited to announce that we have raised $21 million in a round led by Healthier Capital, a VC firm focused on applying innovative technology to healthcare.",
     "stage": "Pre-IPO",
     "region": "North America",
-    "focus": [
-      "GaN",
-      "SiC"
-    ],
+    "focus": [],
     "sector": "healthcare",
     "key_people": [],
     "portfolio": [
@@ -3378,8 +3054,6 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "DeFi",
-      "GaN",
       "machine learning"
     ],
     "sector": "ai_apps",
@@ -3399,15 +3073,10 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
-      "GPU",
-      "SiC",
       "artificial intelligence",
-      "foundation model",
       "generative AI",
       "machine learning",
-      "robotics",
-      "vector database"
+      "robotics"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -3423,8 +3092,6 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "GaN",
-      "enterprise AI",
       "generative AI",
       "robotics"
     ],
@@ -3442,9 +3109,7 @@
     "stage": "Angel",
     "region": null,
     "focus": [
-      "AI infrastructure",
-      "SiC",
-      "vector database"
+      "AI infrastructure"
     ],
     "sector": "ai_apps",
     "key_people": [
@@ -3466,14 +3131,9 @@
     "focus": [
       "AI agent",
       "AI infrastructure",
-      "DeFi",
       "LLM",
       "MLOps",
-      "enterprise AI",
-      "foundation model",
-      "large language model",
-      "machine learning",
-      "vector database"
+      "machine learning"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -3493,9 +3153,7 @@
     "focus": [
       "AI agent",
       "LLM",
-      "LMS",
       "artificial intelligence",
-      "enterprise AI",
       "generative AI"
     ],
     "sector": "ai_apps",
@@ -3514,11 +3172,7 @@
     "focus": [
       "AI agent",
       "AI infrastructure",
-      "DeFi",
-      "enterprise AI",
-      "foundation model",
-      "machine learning",
-      "vector database"
+      "machine learning"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -3539,12 +3193,7 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "AI agent",
-      "GaN",
-      "blockchain",
-      "enterprise AI",
-      "fintech",
-      "wafer"
+      "AI agent"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -3561,9 +3210,7 @@
     "description": "From predictive pipelines to real-time intelligence layers, we back the picks-and-shovels of the AI era.",
     "stage": "Pre-A",
     "region": null,
-    "focus": [
-      "DeFi"
-    ],
+    "focus": [],
     "sector": "ai_apps",
     "key_people": [],
     "portfolio": [
@@ -3584,8 +3231,7 @@
     "stage": "Angel",
     "region": null,
     "focus": [
-      "AI infrastructure",
-      "enterprise AI"
+      "AI infrastructure"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -3619,14 +3265,7 @@
     "region": null,
     "focus": [
       "AI agent",
-      "DeFi",
-      "EDA",
-      "EHR",
-      "GaN",
-      "LLM",
-      "fintech",
-      "lending",
-      "payments"
+      "LLM"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -3661,9 +3300,7 @@
     "stage": "Angel",
     "region": null,
     "focus": [
-      "AI infrastructure",
-      "DeFi",
-      "drug discovery"
+      "AI infrastructure"
     ],
     "sector": "ai_apps",
     "key_people": [
@@ -3683,8 +3320,6 @@
     "stage": "Series B",
     "region": "North America",
     "focus": [
-      "DeFi",
-      "GPU",
       "artificial intelligence"
     ],
     "sector": "ai_apps",
@@ -3705,11 +3340,7 @@
     "stage": "Angel",
     "region": null,
     "focus": [
-      "AI agent",
-      "SiC",
-      "algorithmic trading",
-      "autonomous systems",
-      "fintech"
+      "AI agent"
     ],
     "sector": "ai_apps",
     "key_people": [
@@ -3745,9 +3376,7 @@
     "region": null,
     "focus": [
       "AI agent",
-      "DeFi",
-      "artificial intelligence",
-      "autonomous systems"
+      "artificial intelligence"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -3762,11 +3391,7 @@
     "description": "Studio Model: How We Build Venture Origination Start from market frictions sourced with operators.",
     "stage": null,
     "region": null,
-    "focus": [
-      "GaN",
-      "SiC",
-      "foundation model"
-    ],
+    "focus": [],
     "sector": "ai_apps",
     "key_people": [],
     "portfolio": [],
@@ -3782,9 +3407,6 @@
     "region": null,
     "focus": [
       "AI agent",
-      "SiC",
-      "autonomous systems",
-      "lending",
       "robotics"
     ],
     "sector": "ai_apps",
@@ -3802,11 +3424,7 @@
     "region": null,
     "focus": [
       "AI agent",
-      "GaN",
-      "LLM",
-      "LMS",
-      "blockchain",
-      "payments"
+      "LLM"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -3873,8 +3491,7 @@
     "stage": "Pre-A",
     "region": "Europe",
     "focus": [
-      "AI agent",
-      "fintech"
+      "AI agent"
     ],
     "sector": "ai_apps",
     "key_people": [
@@ -3891,11 +3508,7 @@
     "description": "At this stage, we are growing revenue four times faster than the companies who defined the Internet and mobile eras, including Alphabet and Meta.",
     "stage": null,
     "region": "North America",
-    "focus": [
-      "DeFi",
-      "GaN",
-      "SiC"
-    ],
+    "focus": [],
     "sector": "ai_apps",
     "key_people": [],
     "portfolio": [],
@@ -3909,9 +3522,7 @@
     "description": "OpenAI raises $110B in one of the largest private funding rounds in history | TechCrunch –:–:–:– The first StrictlyVC of 2026 hits SF on April 30.",
     "stage": "Angel",
     "region": "North America",
-    "focus": [
-      "DeFi"
-    ],
+    "focus": [],
     "sector": "ai_apps",
     "key_people": [],
     "portfolio": [],
@@ -3926,11 +3537,7 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "GPU",
-      "GaN",
-      "LLM",
-      "LMS",
-      "large language model"
+      "LLM"
     ],
     "sector": "ai_apps",
     "key_people": [
@@ -3948,11 +3555,7 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "EDA",
       "LLM",
-      "LMS",
-      "battery",
-      "foundation model",
       "machine learning"
     ],
     "sector": "ai_apps",
@@ -3987,10 +3590,7 @@
     "region": "North America",
     "focus": [
       "AI infrastructure",
-      "LLM",
-      "LMS",
-      "enterprise AI",
-      "foundation model"
+      "LLM"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -4007,9 +3607,7 @@
     "region": null,
     "focus": [
       "LLM",
-      "LMS",
-      "generative AI",
-      "large language model"
+      "generative AI"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -4027,11 +3625,7 @@
     "description": "Strategic investors NVIDIA and AMD also participated and continue to support xAI in rapidly scaling our infrastructure.",
     "stage": "Series C",
     "region": null,
-    "focus": [
-      "GPU",
-      "GaN",
-      "foundation model"
-    ],
+    "focus": [],
     "sector": "ai_apps",
     "key_people": [],
     "portfolio": [],
@@ -4047,9 +3641,6 @@
     "region": null,
     "focus": [
       "AI agent",
-      "DeFi",
-      "GPU",
-      "SiC",
       "artificial intelligence",
       "robotics"
     ],
@@ -4066,9 +3657,7 @@
     "description": "Scaling AI for everyone | OpenAI February 27, 2026 # Scaling AI for everyone Loading… Share AI demand is surging across consumers, developers, and businesses.",
     "stage": null,
     "region": "North America",
-    "focus": [
-      "DeFi"
-    ],
+    "focus": [],
     "sector": "ai_apps",
     "key_people": [],
     "portfolio": [],
@@ -4083,8 +3672,6 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "DeFi",
-      "SiC",
       "artificial intelligence"
     ],
     "sector": "ai_apps",
@@ -4103,7 +3690,6 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "DeFi",
       "artificial intelligence"
     ],
     "sector": "ai_apps",
@@ -4137,10 +3723,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "GaN",
-      "MLOps",
-      "battery",
-      "vector database"
+      "MLOps"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -4158,9 +3741,7 @@
     "focus": [
       "AI infrastructure",
       "artificial intelligence",
-      "battery",
-      "machine learning",
-      "vector database"
+      "machine learning"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -4176,14 +3757,9 @@
     "stage": "Series B",
     "region": null,
     "focus": [
-      "GaN",
-      "NPU",
-      "SiC",
       "artificial intelligence",
       "generative AI",
-      "large language model",
-      "machine learning",
-      "vector database"
+      "machine learning"
     ],
     "sector": "ai_apps",
     "key_people": [
@@ -4206,12 +3782,9 @@
     "region": "North America",
     "focus": [
       "AI infrastructure",
-      "GaN",
       "artificial intelligence",
-      "battery",
       "generative AI",
-      "machine learning",
-      "vector database"
+      "machine learning"
     ],
     "sector": "ai_apps",
     "key_people": [
@@ -4229,10 +3802,7 @@
     "description": "Early-stage companies wait months, or pay spot premiums of 3 to 5 times the committed rate.",
     "stage": "Pre-A",
     "region": null,
-    "focus": [
-      "GPU",
-      "SiC"
-    ],
+    "focus": [],
     "sector": "ai_apps",
     "key_people": [],
     "portfolio": [
@@ -4249,10 +3819,7 @@
     "stage": "Series A",
     "region": null,
     "focus": [
-      "GaN",
-      "LLM",
-      "LMS",
-      "vector database"
+      "LLM"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -4271,8 +3838,7 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "LLM",
-      "LMS"
+      "LLM"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -4288,9 +3854,7 @@
     "stage": "Series A",
     "region": null,
     "focus": [
-      "GaN",
-      "generative AI",
-      "vector database"
+      "generative AI"
     ],
     "sector": "ai_apps",
     "key_people": [
@@ -4310,11 +3874,9 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
       "artificial intelligence",
       "generative AI",
-      "machine learning",
-      "vector database"
+      "machine learning"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -4331,15 +3893,10 @@
     "region": "North America",
     "focus": [
       "AI infrastructure",
-      "GPU",
-      "GaN",
       "MLOps",
       "artificial intelligence",
-      "diagnostics",
-      "drug discovery",
       "machine learning",
-      "robotics",
-      "vector database"
+      "robotics"
     ],
     "sector": "ai_apps",
     "key_people": [
@@ -4364,8 +3921,6 @@
     "stage": "Series C",
     "region": "North America",
     "focus": [
-      "DeFi",
-      "GaN",
       "robotics"
     ],
     "sector": "ai_apps",
@@ -4387,12 +3942,7 @@
     "description": "About Fusion FundFounded in 2015, Fusion Fund is a Palo Alto–based venture capital firm that backs early-stage startups leveraging technical or data advantages.",
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "DeFi",
-      "SiC",
-      "enterprise AI",
-      "lending"
-    ],
+    "focus": [],
     "sector": "ai_apps",
     "key_people": [
       "Emily Kirsch"
@@ -4408,12 +3958,7 @@
     "description": "These InstaWorkers™ analyze complex fault descriptions and predict the most likely replacement part from thousands of SKUs, empowering technicians to focus on high-stakes repairs and customer service.",
     "stage": "Series A",
     "region": "North America",
-    "focus": [
-      "AI copilot",
-      "EHR",
-      "NPU",
-      "SiC"
-    ],
+    "focus": [],
     "sector": "ai_apps",
     "key_people": [
       "Amit Shah",
@@ -4431,8 +3976,6 @@
     "stage": "Series C",
     "region": "North America",
     "focus": [
-      "DeFi",
-      "GaN",
       "robotics"
     ],
     "sector": "ai_apps",
@@ -4468,11 +4011,6 @@
     "stage": "Series A",
     "region": "Europe",
     "focus": [
-      "DeFi",
-      "NPU",
-      "SiC",
-      "embodied intelligence",
-      "industrial automation",
       "robotics"
     ],
     "sector": "ai_apps",
@@ -4509,9 +4047,7 @@
     "description": "The new funding will help Loop expand its platform across a broader set of enterprise use cases, deepen its product and engineering capabilities, and invest in top AI talent.",
     "stage": "Series C",
     "region": "North America",
-    "focus": [
-      "GaN"
-    ],
+    "focus": [],
     "sector": "ai_apps",
     "key_people": [
       "Antonio Gracias"
@@ -4530,10 +4066,6 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "DeFi",
-      "GaN",
-      "battery",
-      "energy storage",
       "machine learning"
     ],
     "sector": "ai_apps",
@@ -4551,9 +4083,7 @@
     "description": "CVector plans to use the capital to grow its sales team, add product talent, and support customers as they scale live deployments.",
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "NPU"
-    ],
+    "focus": [],
     "sector": "ai_apps",
     "key_people": [],
     "portfolio": [],
@@ -4602,11 +4132,7 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "DeFi",
-      "artificial intelligence",
-      "foundation model",
-      "natural language processing",
-      "semiconductor"
+      "artificial intelligence"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -4622,12 +4148,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "GaN",
-      "NPU",
-      "SiC",
-      "generative AI",
-      "multimodal AI",
-      "natural language processing"
+      "generative AI"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -4644,8 +4165,7 @@
     "region": null,
     "focus": [
       "artificial intelligence",
-      "machine learning",
-      "medical imaging"
+      "machine learning"
     ],
     "sector": "ai_apps",
     "key_people": [
@@ -4672,9 +4192,7 @@
     "region": null,
     "focus": [
       "artificial intelligence",
-      "machine learning",
-      "medical imaging",
-      "mental health"
+      "machine learning"
     ],
     "sector": "ai_apps",
     "key_people": [
@@ -4693,38 +4211,11 @@
     "scraped_at": "2026-04-30T11:15:52Z"
   },
   {
-    "name": "3 Years Investing at LDV Capital",
-    "description": "In September 2021, I was fortunate enough to break into the world of venture capital when I joined Evan Nisselson and the LDV Capital team to invest out of Fund III as an Analyst for the 2 year program.",
-    "stage": "Angel",
-    "region": null,
-    "focus": [
-      "artificial intelligence",
-      "circular economy",
-      "machine learning"
-    ],
-    "sector": "ai_apps",
-    "key_people": [
-      "Leo Grady",
-      "David Concannon",
-      "Evan Nisselson",
-      "Rebecca Paoletti"
-    ],
-    "portfolio": [],
-    "founded_year": 2012,
-    "website": "https://www.ldv.co",
-    "source_url": "https://www.ldv.co/blog/2025/3-years-investing-at-ldv-capital-insights-from-sourcing-evaluating-amp-partnering-with-early-stage-deep-tech-founders",
-    "scraped_at": "2026-04-30T11:15:52Z"
-  },
-  {
     "name": "Vision-native AI opportunities",
     "description": "The underlying vision models powering these systems have crossed critical thresholds.",
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
-      "LMS",
-      "SiC",
-      "foundation model",
       "robotics"
     ],
     "sector": "ai_apps",
@@ -4740,9 +4231,7 @@
     "description": "For computer vision to be widely adopted, it must be made more accessible and resilient.",
     "stage": "Series A",
     "region": "Europe",
-    "focus": [
-      "fintech"
-    ],
+    "focus": [],
     "sector": "ai_apps",
     "key_people": [],
     "portfolio": [],
@@ -4756,11 +4245,7 @@
     "description": "View Portfolio About Us $160M Under Management # Where Bold Ideas Meet Deep Expertise From seed to growth, we partner with founders at the earliest stages — bringing capital, networks, and domain knowledge to every investment.",
     "stage": "Pre-A",
     "region": null,
-    "focus": [
-      "DeFi",
-      "fintech",
-      "payments"
-    ],
+    "focus": [],
     "sector": "ai_apps",
     "key_people": [],
     "portfolio": [
@@ -4776,10 +4261,7 @@
     "description": "These founders may or may not serve as Affiliate Advisors, Retained Advisors, or consultants to provide their expertise on a formal or ad hoc basis.",
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "enterprise AI",
-      "fintech"
-    ],
+    "focus": [],
     "sector": "ai_apps",
     "key_people": [],
     "portfolio": [
@@ -4795,9 +4277,7 @@
     "description": "Unlike traditional investors who wait for traction, we invest at the moment of exploration, when the boldest ideas are still forming.",
     "stage": null,
     "region": null,
-    "focus": [
-      "DeFi"
-    ],
+    "focus": [],
     "sector": "ai_apps",
     "key_people": [],
     "portfolio": [],
@@ -4811,9 +4291,7 @@
     "description": "We identify and back the companies building those foundations before the wave arrives.",
     "stage": "Pre-A",
     "region": null,
-    "focus": [
-      "DeFi"
-    ],
+    "focus": [],
     "sector": "ai_apps",
     "key_people": [],
     "portfolio": [],
@@ -4829,15 +4307,9 @@
     "region": null,
     "focus": [
       "AI infrastructure",
-      "DeFi",
-      "EDA",
-      "GPU",
       "LLM",
-      "LMS",
-      "SiC",
       "artificial intelligence",
-      "generative AI",
-      "oncology"
+      "generative AI"
     ],
     "sector": "ai_apps",
     "key_people": [
@@ -4859,7 +4331,6 @@
     "stage": "Angel",
     "region": null,
     "focus": [
-      "GaN",
       "machine learning"
     ],
     "sector": "ai_apps",
@@ -4880,9 +4351,7 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "AI agent",
-      "GPU",
-      "NPU"
+      "AI agent"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -4900,8 +4369,6 @@
     "focus": [
       "AI infrastructure",
       "LLM",
-      "SiC",
-      "foundation model",
       "generative AI",
       "robotics"
     ],
@@ -4921,7 +4388,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "EDA",
       "generative AI"
     ],
     "sector": "ai_apps",
@@ -4957,8 +4423,6 @@
     "region": "North America",
     "focus": [
       "AI agent",
-      "DeFi",
-      "NPU",
       "artificial intelligence"
     ],
     "sector": "ai_apps",
@@ -5002,11 +4466,7 @@
     "focus": [
       "AI agent",
       "AI infrastructure",
-      "GPU",
-      "GaN",
-      "SiC",
-      "generative AI",
-      "payments"
+      "generative AI"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -5027,10 +4487,7 @@
     "stage": "Angel",
     "region": null,
     "focus": [
-      "DeFi",
-      "LLM",
-      "SiC",
-      "enterprise AI"
+      "LLM"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -5046,8 +4503,7 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "AI agent",
-      "DeFi"
+      "AI agent"
     ],
     "sector": "ai_apps",
     "key_people": [],
@@ -5082,7 +4538,6 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "SiC",
       "humanoid robot",
       "robotics"
     ],
@@ -5100,10 +4555,7 @@
     "stage": "Series A",
     "region": null,
     "focus": [
-      "AI infrastructure",
       "GPU",
-      "SiC",
-      "artificial intelligence",
       "humanoid robot",
       "robotics"
     ],
@@ -5123,8 +4575,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
-      "SiC",
       "autonomous systems",
       "robotics"
     ],
@@ -5142,9 +4592,7 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "SiC",
-      "robotics",
-      "surgical robotics"
+      "robotics"
     ],
     "sector": "ai_hardware",
     "key_people": [],
@@ -5160,8 +4608,6 @@
     "stage": "Angel",
     "region": "North America",
     "focus": [
-      "GaN",
-      "LLM",
       "drone",
       "industrial automation",
       "robotics"
@@ -5202,7 +4648,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "SiC",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -5219,8 +4664,6 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "SiC",
-      "artificial intelligence",
       "drone",
       "robotics"
     ],
@@ -5241,8 +4684,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "SiC",
-      "blockchain",
       "drone",
       "humanoid robot",
       "robotics"
@@ -5261,12 +4702,7 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "DeFi",
-      "GaN",
-      "artificial intelligence",
-      "chip design",
       "drone",
-      "machine learning",
       "robotics",
       "semiconductor"
     ],
@@ -5286,10 +4722,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "AI infrastructure",
       "GPU",
-      "SiC",
-      "artificial intelligence",
       "humanoid robot",
       "industrial automation",
       "robotics"
@@ -5310,11 +4743,7 @@
     "description": "Physical AI Europe Fund I # The Intelligence is Physical.",
     "stage": null,
     "region": "North America",
-    "focus": [
-      "GaN",
-      "SiC",
-      "generative AI"
-    ],
+    "focus": [],
     "sector": "ai_hardware",
     "key_people": [],
     "portfolio": [],
@@ -5329,12 +4758,9 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "DeFi",
-      "LLM",
       "autonomous systems",
       "drone",
       "industrial automation",
-      "machine learning",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -5354,9 +4780,6 @@
     "stage": "Angel",
     "region": null,
     "focus": [
-      "GaN",
-      "SiC",
-      "advanced materials",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -5373,15 +4796,8 @@
     "stage": "Series A",
     "region": "Europe",
     "focus": [
-      "DeFi",
-      "EDA",
-      "LLM",
-      "LMS",
-      "SiC",
       "autonomous systems",
-      "generative AI",
       "humanoid robot",
-      "large language model",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -5400,9 +4816,6 @@
     "stage": "Series A",
     "region": null,
     "focus": [
-      "SiC",
-      "foundation model",
-      "online learning",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -5422,9 +4835,6 @@
     "stage": "Series A",
     "region": null,
     "focus": [
-      "GaN",
-      "LLM",
-      "SiC",
       "humanoid robot",
       "robotics"
     ],
@@ -5447,9 +4857,6 @@
     "stage": "Series A",
     "region": "China",
     "focus": [
-      "EDA",
-      "GaN",
-      "embodied intelligence",
       "humanoid robot",
       "robotics"
     ],
@@ -5467,8 +4874,6 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "GaN",
-      "SiC",
       "humanoid robot",
       "robotics"
     ],
@@ -5486,8 +4891,6 @@
     "stage": "Series B",
     "region": "North America",
     "focus": [
-      "AI infrastructure",
-      "LLM",
       "humanoid robot",
       "robotics"
     ],
@@ -5508,7 +4911,6 @@
     "stage": "Series B",
     "region": null,
     "focus": [
-      "EDA",
       "humanoid robot",
       "robotics"
     ],
@@ -5528,11 +4930,7 @@
     "stage": "Series B",
     "region": "China",
     "focus": [
-      "SiC",
-      "artificial intelligence",
-      "embodied intelligence",
       "humanoid robot",
-      "large language model",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -5551,10 +4949,6 @@
     "stage": "Series A",
     "region": null,
     "focus": [
-      "GaN",
-      "SiC",
-      "foundation model",
-      "online learning",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -5571,9 +4965,6 @@
     "stage": "Series A",
     "region": null,
     "focus": [
-      "SiC",
-      "foundation model",
-      "online learning",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -5592,8 +4983,6 @@
     "focus": [
       "GPU",
       "NPU",
-      "artificial intelligence",
-      "embodied intelligence",
       "humanoid robot",
       "industrial automation",
       "robotics"
@@ -5614,8 +5003,6 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "autonomous vehicle",
-      "fintech",
       "semiconductor"
     ],
     "sector": "ai_hardware",
@@ -5636,8 +5023,6 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "SiC",
-      "battery",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -5654,10 +5039,6 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "carbon capture",
-      "energy storage",
-      "hydrogen",
-      "renewable energy",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -5708,14 +5089,7 @@
     "description": "Investment Portfolio | GM Ventures # Portfolio We are bringing industry-first advancements to markets.",
     "stage": null,
     "region": null,
-    "focus": [
-      "DeFi",
-      "LIDAR",
-      "SiC",
-      "artificial intelligence",
-      "battery",
-      "hydrogen"
-    ],
+    "focus": [],
     "sector": "ai_hardware",
     "key_people": [],
     "portfolio": [
@@ -5733,14 +5107,6 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "artificial intelligence",
-      "carbon capture",
-      "digital health",
-      "energy storage",
-      "fintech",
-      "generative AI",
-      "hydrogen",
-      "renewable energy",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -5760,10 +5126,7 @@
     "description": "Portfolio # Portfolio We are a global seed-stage mobility investor partnering with exceptional founders.",
     "stage": "Pre-A",
     "region": null,
-    "focus": [
-      "LLM",
-      "battery"
-    ],
+    "focus": [],
     "sector": "ai_hardware",
     "key_people": [],
     "portfolio": [
@@ -5781,13 +5144,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
-      "EV charging",
-      "LIDAR",
-      "battery",
-      "diagnostics",
-      "foundation model",
-      "hydrogen",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -5805,10 +5161,7 @@
     "description": "Waabi is led by Raquel, a Professor in the Department of Computer Science at the University of Toronto and, alongside Radical’s co-founders Jordan Jacobs and Tomi Poutanen, co-founded the Vector Institute for AI.",
     "stage": null,
     "region": "North America",
-    "focus": [
-      "autonomous vehicle",
-      "self-driving"
-    ],
+    "focus": [],
     "sector": "ai_hardware",
     "key_people": [],
     "portfolio": [],
@@ -5822,12 +5175,7 @@
     "description": "Momenta Ventures - Industrial Impact Investments + Growth Skip to content # Industrial Impact Investment + Advisory Building the future of industry — sustainable, resilient, and autonomous.",
     "stage": null,
     "region": null,
-    "focus": [
-      "GaN",
-      "SiC",
-      "energy management",
-      "energy storage"
-    ],
+    "focus": [],
     "sector": "ai_hardware",
     "key_people": [],
     "portfolio": [
@@ -5858,9 +5206,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "AI infrastructure",
-      "DeFi",
-      "SiC",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -5880,8 +5225,6 @@
     "stage": "Series A",
     "region": null,
     "focus": [
-      "DeFi",
-      "machine learning",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -5902,10 +5245,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "AI infrastructure",
-      "GaN",
-      "edge AI",
-      "machine learning"
+      "edge AI"
     ],
     "sector": "ai_hardware",
     "key_people": [
@@ -5922,10 +5262,7 @@
     "description": "More than a decade of exclusive focus on Industrial Software positions McRock to lead the Industrial AI revolution — with the access, pattern recognition, and conviction that only comes from being first.",
     "stage": null,
     "region": null,
-    "focus": [
-      "DeFi",
-      "SiC"
-    ],
+    "focus": [],
     "sector": "ai_hardware",
     "key_people": [],
     "portfolio": [],
@@ -5972,12 +5309,8 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "SiC",
       "autonomous systems",
-      "energy management",
-      "fintech",
-      "robotics",
-      "smart grid"
+      "robotics"
     ],
     "sector": "ai_hardware",
     "key_people": [
@@ -5996,9 +5329,7 @@
     "description": "Search # Operators with Capital ![](https://cdn.sanity.io/images/5uq66tk5/production/7b51c469c7c41b0b45d3ca056cdac38a5184be12-1252x1799.jpg?w=3840&q=75&fit=clip&auto=format)",
     "stage": null,
     "region": null,
-    "focus": [
-      "SiC"
-    ],
+    "focus": [],
     "sector": "ai_hardware",
     "key_people": [],
     "portfolio": [],
@@ -6013,8 +5344,6 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "LIDAR",
-      "artificial intelligence",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -6038,10 +5367,7 @@
     "description": "Now, for every tough call, we come back to these principles.",
     "stage": null,
     "region": null,
-    "focus": [
-      "DeFi",
-      "GaN"
-    ],
+    "focus": [],
     "sector": "ai_hardware",
     "key_people": [],
     "portfolio": [],
@@ -6056,8 +5382,6 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "AI copilot",
-      "SiC",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -6078,7 +5402,6 @@
     "stage": "Pre-A",
     "region": "Europe",
     "focus": [
-      "DeFi",
       "autonomous systems",
       "drone"
     ],
@@ -6098,7 +5421,6 @@
     "stage": "Series A",
     "region": null,
     "focus": [
-      "DeFi",
       "drone"
     ],
     "sector": "ai_hardware",
@@ -6119,8 +5441,6 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "DeFi",
-      "SiC",
       "autonomous systems"
     ],
     "sector": "ai_hardware",
@@ -6142,8 +5462,6 @@
     "stage": "Pre-IPO",
     "region": "North America",
     "focus": [
-      "DeFi",
-      "GaN",
       "drone",
       "robotics"
     ],
@@ -6165,12 +5483,7 @@
     "stage": "Series B",
     "region": "North America",
     "focus": [
-      "SiC",
-      "battery",
       "drone",
-      "fuel cell",
-      "generative AI",
-      "hydrogen",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -6208,8 +5521,6 @@
     "stage": "Series A",
     "region": null,
     "focus": [
-      "DeFi",
-      "GaN",
       "drone"
     ],
     "sector": "ai_hardware",
@@ -6231,7 +5542,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
       "drone"
     ],
     "sector": "ai_hardware",
@@ -6275,8 +5585,6 @@
     "stage": "Series C",
     "region": "North America",
     "focus": [
-      "DeFi",
-      "GaN",
       "drone",
       "robotics"
     ],
@@ -6298,7 +5606,6 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "DeFi",
       "drone",
       "robotics"
     ],
@@ -6320,8 +5627,6 @@
     "stage": "Series A",
     "region": null,
     "focus": [
-      "DeFi",
-      "SiC",
       "autonomous systems",
       "drone"
     ],
@@ -6341,22 +5646,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "LLM",
-      "LMS",
-      "SiC",
       "autonomous systems",
-      "battery",
-      "biotech",
-      "clinical AI",
-      "drug discovery",
-      "embodied intelligence",
-      "energy storage",
-      "fintech",
-      "foundation model",
-      "generative AI",
-      "genomics",
-      "nuclear energy",
-      "payments",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -6378,10 +5668,7 @@
     "stage": "Pre-A",
     "region": "Europe",
     "focus": [
-      "GPU",
-      "LLM",
-      "LMS",
-      "fintech"
+      "GPU"
     ],
     "sector": "ai_hardware",
     "key_people": [
@@ -6402,7 +5689,6 @@
     "region": "North America",
     "focus": [
       "GPU",
-      "machine learning",
       "semiconductor"
     ],
     "sector": "ai_hardware",
@@ -6424,7 +5710,6 @@
     "stage": null,
     "region": "China",
     "focus": [
-      "GaN",
       "NPU"
     ],
     "sector": "ai_hardware",
@@ -6442,11 +5727,7 @@
     "description": "These startups, highly technical and driven by deep research, will likely emerge from the US, especially Silicon Valley.",
     "stage": "Angel",
     "region": "North America",
-    "focus": [
-      "AI agent",
-      "DeFi",
-      "foundation model"
-    ],
+    "focus": [],
     "sector": "ai_hardware",
     "key_people": [],
     "portfolio": [
@@ -6464,12 +5745,8 @@
     "stage": null,
     "region": null,
     "focus": [
-      "GaN",
-      "artificial intelligence",
-      "generative AI",
       "industrial automation",
-      "semiconductor",
-      "wafer"
+      "semiconductor"
     ],
     "sector": "ai_hardware",
     "key_people": [],
@@ -6489,11 +5766,7 @@
     "description": "CoreWeave Ventures | Investing in the Future of AI # CoreWeave Ventures Backing visionary founders and companies driving breakthroughs in artificial intelligence.",
     "stage": "Pre-A",
     "region": null,
-    "focus": [
-      "AI infrastructure",
-      "GaN",
-      "artificial intelligence"
-    ],
+    "focus": [],
     "sector": "ai_hardware",
     "key_people": [
       "Brian Venturo",
@@ -6512,13 +5785,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "AI infrastructure",
-      "DeFi",
-      "SiC",
-      "artificial intelligence",
       "autonomous systems",
-      "energy storage",
-      "machine learning",
       "robotics",
       "semiconductor"
     ],
@@ -6538,22 +5805,11 @@
     "stage": "Pre-A",
     "region": "China",
     "focus": [
-      "AI infrastructure",
       "GPU",
-      "SiC",
-      "artificial intelligence",
       "autonomous systems",
-      "autonomous vehicle",
-      "biotech",
-      "digital health",
-      "drug discovery",
-      "embodied intelligence",
-      "foundation model",
       "humanoid robot",
-      "large language model",
       "robotics",
-      "semiconductor",
-      "surgical robotics"
+      "semiconductor"
     ],
     "sector": "ai_hardware",
     "key_people": [],
@@ -6590,9 +5846,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "SiC",
-      "battery",
-      "energy storage",
       "robotics",
       "semiconductor"
     ],
@@ -6612,18 +5865,7 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "AI agent",
-      "AI infrastructure",
-      "DeFi",
-      "LLM",
-      "circular economy",
-      "digital health",
-      "drone",
-      "generative AI",
-      "hydrogen",
-      "mental health",
-      "open banking",
-      "payments"
+      "drone"
     ],
     "sector": "ai_hardware",
     "key_people": [],
@@ -6642,11 +5884,7 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "GaN",
-      "LIDAR",
-      "SiC",
-      "robotics",
-      "self-driving"
+      "robotics"
     ],
     "sector": "ai_hardware",
     "key_people": [],
@@ -6664,12 +5902,6 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "AI infrastructure",
-      "DeFi",
-      "LIDAR",
-      "MEMS",
-      "SiC",
-      "embodied intelligence",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -6686,9 +5918,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "LIDAR",
-      "drone",
-      "foundation model"
+      "drone"
     ],
     "sector": "ai_hardware",
     "key_people": [],
@@ -6704,16 +5934,7 @@
     "stage": "Angel",
     "region": "North America",
     "focus": [
-      "GaN",
-      "LIDAR",
-      "artificial intelligence",
-      "autonomous vehicle",
-      "battery",
-      "biotech",
-      "machine learning",
-      "medical imaging",
-      "robotics",
-      "wearables"
+      "robotics"
     ],
     "sector": "ai_hardware",
     "key_people": [],
@@ -6734,10 +5955,7 @@
     "stage": "Angel",
     "region": "North America",
     "focus": [
-      "GaN",
-      "MEMS",
       "autonomous systems",
-      "battery",
       "drone",
       "robotics"
     ],
@@ -6757,10 +5975,8 @@
     "stage": null,
     "region": null,
     "focus": [
-      "SiC",
       "autonomous systems",
       "edge AI",
-      "energy management",
       "robotics"
     ],
     "sector": "ai_hardware",
@@ -6779,7 +5995,6 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "LIDAR",
       "drone",
       "industrial automation",
       "robotics"
@@ -6799,9 +6014,7 @@
     "region": null,
     "focus": [
       "GPU",
-      "SiC",
-      "blockchain",
-      "semiconductor"
+      "SiC"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -6821,11 +6034,7 @@
     "region": "North America",
     "focus": [
       "SiC",
-      "artificial intelligence",
-      "chip design",
-      "foundation model",
-      "generative AI",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -6843,10 +6052,7 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "LMS",
-      "artificial intelligence",
-      "chip design",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -6866,13 +6072,8 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "AI infrastructure",
       "SiC",
-      "artificial intelligence",
-      "chip design",
-      "foundation model",
-      "generative AI",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -6894,10 +6095,7 @@
     "focus": [
       "EDA",
       "SiC",
-      "artificial intelligence",
-      "chip design",
-      "foundation model",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -6913,13 +6111,8 @@
     "stage": "Series A",
     "region": null,
     "focus": [
-      "DeFi",
       "SiC",
-      "chip design",
-      "edge AI",
-      "foundation model",
-      "semiconductor",
-      "wafer"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -6942,12 +6135,8 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "DeFi",
       "SiC",
-      "chip design",
-      "edge AI",
-      "foundation model",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -6971,8 +6160,7 @@
     "region": "North America",
     "focus": [
       "EDA",
-      "chip design",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -6990,14 +6178,8 @@
     "stage": "Series A",
     "region": null,
     "focus": [
-      "AI agent",
       "EDA",
-      "LLM",
-      "LMS",
-      "chip design",
-      "generative AI",
-      "large language model",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7015,12 +6197,8 @@
     "stage": "Series C",
     "region": "North America",
     "focus": [
-      "LLM",
-      "LMS",
       "NPU",
-      "chip design",
-      "edge AI",
-      "self-driving"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -7040,11 +6218,7 @@
     "region": "North America",
     "focus": [
       "SiC",
-      "artificial intelligence",
-      "chip design",
-      "foundation model",
-      "generative AI",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -7061,13 +6235,7 @@
     "description": null,
     "stage": "Series A",
     "region": null,
-    "focus": [
-      "AI infrastructure",
-      "foundation model",
-      "humanoid robot",
-      "large language model",
-      "robotics"
-    ],
+    "focus": [],
     "sector": "semiconductor",
     "key_people": [],
     "portfolio": [
@@ -7085,13 +6253,7 @@
     "region": null,
     "focus": [
       "GaN",
-      "NPU",
-      "chiplet",
-      "genomics",
-      "machine learning",
-      "precision medicine",
-      "robotics",
-      "semiconductor"
+      "NPU"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7114,15 +6276,7 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "SiC",
-      "biopharmaceutical",
-      "biotech",
-      "digital health",
-      "drug discovery",
-      "fintech",
-      "foundation model",
-      "generative AI",
-      "humanoid robot"
+      "SiC"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7138,13 +6292,7 @@
     "stage": "Series B",
     "region": null,
     "focus": [
-      "AI infrastructure",
-      "GPU",
-      "LLM",
-      "artificial intelligence",
-      "enterprise AI",
-      "foundation model",
-      "robotics"
+      "GPU"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7160,13 +6308,8 @@
     "stage": "Pre-IPO",
     "region": "North America",
     "focus": [
-      "AI infrastructure",
-      "DeFi",
       "GPU",
-      "GaN",
-      "LLM",
-      "generative AI",
-      "large language model"
+      "GaN"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7184,9 +6327,7 @@
     "focus": [
       "GaN",
       "SiC",
-      "artificial intelligence",
-      "power semiconductor",
-      "semiconductor"
+      "power semiconductor"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -7205,12 +6346,7 @@
     "region": "North America",
     "focus": [
       "GaN",
-      "SiC",
-      "artificial intelligence",
-      "autonomous systems",
-      "drone",
-      "semiconductor",
-      "wafer"
+      "SiC"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7226,11 +6362,9 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
       "GaN",
       "SiC",
-      "power semiconductor",
-      "semiconductor"
+      "power semiconductor"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -7251,13 +6385,9 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "DeFi",
       "GaN",
       "SiC",
-      "battery",
-      "power semiconductor",
-      "renewable energy",
-      "semiconductor"
+      "power semiconductor"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7277,9 +6407,7 @@
     "focus": [
       "GaN",
       "SiC",
-      "artificial intelligence",
-      "power semiconductor",
-      "semiconductor"
+      "power semiconductor"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -7298,9 +6426,7 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "GaN",
-      "semiconductor",
-      "wafer"
+      "GaN"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -7319,11 +6445,7 @@
     "description": "This first round was led by Porsche Ventures and Project A Ventures, with participation from leading venture capital firms, corporates, and industry leaders including Scania Growth Capital, Capnamic, Tech Vision Fonds, and NRW.BANK.",
     "stage": "Series A",
     "region": "Europe",
-    "focus": [
-      "artificial intelligence",
-      "embedded AI",
-      "semiconductor"
-    ],
+    "focus": [],
     "sector": "semiconductor",
     "key_people": [
       "Deputy Minister"
@@ -7341,13 +6463,7 @@
     "region": null,
     "focus": [
       "SiC",
-      "advanced materials",
-      "clean energy",
-      "energy storage",
-      "power semiconductor",
-      "renewable energy",
-      "semiconductor",
-      "wafer"
+      "power semiconductor"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7366,8 +6482,7 @@
     "region": "North America",
     "focus": [
       "GaN",
-      "power semiconductor",
-      "semiconductor"
+      "power semiconductor"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -7388,9 +6503,7 @@
     "region": "Europe",
     "focus": [
       "GaN",
-      "SiC",
-      "semiconductor",
-      "wafer"
+      "SiC"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7406,8 +6519,7 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "SiC",
-      "semiconductor"
+      "SiC"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7427,10 +6539,7 @@
     "focus": [
       "GaN",
       "SiC",
-      "clean energy",
-      "power semiconductor",
-      "semiconductor",
-      "wafer"
+      "power semiconductor"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7446,15 +6555,9 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
       "GaN",
-      "LLM",
-      "LMS",
       "advanced packaging",
-      "artificial intelligence",
-      "chip design",
-      "robotics",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7473,10 +6576,7 @@
     "stage": "Angel",
     "region": "Europe",
     "focus": [
-      "GaN",
-      "LLM",
-      "advanced materials",
-      "semiconductor"
+      "GaN"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -7497,9 +6597,7 @@
     "stage": "Series B",
     "region": "North America",
     "focus": [
-      "DeFi",
-      "SiC",
-      "semiconductor"
+      "SiC"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -7525,16 +6623,9 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "AI infrastructure",
-      "DeFi",
       "GaN",
-      "LIDAR",
       "MEMS",
-      "SiC",
-      "artificial intelligence",
-      "battery",
-      "large language model",
-      "semiconductor"
+      "SiC"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -7556,16 +6647,7 @@
     "description": "We invest $200K to $2M in Seed to Series B companies across the US and Europe.",
     "stage": "Pre-A",
     "region": "Europe",
-    "focus": [
-      "DeFi",
-      "advanced materials",
-      "carbon capture",
-      "clean energy",
-      "grid technology",
-      "machine learning",
-      "semiconductor",
-      "smart grid"
-    ],
+    "focus": [],
     "sector": "semiconductor",
     "key_people": [
       "Rick Johnson",
@@ -7584,10 +6666,7 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "SiC",
-      "lithography",
-      "machine learning",
-      "semiconductor"
+      "SiC"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -7609,8 +6688,7 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "GaN",
-      "semiconductor"
+      "GaN"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -7630,10 +6708,7 @@
     "stage": "Pre-A",
     "region": "Europe",
     "focus": [
-      "GaN",
-      "lithography",
-      "semiconductor",
-      "wealth management"
+      "GaN"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7648,11 +6723,7 @@
     "description": null,
     "stage": null,
     "region": null,
-    "focus": [
-      "advanced materials",
-      "renewable energy",
-      "semiconductor"
-    ],
+    "focus": [],
     "sector": "semiconductor",
     "key_people": [],
     "portfolio": [],
@@ -7667,14 +6738,8 @@
     "stage": "Angel",
     "region": null,
     "focus": [
-      "DeFi",
       "GaN",
-      "artificial intelligence",
-      "chip design",
-      "drone",
-      "nuclear energy",
-      "robotics",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -7693,12 +6758,7 @@
     "description": "Lam Capital - Investor Profile Never miss breaking news Get instant notifications when new news matching \"Lam Capital\" are published.",
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "artificial intelligence",
-      "industrial automation",
-      "semiconductor",
-      "wafer"
-    ],
+    "focus": [],
     "sector": "semiconductor",
     "key_people": [],
     "portfolio": [],
@@ -7713,12 +6773,10 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "AI agent",
       "EDA",
       "GPU",
       "SiC",
-      "chip design",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7738,14 +6796,8 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "DeFi",
       "GPU",
-      "artificial intelligence",
-      "chip design",
-      "edge AI",
-      "generative AI",
-      "robotics",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7761,9 +6813,7 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "AI agent",
-      "GaN",
-      "semiconductor"
+      "GaN"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7779,11 +6829,9 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "AI agent",
       "EDA",
       "SiC",
-      "chip design",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7803,12 +6851,10 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "AI agent",
       "EDA",
       "GPU",
       "SiC",
-      "chip design",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7828,8 +6874,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "advanced packaging",
-      "chiplet"
+      "advanced packaging"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7845,13 +6890,8 @@
     "stage": "Series B",
     "region": "North America",
     "focus": [
-      "LLM",
       "advanced packaging",
-      "chip design",
-      "chiplet",
-      "generative AI",
-      "large language model",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7870,9 +6910,7 @@
     "region": "North America",
     "focus": [
       "advanced packaging",
-      "chip design",
-      "chiplet",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7888,9 +6926,7 @@
     "stage": "Series B",
     "region": "Europe",
     "focus": [
-      "NPU",
-      "chiplet",
-      "semiconductor"
+      "NPU"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -7907,12 +6943,7 @@
     "description": null,
     "stage": null,
     "region": "Europe",
-    "focus": [
-      "battery",
-      "chiplet",
-      "hydrogen",
-      "robotics"
-    ],
+    "focus": [],
     "sector": "semiconductor",
     "key_people": [
       "Group Co"
@@ -7930,10 +6961,7 @@
     "description": "Eliyan’s NuLink and NuLink-X PHY technologies increase performance, improve power efficiency, and reduce total cost of ownership (TCO) unlike any other solution today.",
     "stage": null,
     "region": null,
-    "focus": [
-      "AI infrastructure",
-      "chiplet"
-    ],
+    "focus": [],
     "sector": "semiconductor",
     "key_people": [],
     "portfolio": [
@@ -7949,10 +6977,7 @@
     "description": "We are pleased to have such broad reaching financial and strategic support from the world’s leading foundries and memory suppliers,” said Ramin Farjadrad, co-founder and CEO of Eliyan.",
     "stage": null,
     "region": null,
-    "focus": [
-      "chiplet",
-      "semiconductor"
-    ],
+    "focus": [],
     "sector": "semiconductor",
     "key_people": [
       "Kai Tsang"
@@ -7971,9 +6996,7 @@
     "focus": [
       "EDA",
       "GPU",
-      "advanced packaging",
-      "chiplet",
-      "semiconductor"
+      "advanced packaging"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -7994,9 +7017,7 @@
     "region": null,
     "focus": [
       "GaN",
-      "advanced packaging",
-      "chiplet",
-      "semiconductor"
+      "advanced packaging"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -8016,12 +7037,7 @@
     "stage": "Series A",
     "region": "Europe",
     "focus": [
-      "LIDAR",
-      "MEMS",
-      "autonomous vehicle",
-      "drone",
-      "semiconductor",
-      "wafer"
+      "MEMS"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -8041,8 +7057,7 @@
     "region": "China",
     "focus": [
       "MEMS",
-      "SiC",
-      "semiconductor"
+      "SiC"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -8060,12 +7075,8 @@
     "stage": "Pre-IPO",
     "region": null,
     "focus": [
-      "AI infrastructure",
-      "DeFi",
       "MEMS",
-      "chip design",
-      "edge AI",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -8084,10 +7095,7 @@
     "region": null,
     "focus": [
       "MEMS",
-      "NPU",
-      "artificial intelligence",
-      "semiconductor",
-      "wearables"
+      "NPU"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -8103,11 +7111,7 @@
     "stage": "Series A",
     "region": null,
     "focus": [
-      "LIDAR",
-      "MEMS",
-      "artificial intelligence",
-      "autonomous vehicle",
-      "semiconductor"
+      "MEMS"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -8123,13 +7127,8 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "EV charging",
       "GaN",
-      "LIDAR",
-      "MEMS",
-      "autonomous vehicle",
-      "drone",
-      "robotics"
+      "MEMS"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -8148,11 +7147,7 @@
     "stage": "Pre-IPO",
     "region": null,
     "focus": [
-      "MEMS",
-      "battery",
-      "edge AI",
-      "integrated circuit",
-      "semiconductor"
+      "MEMS"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -8170,11 +7165,7 @@
     "description": "The £0.4m investment is a crucial step towards developing high-volume production processes for customers requiring highly repeatable sensor installations at scale.",
     "stage": null,
     "region": null,
-    "focus": [
-      "DeFi",
-      "robotics",
-      "semiconductor"
-    ],
+    "focus": [],
     "sector": "semiconductor",
     "key_people": [
       "Ryan Maughan"
@@ -8194,10 +7185,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "GaN",
-      "drone",
-      "semiconductor",
-      "wafer"
+      "GaN"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -8216,10 +7204,7 @@
     "region": "North America",
     "focus": [
       "GPU",
-      "GaN",
-      "drone",
-      "semiconductor",
-      "wafer"
+      "GaN"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -8236,11 +7221,7 @@
     "description": "The round was led by Entrada Ventures, with additional investments from Foothill Ventures and Uncork Capital.",
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "chiplet",
-      "semiconductor",
-      "wafer"
-    ],
+    "focus": [],
     "sector": "semiconductor",
     "key_people": [
       "Jim Buckwalter",
@@ -8261,9 +7242,7 @@
     "stage": "Series A",
     "region": null,
     "focus": [
-      "DeFi",
-      "GaN",
-      "semiconductor"
+      "GaN"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -8282,9 +7261,7 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "chip design",
-      "integrated circuit",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -8304,9 +7281,7 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "chip design",
-      "integrated circuit",
-      "semiconductor"
+      "chip design"
     ],
     "sector": "semiconductor",
     "key_people": [
@@ -8324,10 +7299,7 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "DeFi",
-      "SiC",
-      "edge AI",
-      "wafer"
+      "SiC"
     ],
     "sector": "semiconductor",
     "key_people": [],
@@ -8345,11 +7317,7 @@
     "description": null,
     "stage": null,
     "region": "North America",
-    "focus": [
-      "K-12",
-      "artificial intelligence",
-      "personalized learning"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [
@@ -8365,10 +7333,7 @@
     "description": "Feb 24, 2026 ## Grade up to 10x faster with Pensive CustomizeReject allAccept all",
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "generative AI",
-      "personalized learning"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [],
@@ -8382,11 +7347,7 @@
     "description": "Tutory - AI Tutor for Students & Schools | Personalized Learning New Tutory is live!",
     "stage": null,
     "region": "North America",
-    "focus": [
-      "GaN",
-      "SiC",
-      "personalized learning"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [],
@@ -8400,10 +7361,7 @@
     "description": "Karttikeya Mangalam, CEO and co-founder of SigIQ.ai, a UC Berkeley AI PhD mentored by computer vision pioneer Prof.",
     "stage": "Pre-A",
     "region": "Europe",
-    "focus": [
-      "AI tutoring",
-      "NPU"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [
       "Karttikeya Mangalam"
@@ -8420,11 +7378,7 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "DeFi",
-      "GaN",
-      "K-12",
-      "edtech",
-      "machine learning"
+      "edtech"
     ],
     "sector": "edtech",
     "key_people": [
@@ -8447,9 +7401,7 @@
     "description": "Visit websiteVisit website Location France Stage Seed Region Europe SECTOR Vertical Solutions Status Active No items found.",
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "robotics"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [],
@@ -8463,10 +7415,7 @@
     "description": "The Alpha Fund • Unlocking Human Potential ## Our Beliefs 1.",
     "stage": null,
     "region": null,
-    "focus": [
-      "EDA",
-      "SiC"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [],
@@ -8476,33 +7425,11 @@
     "scraped_at": "2026-04-30T11:15:52Z"
   },
   {
-    "name": "Abu Dhabi based VC",
-    "description": "The round was led by Magna Investments, an Abu Dhabi based VC fund followed by 20+ angels and an investment fund.",
-    "stage": "Pre-A",
-    "region": "North America",
-    "focus": [
-      "edtech",
-      "machine learning"
-    ],
-    "sector": "edtech",
-    "key_people": [
-      "Tornike Asatiani"
-    ],
-    "portfolio": [],
-    "founded_year": null,
-    "website": "https://edumentors.co.uk",
-    "source_url": "https://edumentors.co.uk/seed-funding-announcement",
-    "scraped_at": "2026-04-30T11:15:52Z"
-  },
-  {
     "name": "Union Square Ventures",
     "description": "Tutor Intelligence's latest funding round was a Incubator/Accelerator for on September 23, 2025.",
     "stage": "Series A",
     "region": "North America",
-    "focus": [
-      "DeFi",
-      "SiC"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [],
@@ -8516,9 +7443,7 @@
     "description": "It is a platform where expert-level support isn’t limited by cost or location.",
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "AI tutoring"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [
       "Tornike Asatiani"
@@ -8535,11 +7460,8 @@
     "stage": "Angel",
     "region": null,
     "focus": [
-      "AI tutoring",
-      "DeFi",
       "LMS",
-      "edtech",
-      "personalized learning"
+      "edtech"
     ],
     "sector": "edtech",
     "key_people": [
@@ -8556,11 +7478,7 @@
     "description": "The round also saw participation from JinQiu Fund (ByteDance-affiliated), Baidu Ventures, Amino Capital, BridgeOne Capital, and others.",
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "EDA",
-      "LLM",
-      "biotech"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [
       "Kai Zhao"
@@ -8578,10 +7496,7 @@
     "description": "Schools and districts partner with Elevate K-12's unique instructional solution to solve their teacher shortage challenges and overuse of long-term substitutes or low-quality teachers.",
     "stage": "Series C",
     "region": "North America",
-    "focus": [
-      "K-12",
-      "SiC"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [],
@@ -8596,10 +7511,7 @@
     "stage": "Series B",
     "region": null,
     "focus": [
-      "K-12",
-      "generative AI",
-      "language learning",
-      "natural language processing"
+      "language learning"
     ],
     "sector": "edtech",
     "key_people": [
@@ -8618,11 +7530,7 @@
     "description": "\"Subject is addressing structural challenges reshaping instruction across secondary institutions,\" said Kevin Barber, Associate Partner at Vistara Growth.",
     "stage": null,
     "region": null,
-    "focus": [
-      "GaN",
-      "K-12",
-      "online learning"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [],
@@ -8650,10 +7558,7 @@
     "description": "We’ve announced a $35M round of Series C funding that gives us room to invest in doing what we do best: building technology to unlock potential for all teachers and learners.",
     "stage": "Series C",
     "region": null,
-    "focus": [
-      "EDA",
-      "K-12"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [
       "Kiddom Features"
@@ -8672,7 +7577,6 @@
     "stage": "Series A",
     "region": null,
     "focus": [
-      "K-12",
       "edtech"
     ],
     "sector": "edtech",
@@ -8689,13 +7593,7 @@
     "stage": "Series A",
     "region": "Middle East",
     "focus": [
-      "EDA",
-      "GaN",
-      "K-12",
-      "SiC",
-      "edtech",
-      "online learning",
-      "personalized learning"
+      "edtech"
     ],
     "sector": "edtech",
     "key_people": [],
@@ -8710,9 +7608,7 @@
     "description": "\"As a former teacher, I know that learning isn't a one-size-fits-all solution, yet many parents lack access to customized choices that will give their children the best chance to succeed.",
     "stage": "Series A",
     "region": "North America",
-    "focus": [
-      "LLM"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [],
@@ -8727,13 +7623,7 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "DeFi",
-      "GaN",
-      "edtech",
-      "education technology",
-      "online learning",
-      "renewable energy",
-      "wearables"
+      "edtech"
     ],
     "sector": "edtech",
     "key_people": [],
@@ -8748,9 +7638,7 @@
     "description": "Get Started Our Grads Change the World Pause Play | 250+ Reviews on Career Karma | | --- | | 300+ Reviews on SwitchUp | | --- | | 330+ Reviews on Course Report | | --- | Why Hack Reactor?",
     "stage": null,
     "region": null,
-    "focus": [
-      "large language model"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [],
@@ -8764,9 +7652,7 @@
     "description": "Bloom Institute of Technology | Online Coding Bootcamp # Launch your tech career journey using AI today!",
     "stage": null,
     "region": null,
-    "focus": [
-      "payments"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [],
@@ -8781,10 +7667,7 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "AI agent",
-      "LLM",
-      "LMS",
-      "SiC"
+      "LMS"
     ],
     "sector": "edtech",
     "key_people": [
@@ -8819,11 +7702,7 @@
     "description": "4.89 584 Reviews ## What our grads say “I got Senior Software Engineer straight out of Codesmith managing computer science grads from Ivy league schools” ### Cyrus Yari Senior Software Engineer “Codesmith is individualized and intense.",
     "stage": null,
     "region": null,
-    "focus": [
-      "DeFi",
-      "SiC",
-      "online learning"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [],
@@ -8854,11 +7733,7 @@
     "description": "Boost VC: PreSeed Investors | $500k Rounds # We invest first – # in founders making # aerospace a reality.",
     "stage": "Angel",
     "region": "North America",
-    "focus": [
-      "GaN",
-      "drone",
-      "robotics"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [
       "Adam Draper",
@@ -8896,10 +7771,7 @@
     "stage": "Series C",
     "region": "North America",
     "focus": [
-      "edtech",
-      "embedded finance",
-      "fintech",
-      "online learning"
+      "edtech"
     ],
     "sector": "edtech",
     "key_people": [],
@@ -8931,7 +7803,6 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "GaN",
       "edtech"
     ],
     "sector": "edtech",
@@ -8954,7 +7825,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
       "edtech"
     ],
     "sector": "edtech",
@@ -8971,12 +7841,9 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "K-12",
-      "MOOC",
       "adaptive learning",
       "edtech",
-      "higher education",
-      "online learning"
+      "higher education"
     ],
     "sector": "edtech",
     "key_people": [
@@ -8995,9 +7862,7 @@
     "description": "Coming soon - GSV Ventures # We're Leveling Up Our new website is launching soon.",
     "stage": null,
     "region": null,
-    "focus": [
-      "SiC"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [
@@ -9027,11 +7892,7 @@
     "description": "JFFVentures - Jobs for the Future (JFF) -- Investing at the intersection of education, workforce, and human potential.",
     "stage": null,
     "region": null,
-    "focus": [
-      "GaN",
-      "SiC",
-      "education technology"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [
       "Elizabeth Lane",
@@ -9068,9 +7929,6 @@
     "stage": "Angel",
     "region": "Europe",
     "focus": [
-      "DeFi",
-      "artificial intelligence",
-      "drug discovery",
       "edtech",
       "language learning"
     ],
@@ -9088,10 +7946,7 @@
     "stage": "Pre-IPO",
     "region": null,
     "focus": [
-      "K-12",
-      "diagnostics",
       "edtech",
-      "education technology",
       "higher education"
     ],
     "sector": "edtech",
@@ -9112,8 +7967,6 @@
     "stage": "Angel",
     "region": "North America",
     "focus": [
-      "DeFi",
-      "GaN",
       "edtech"
     ],
     "sector": "edtech",
@@ -9132,10 +7985,7 @@
     "description": "Get the latest fund announcements, sector news and data-driven market insights delivered straight to your inbox.",
     "stage": null,
     "region": null,
-    "focus": [
-      "mental health",
-      "personalized learning"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [],
@@ -9149,10 +7999,7 @@
     "description": "They are seeking further new growth capital to scale the business.",
     "stage": "Series B",
     "region": null,
-    "focus": [
-      "DeFi",
-      "GaN"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [],
@@ -9167,9 +8014,7 @@
     "stage": "Angel",
     "region": null,
     "focus": [
-      "diagnostics",
-      "edtech",
-      "medtech"
+      "edtech"
     ],
     "sector": "edtech",
     "key_people": [],
@@ -9185,12 +8030,8 @@
     "stage": null,
     "region": null,
     "focus": [
-      "LLM",
       "LMS",
-      "SiC",
-      "drone",
-      "edtech",
-      "telehealth"
+      "edtech"
     ],
     "sector": "edtech",
     "key_people": [],
@@ -9207,9 +8048,7 @@
     "description": "Check out the Xperiment stake and apply by the deadline ABOUT US # Built to back entrepreneurs who experiment across disciplines.",
     "stage": null,
     "region": "North America",
-    "focus": [
-      "DeFi"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [],
@@ -9238,10 +8077,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "LLM",
-      "corporate learning",
       "edtech",
-      "education technology",
       "higher education"
     ],
     "sector": "edtech",
@@ -9257,11 +8093,7 @@
     "description": "Drawing on our operational and strategic experience, we work with portfolio company leadership to refine business models, strengthen execution, and navigate the transition from research to market.",
     "stage": null,
     "region": null,
-    "focus": [
-      "advanced materials",
-      "clean energy",
-      "robotics"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [],
@@ -9307,9 +8139,7 @@
     "description": "Dream Bigger — Concept2Company Ventures - Stanford, CA - 650 614 5010 - info@c2cventures.com ## A seed-stage venture capital firm providing capital and advice to university entrepreneurs since 1999.",
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "AI infrastructure"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [],
@@ -9324,12 +8154,8 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "artificial intelligence",
       "edtech",
-      "education technology",
-      "higher education",
-      "machine learning",
-      "online learning"
+      "higher education"
     ],
     "sector": "edtech",
     "key_people": [],
@@ -9344,12 +8170,7 @@
     "description": "Home - EagletCapital # Home # Investing in Innovation from America’s Campuses We partner with visionary founders emerging from U.S.",
     "stage": "Angel",
     "region": null,
-    "focus": [
-      "artificial intelligence",
-      "clean energy",
-      "payments",
-      "robotics"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [
@@ -9382,10 +8203,7 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "SiC",
-      "language learning",
-      "machine learning",
-      "natural language processing"
+      "language learning"
     ],
     "sector": "edtech",
     "key_people": [],
@@ -9401,9 +8219,6 @@
     "stage": "Series A",
     "region": "Europe",
     "focus": [
-      "AI tutoring",
-      "K-12",
-      "assessment platform",
       "edtech",
       "language learning"
     ],
@@ -9423,10 +8238,7 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "SiC",
-      "language learning",
-      "machine learning",
-      "natural language processing"
+      "language learning"
     ],
     "sector": "edtech",
     "key_people": [],
@@ -9442,9 +8254,7 @@
     "stage": "Series A",
     "region": "Europe",
     "focus": [
-      "education technology",
-      "language learning",
-      "personalized learning"
+      "language learning"
     ],
     "sector": "edtech",
     "key_people": [],
@@ -9460,10 +8270,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "AI agent",
-      "SiC",
-      "adaptive learning",
-      "lending"
+      "adaptive learning"
     ],
     "sector": "edtech",
     "key_people": [],
@@ -9478,16 +8285,7 @@
     "description": "The company plans to use the funds to keep building out its product and grow adoption across U.S.",
     "stage": "Pre-A",
     "region": null,
-    "focus": [
-      "GaN",
-      "K-12",
-      "STEM education",
-      "SiC",
-      "autonomous vehicle",
-      "battery",
-      "robotics",
-      "semiconductor"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [
       "Vivek Seetharaman"
@@ -9505,12 +8303,7 @@
     "description": "Raising nearly 500 million RMB within a month, partnering with Coding Cat, Noetix Robotics opens a new chapter in the education market-Noetix Robotics (Beijing) Technology Co., Ltd.",
     "stage": null,
     "region": "China",
-    "focus": [
-      "DeFi",
-      "composite materials",
-      "humanoid robot",
-      "robotics"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [],
@@ -9525,9 +8318,7 @@
     "stage": "Pre-A",
     "region": "Europe",
     "focus": [
-      "STEM education",
-      "edtech",
-      "robotics"
+      "edtech"
     ],
     "sector": "edtech",
     "key_people": [],
@@ -9543,10 +8334,7 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "GaN",
-      "edtech",
-      "personalized learning",
-      "robotics"
+      "edtech"
     ],
     "sector": "edtech",
     "key_people": [
@@ -9563,10 +8351,7 @@
     "description": "About Wonder WorkshopFounded in 2012, Wonder Workshop's mission is to spark creativity with kids of all ages, inspiring lifelong learning through our clever robotics platform.",
     "stage": "Series C",
     "region": null,
-    "focus": [
-      "GaN",
-      "robotics"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [
       "Vikas Gupta"
@@ -9582,11 +8367,7 @@
     "description": "Miko is excited to step into the next phase of its growth, driven by the collective vision of its diverse team and the mission to make learning both fun and impactful for kids around the world.",
     "stage": "Series C",
     "region": "North America",
-    "focus": [
-      "DeFi",
-      "artificial intelligence",
-      "robotics"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [],
     "portfolio": [
@@ -9598,40 +8379,12 @@
     "scraped_at": "2026-04-30T11:15:53Z"
   },
   {
-    "name": "Accelerate Humanoid Robot Sign in Investment",
-    "description": "The capital will accelerate R&D, expand high-value use cases, and scale manufacturing — but the real story isn’t the money.It’s the market Noetix is targeting first: education.",
-    "stage": null,
-    "region": "North America",
-    "focus": [
-      "EDA",
-      "battery",
-      "composite materials",
-      "humanoid robot",
-      "robotics"
-    ],
-    "sector": "edtech",
-    "key_people": [
-      "Li Tianchi",
-      "Jiang Zheyuan"
-    ],
-    "portfolio": [
-      "Humanoid Robotics Programming Lab"
-    ],
-    "founded_year": null,
-    "website": "https://ahr.so",
-    "source_url": "https://ahr.so/noetix-robotics-raises-68m-in-one-month-robots-for-education/",
-    "scraped_at": "2026-04-30T11:15:53Z"
-  },
-  {
     "name": "Soulmates Ventures",
     "description": "Soulmates Ventures, known for its focus on STEM and sustainability, spearheaded the investment, sharing Twin’s commitment to expanding access to innovative educational solutions worldwide.",
     "stage": null,
     "region": "Europe",
     "focus": [
-      "STEM education",
-      "SiC",
-      "edtech",
-      "robotics"
+      "edtech"
     ],
     "sector": "edtech",
     "key_people": [
@@ -9650,10 +8403,7 @@
     "stage": "Angel",
     "region": "Europe",
     "focus": [
-      "STEM education",
-      "SiC",
-      "edtech",
-      "robotics"
+      "edtech"
     ],
     "sector": "edtech",
     "key_people": [
@@ -9672,13 +8422,7 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "AI agent",
-      "GaN",
-      "K-12",
-      "STEM education",
-      "SiC",
-      "edtech",
-      "robotics"
+      "edtech"
     ],
     "sector": "edtech",
     "key_people": [
@@ -9699,11 +8443,7 @@
     "description": "Existing investors Swift Ventures, Berkeley SkyDeck Fund, LDV Partners, and Courtyard Ventures also participated.",
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "LLM",
-      "machine learning",
-      "robotics"
-    ],
+    "focus": [],
     "sector": "edtech",
     "key_people": [
       "Max Cao",
@@ -9760,7 +8500,6 @@
       "embedded finance",
       "fintech",
       "lending",
-      "open banking",
       "payments"
     ],
     "sector": "fintech",
@@ -9831,7 +8570,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "digital banking",
       "fintech",
       "payments"
     ],
@@ -9849,7 +8587,6 @@
     "stage": "Series C",
     "region": "North America",
     "focus": [
-      "AI agent",
       "fintech",
       "payments"
     ],
@@ -9902,7 +8639,6 @@
     "stage": "Series C",
     "region": "North America",
     "focus": [
-      "AI agent",
       "DeFi",
       "payments"
     ],
@@ -9926,8 +8662,7 @@
       "embedded finance",
       "fintech",
       "lending",
-      "payments",
-      "robotics"
+      "payments"
     ],
     "sector": "fintech",
     "key_people": [],
@@ -9962,7 +8697,6 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "digital banking",
       "fintech",
       "payments"
     ],
@@ -9980,7 +8714,6 @@
     "stage": "Pre-IPO",
     "region": null,
     "focus": [
-      "artificial intelligence",
       "fintech",
       "payments"
     ],
@@ -9998,10 +8731,8 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "GaN",
       "blockchain",
       "cryptocurrency",
-      "generative AI",
       "lending",
       "payments"
     ],
@@ -10019,8 +8750,6 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "GaN",
-      "artificial intelligence",
       "blockchain",
       "fintech"
     ],
@@ -10040,10 +8769,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "AI agent",
       "DeFi",
-      "LLM",
-      "LMS",
       "embedded finance",
       "fintech",
       "lending",
@@ -10063,8 +8789,6 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "GaN",
-      "artificial intelligence",
       "blockchain",
       "fintech"
     ],
@@ -10084,9 +8808,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "AI agent",
-      "DeFi",
-      "LLM"
+      "DeFi"
     ],
     "sector": "fintech",
     "key_people": [],
@@ -10101,12 +8823,7 @@
     "description": "Quantara Capital integrates AI-enhanced scenario testing, statistical regime modelling, and transaction-cost intelligence to maintain stable drawdown behaviour and consistent liquidity across environments.",
     "stage": null,
     "region": null,
-    "focus": [
-      "MLOps",
-      "adaptive learning",
-      "algorithmic trading",
-      "machine learning"
-    ],
+    "focus": [],
     "sector": "fintech",
     "key_people": [],
     "portfolio": [
@@ -10122,11 +8839,7 @@
     "description": "About Us ## Fund Offering -- Fund Offering Discover the ZTB quantum fund.",
     "stage": null,
     "region": null,
-    "focus": [
-      "artificial intelligence",
-      "machine learning",
-      "wealth management"
-    ],
+    "focus": [],
     "sector": "fintech",
     "key_people": [],
     "portfolio": [],
@@ -10140,12 +8853,7 @@
     "description": "Our principal focus is on mathematics, where we aim to support more students to progress to degrees and PhDs, and to accelerate breakthrough research.",
     "stage": null,
     "region": "North America",
-    "focus": [
-      "GPU",
-      "SiC",
-      "algorithmic trading",
-      "machine learning"
-    ],
+    "focus": [],
     "sector": "fintech",
     "key_people": [],
     "portfolio": [],
@@ -10159,10 +8867,7 @@
     "description": "Bayforest Technologies - Quantitative Investment Company Real-time machine intelligence.",
     "stage": null,
     "region": null,
-    "focus": [
-      "online learning",
-      "quantitative trading"
-    ],
+    "focus": [],
     "sector": "fintech",
     "key_people": [],
     "portfolio": [
@@ -10178,9 +8883,7 @@
     "description": "We’re committed to slowly building and nourishing a strong culture that promotes learning, creativity, kindness, and mutual trust and respect.",
     "stage": null,
     "region": "North America",
-    "focus": [
-      "GaN"
-    ],
+    "focus": [],
     "sector": "fintech",
     "key_people": [],
     "portfolio": [],
@@ -10194,11 +8897,7 @@
     "description": "Vertex Capital — AI-Native Investment Management Silicon Valley, California # AI-nativeinvestment management Research, risk management, and portfolio construction designed and operated by purpose-built AI systems.",
     "stage": null,
     "region": "North America",
-    "focus": [
-      "AI agent",
-      "GaN",
-      "semiconductor"
-    ],
+    "focus": [],
     "sector": "fintech",
     "key_people": [],
     "portfolio": [
@@ -10233,9 +8932,7 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "DeFi",
-      "LLM",
-      "LMS"
+      "DeFi"
     ],
     "sector": "fintech",
     "key_people": [],
@@ -10250,9 +8947,7 @@
     "description": "AI-Native Asset Management | Qlumina # AI-native Asset Management Explore Our Strategies Partner With Us About Us ### Institutional-Grade Alpha AI-Native Architecture We are not a traditional asset manager with a tech add-on.",
     "stage": null,
     "region": "North America",
-    "focus": [
-      "machine learning"
-    ],
+    "focus": [],
     "sector": "fintech",
     "key_people": [],
     "portfolio": [],
@@ -10266,9 +8961,7 @@
     "description": "0% Win Rate 0 Sharpe (30D) 0ms Avg Execution $483M VOLUME TRADED NEURAL HANDSHAKE ## Prove You're Watching Replicate the neural firing pattern to establish a secure channel.",
     "stage": null,
     "region": null,
-    "focus": [
-      "NPU"
-    ],
+    "focus": [],
     "sector": "fintech",
     "key_people": [],
     "portfolio": [],
@@ -10282,13 +8975,7 @@
     "description": "The fund will trade global equity, futures and other derivatives, using a unique multi-market approach that yields low correlation with both the market and other active strategies.",
     "stage": null,
     "region": null,
-    "focus": [
-      "LLM",
-      "LMS",
-      "artificial intelligence",
-      "edge AI",
-      "generative AI"
-    ],
+    "focus": [],
     "sector": "fintech",
     "key_people": [],
     "portfolio": [],
@@ -10302,9 +8989,7 @@
     "description": null,
     "stage": null,
     "region": null,
-    "focus": [
-      "algorithmic trading"
-    ],
+    "focus": [],
     "sector": "fintech",
     "key_people": [],
     "portfolio": [],
@@ -10318,9 +9003,7 @@
     "description": "Sigmatic — AI-Powered Infrastructure for Quantitative Trading # The Operating System for Systematic Trading A unified environment where quantitative strategies are researched, validated, deployed, and monitored at institutional scale.",
     "stage": null,
     "region": null,
-    "focus": [
-      "quantitative trading"
-    ],
+    "focus": [],
     "sector": "fintech",
     "key_people": [],
     "portfolio": [],
@@ -10335,12 +9018,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
-      "LLM",
-      "LMS",
-      "adaptive learning",
-      "algorithmic trading",
-      "quantitative trading"
+      "DeFi"
     ],
     "sector": "fintech",
     "key_people": [],
@@ -10423,7 +9101,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "EDA",
       "cryptocurrency"
     ],
     "sector": "fintech",
@@ -10476,9 +9153,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
-      "EDA",
-      "SiC"
+      "DeFi"
     ],
     "sector": "fintech",
     "key_people": [],
@@ -10494,8 +9169,7 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "DeFi",
-      "diagnostics"
+      "DeFi"
     ],
     "sector": "fintech",
     "key_people": [],
@@ -10524,9 +9198,7 @@
     "description": "Paradigm We build software, much of it open source, that aims to advance the frontier for everyone.",
     "stage": null,
     "region": null,
-    "focus": [
-      "robotics"
-    ],
+    "focus": [],
     "sector": "fintech",
     "key_people": [],
     "portfolio": [],
@@ -10541,7 +9213,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "CCUS",
       "blockchain",
       "payments"
     ],
@@ -10598,7 +9269,6 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "assessment platform",
       "blockchain",
       "fintech",
       "insurtech"
@@ -10633,10 +9303,7 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "DeFi",
-      "artificial intelligence",
-      "industrial automation",
-      "machine learning"
+      "DeFi"
     ],
     "sector": "fintech",
     "key_people": [
@@ -10688,7 +9355,6 @@
     "stage": "Angel",
     "region": null,
     "focus": [
-      "GaN",
       "insurtech"
     ],
     "sector": "fintech",
@@ -10743,7 +9409,6 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "generative AI",
       "insurtech"
     ],
     "sector": "fintech",
@@ -10760,7 +9425,6 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "EDA",
       "insurtech"
     ],
     "sector": "fintech",
@@ -10837,9 +9501,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "GaN",
       "fintech",
-      "machine learning",
       "payments"
     ],
     "sector": "fintech",
@@ -10876,9 +9538,7 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "AI agent",
       "DeFi",
-      "GaN",
       "fintech",
       "payments"
     ],
@@ -10936,7 +9596,6 @@
     "region": "North America",
     "focus": [
       "blockchain",
-      "digital banking",
       "embedded finance",
       "fintech",
       "insurtech",
@@ -10977,7 +9636,6 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "artificial intelligence",
       "payments"
     ],
     "sector": "fintech",
@@ -10994,9 +9652,7 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "artificial intelligence",
       "fintech",
-      "machine learning",
       "payments",
       "regtech"
     ],
@@ -11014,10 +9670,6 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "AI agent",
-      "GaN",
-      "artificial intelligence",
-      "edge AI",
       "fintech"
     ],
     "sector": "fintech",
@@ -11053,7 +9705,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "artificial intelligence",
       "fintech",
       "payments"
     ],
@@ -11092,7 +9743,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "SiC",
       "fintech",
       "neobank",
       "payments"
@@ -11128,7 +9778,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "SiC",
       "embedded finance",
       "fintech",
       "lending",
@@ -11151,7 +9800,6 @@
     "stage": "Series C",
     "region": "North America",
     "focus": [
-      "GaN",
       "embedded finance",
       "fintech",
       "neobank",
@@ -11177,7 +9825,6 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "SiC",
       "fintech",
       "payments"
     ],
@@ -11212,10 +9859,7 @@
     "description": "Wealthfront is leading the wave of software-based financial services companies that enable underserved young professionals and families to invest through convenient, low cost mobile-based services.",
     "stage": "Series B",
     "region": "North America",
-    "focus": [
-      "enterprise AI",
-      "robo-advisor"
-    ],
+    "focus": [],
     "sector": "fintech",
     "key_people": [
       "Lee Fixel"
@@ -11231,13 +9875,7 @@
     "description": "Wealthnomics — AI-Native Hedge Fund | Wealth Management | 30% CAGR W\" W Access to this fund is by invitation only.",
     "stage": null,
     "region": "North America",
-    "focus": [
-      "GaN",
-      "artificial intelligence",
-      "machine learning",
-      "semiconductor",
-      "wealth management"
-    ],
+    "focus": [],
     "sector": "fintech",
     "key_people": [
       "Ayushman Gupta"
@@ -11256,10 +9894,7 @@
     "stage": "Series B",
     "region": "North America",
     "focus": [
-      "AI infrastructure",
-      "DeFi",
-      "artificial intelligence",
-      "wealth management"
+      "DeFi"
     ],
     "sector": "fintech",
     "key_people": [],
@@ -11275,9 +9910,7 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "generative AI",
-      "payments",
-      "wealth management"
+      "payments"
     ],
     "sector": "fintech",
     "key_people": [],
@@ -11295,11 +9928,7 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "AI agent",
-      "GPU",
-      "GaN",
-      "neobank",
-      "wealth management"
+      "neobank"
     ],
     "sector": "fintech",
     "key_people": [],
@@ -11316,9 +9945,7 @@
     "description": "Robust Wealth — About Walden Venture Capital www.robustwealth.com ## About RobustWealth is a digital wealth management platform built by and for investment advisors, and engineered to satisfy their unique needs.",
     "stage": null,
     "region": null,
-    "focus": [
-      "wealth management"
-    ],
+    "focus": [],
     "sector": "fintech",
     "key_people": [
       "Founding Team",
@@ -11347,36 +9974,12 @@
     "scraped_at": "2026-04-30T11:15:53Z"
   },
   {
-    "name": "Autonomous Technologies Group: Superintelligent financial advisor",
-    "description": "Today, managing your money means one of two bad options: DIY your money: You end up with accounts everywhere (401k, IRAs, brokerage, crypto, savings, equity, secondaries).",
-    "stage": "Angel",
-    "region": null,
-    "focus": [
-      "GPU"
-    ],
-    "sector": "fintech",
-    "key_people": [
-      "Dillon Erb",
-      "Daniel Kobran"
-    ],
-    "portfolio": [
-      "Autonomous Technologies",
-      "Autonomous Technologies Group Autonomous Technologies"
-    ],
-    "founded_year": null,
-    "website": "http://www.ycombinator.com",
-    "source_url": "http://www.ycombinator.com/companies/autonomous-technologies-group",
-    "scraped_at": "2026-04-30T11:15:53Z"
-  },
-  {
     "name": "Mariner Wealth Advisors",
     "description": "The round comes as advisory firms increasingly adopt AI to modernize how financial advice is analyzed, produced, and delivered.",
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "DeFi",
-      "GaN",
-      "wealth management"
+      "DeFi"
     ],
     "sector": "fintech",
     "key_people": [],
@@ -11392,8 +9995,7 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "fintech",
-      "wealth management"
+      "fintech"
     ],
     "sector": "fintech",
     "key_people": [],
@@ -11412,10 +10014,7 @@
     "region": "North America",
     "focus": [
       "DeFi",
-      "artificial intelligence",
-      "fintech",
-      "robo-advisor",
-      "wealth management"
+      "fintech"
     ],
     "sector": "fintech",
     "key_people": [],
@@ -11434,9 +10033,7 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "SiC",
-      "fintech",
-      "machine learning"
+      "fintech"
     ],
     "sector": "fintech",
     "key_people": [],
@@ -11453,11 +10050,7 @@
     "region": null,
     "focus": [
       "DeFi",
-      "NPU",
-      "fintech",
-      "machine learning",
-      "robo-advisor",
-      "wealth management"
+      "fintech"
     ],
     "sector": "fintech",
     "key_people": [],
@@ -11472,9 +10065,7 @@
     "description": "scroll - What - How - Why About our Philosophy ## Our What First money in for first-of-their-kind innovations.",
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "SiC"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [],
     "portfolio": [],
@@ -11489,10 +10080,8 @@
     "stage": null,
     "region": "China",
     "focus": [
-      "GaN",
       "advanced materials",
-      "carbon capture",
-      "semiconductor"
+      "carbon capture"
     ],
     "sector": "greentech",
     "key_people": [],
@@ -11523,10 +10112,7 @@
     "description": "Materials ∙ Molecules ∙ Machines # SNØCAP is a deeptech venture capital firm run by engineers.",
     "stage": null,
     "region": "North America",
-    "focus": [
-      "GaN",
-      "LMS"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [],
     "portfolio": [],
@@ -11540,19 +10126,7 @@
     "description": "OLIMP Capital Partners DEEP TECH & HARD SCIENCE INVESTORS # Backing the builders oftomorrow.",
     "stage": null,
     "region": null,
-    "focus": [
-      "DeFi",
-      "SMR",
-      "SiC",
-      "autonomous systems",
-      "diagnostics",
-      "drug discovery",
-      "humanoid robot",
-      "industrial automation",
-      "nuclear energy",
-      "robotics",
-      "semiconductor"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [],
     "portfolio": [
@@ -11568,9 +10142,7 @@
     "description": "Gigascale Capital | Deep tech for climate impact # Progressis built south We invest in sectors decisive for climate impact.",
     "stage": null,
     "region": null,
-    "focus": [
-      "SiC"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [],
     "portfolio": [],
@@ -11584,13 +10156,7 @@
     "description": "We provide value to our portfolio companies through pathways to co-development and commercialization with Mitsubishi Chemical Group business units.",
     "stage": null,
     "region": null,
-    "focus": [
-      "DeFi",
-      "GaN",
-      "LMS",
-      "renewable energy",
-      "semiconductor"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [],
     "portfolio": [],
@@ -11604,9 +10170,7 @@
     "description": "ND Capital – Investing in Disruptive Technologies # Investing in Breakthroughs ## Who We Are --- We invest across sectors, stages and technologies.",
     "stage": null,
     "region": "North America",
-    "focus": [
-      "SiC"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [
       "Aymeric Sallin",
@@ -11628,10 +10192,7 @@
     "description": "TENSEUR Capital | Industrial Deep Tech VC # FUNDING THE FOUNDERS CIVILIZATION FORGOT TO LOOK FOR.",
     "stage": null,
     "region": null,
-    "focus": [
-      "DeFi",
-      "artificial intelligence"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [],
     "portfolio": [
@@ -11680,7 +10241,6 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "biotech",
       "clean energy"
     ],
     "sector": "greentech",
@@ -11697,9 +10257,7 @@
     "stage": "Series A",
     "region": "Europe",
     "focus": [
-      "GaN",
       "advanced materials",
-      "biotech",
       "circular economy"
     ],
     "sector": "greentech",
@@ -11715,11 +10273,7 @@
     "description": "We fund founders and climate-hard-tech innovations ready to scale with a relentless commitment to climate impact.",
     "stage": "Angel",
     "region": null,
-    "focus": [
-      "GaN",
-      "SiC",
-      "battery"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [
       "Pauliina Meskanen",
@@ -11739,10 +10293,7 @@
     "description": "First Bight Ventures # Unleash The Power # of Biomanufacturing We invest in nature's chemistry to disrupt how people and companies consume products.",
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "NPU",
-      "biotech"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [
       "Veronica Breckenridge",
@@ -11762,13 +10313,7 @@
     "stage": "Pre-IPO",
     "region": null,
     "focus": [
-      "DeFi",
-      "carbon capture",
-      "cleantech",
-      "drone",
-      "energy transition",
-      "fuel cell",
-      "hydrogen"
+      "carbon capture"
     ],
     "sector": "greentech",
     "key_people": [],
@@ -11784,9 +10329,7 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "GaN",
-      "bio-based materials",
-      "biotech"
+      "bio-based materials"
     ],
     "sector": "greentech",
     "key_people": [],
@@ -11804,15 +10347,9 @@
     "stage": "Pre-A",
     "region": "Europe",
     "focus": [
-      "DeFi",
-      "SiC",
       "advanced materials",
-      "battery",
       "bio-based materials",
-      "biotech",
-      "circular economy",
-      "energy storage",
-      "fuel cell"
+      "circular economy"
     ],
     "sector": "greentech",
     "key_people": [],
@@ -11832,9 +10369,7 @@
     "description": "Forbion BioEconomy | Forbion #### Planetary Health # BioEconomy Forbion BioEconomy enables and supports the growth of innovative biotech-enabled companies with planetary health impact.",
     "stage": "Series A",
     "region": null,
-    "focus": [
-      "biotech"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [
       "Alexander Hoffmann",
@@ -11853,30 +10388,12 @@
     "scraped_at": "2026-04-30T11:15:53Z"
   },
   {
-    "name": "Empowering early stage clean tech entrepreneurs",
-    "description": null,
-    "stage": null,
-    "region": null,
-    "focus": [],
-    "sector": "greentech",
-    "key_people": [],
-    "portfolio": [],
-    "founded_year": null,
-    "website": "https://www.cleangrowthfund.com",
-    "source_url": "https://www.cleangrowthfund.com/",
-    "scraped_at": "2026-04-30T11:15:53Z"
-  },
-  {
     "name": "The Good Science Fund",
     "description": "At The Good Science Fund, we seek out companies operating at this intersection — where ecosystem sustainability and breakthrough technology accelerate each other.",
     "stage": null,
     "region": null,
     "focus": [
-      "advanced materials",
-      "biotech",
-      "diagnostics",
-      "energy storage",
-      "green chemistry"
+      "advanced materials"
     ],
     "sector": "greentech",
     "key_people": [
@@ -11895,7 +10412,6 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "AI infrastructure",
       "circular economy"
     ],
     "sector": "greentech",
@@ -11914,43 +10430,11 @@
     "scraped_at": "2026-04-30T11:15:53Z"
   },
   {
-    "name": "A new approach to impact investing",
-    "description": "Aluminum Supply Chain January 8, 2025 ##### Fervo Energy Secures Additional $255 Million Funding to Meet Unprecedented Energy Demand December 19, 2024 ##### Umaro and Sway Receive $1.5M Dept.",
-    "stage": "Series C",
-    "region": null,
-    "focus": [
-      "DeFi",
-      "advanced materials",
-      "battery",
-      "bioplastics",
-      "biotech",
-      "energy storage",
-      "genomics",
-      "machine learning"
-    ],
-    "sector": "greentech",
-    "key_people": [
-      "Managing Partner",
-      "Orbital Materials"
-    ],
-    "portfolio": [
-      "Resonant Link Medical",
-      "Power Better Health",
-      "Concerto Biosciences"
-    ],
-    "founded_year": null,
-    "website": "https://www.impactscience.vc",
-    "source_url": "https://www.impactscience.vc/",
-    "scraped_at": "2026-04-30T11:15:53Z"
-  },
-  {
     "name": "European Circular Bioeconomy Fund",
     "description": "It aims to speed up the shift from a fossil-based to a circular bio-based economy and contribute to achieving the European Green Deal goals to make Europe climate neutral by 2050.",
     "stage": null,
     "region": "Europe",
     "focus": [
-      "GaN",
-      "biotech",
       "circular economy"
     ],
     "sector": "greentech",
@@ -12000,9 +10484,7 @@
     "description": "| Direct air capture for a net zero future ## CarbonCapture Inc.",
     "stage": "Series A",
     "region": null,
-    "focus": [
-      "SiC"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [],
     "portfolio": [
@@ -12032,9 +10514,7 @@
     "description": "Brineworks - Ultra low-cost Direct Air Capture Ultra low-cost Direct Air Capture How it works Industry leading costs through cutting edge electrochemistry, and renewably powered intermittent operation.",
     "stage": "Pre-A",
     "region": null,
-    "focus": [
-      "CCUS"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [],
     "portfolio": [],
@@ -12048,10 +10528,7 @@
     "description": "We are excited to partner with Spiritus and bring this important technology to market.",
     "stage": null,
     "region": null,
-    "focus": [
-      "DeFi",
-      "SMR"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [
       "Jessy Rivest"
@@ -12070,8 +10547,7 @@
     "stage": "Angel",
     "region": null,
     "focus": [
-      "carbon capture",
-      "hydrogen"
+      "carbon capture"
     ],
     "sector": "greentech",
     "key_people": [],
@@ -12089,7 +10565,6 @@
     "stage": "Series A",
     "region": null,
     "focus": [
-      "SiC",
       "carbon capture"
     ],
     "sector": "greentech",
@@ -12112,8 +10587,7 @@
     "stage": "Series A",
     "region": "Europe",
     "focus": [
-      "carbon capture",
-      "energy transition"
+      "carbon capture"
     ],
     "sector": "greentech",
     "key_people": [
@@ -12132,11 +10606,8 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "CCUS",
-      "battery",
       "carbon capture",
-      "clean energy",
-      "robotics"
+      "clean energy"
     ],
     "sector": "greentech",
     "key_people": [],
@@ -12181,12 +10652,7 @@
     "description": "Coral Carbon | Science-Driven Climate VC #### What if we grew 1,000 startups to decarbonize, adapt, and electrify everything?",
     "stage": "Pre-A",
     "region": null,
-    "focus": [
-      "GaN",
-      "LLM",
-      "blockchain",
-      "drone"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [],
     "portfolio": [],
@@ -12239,7 +10705,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "GaN",
       "circular economy"
     ],
     "sector": "greentech",
@@ -12255,9 +10720,7 @@
     "description": "Novoloop · Valo Ventures ### Demand for plastics is forecasted to double between now and 2050, while recycling rates are stuck at less than 10 percent.",
     "stage": "Series B",
     "region": "North America",
-    "focus": [
-      "GaN"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [],
     "portfolio": [],
@@ -12272,8 +10735,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "clean energy",
-      "renewable energy"
+      "clean energy"
     ],
     "sector": "greentech",
     "key_people": [
@@ -12312,10 +10774,7 @@
     "description": "‍ “Many of the global Fortune 500 have set aggressive targets to use up to 50% ‘recycled resin in the coming 3-5 years,” said Eclipse Partner Aidan Madigan-Curtis.",
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "GaN",
-      "artificial intelligence"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [
       "Ian Arthurs"
@@ -12331,9 +10790,7 @@
     "description": "DePoly’s technology offers a promising solution to address the global plastic waste challenge and concurrently support the reduction of greenhouse gas emissions related to the production of virgin plastics.",
     "stage": "Pre-A",
     "region": null,
-    "focus": [
-      "EDA"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [
       "Samantha Anderson",
@@ -12388,8 +10845,6 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "NPU",
-      "SiC",
       "clean energy"
     ],
     "sector": "greentech",
@@ -12408,7 +10863,6 @@
     "stage": "Series C",
     "region": null,
     "focus": [
-      "GaN",
       "circular economy"
     ],
     "sector": "greentech",
@@ -12425,7 +10879,6 @@
     "stage": null,
     "region": "China",
     "focus": [
-      "DeFi",
       "carbon capture",
       "water treatment"
     ],
@@ -12479,7 +10932,6 @@
     "stage": "Angel",
     "region": "North America",
     "focus": [
-      "cleantech",
       "water treatment"
     ],
     "sector": "greentech",
@@ -12517,8 +10969,6 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "battery",
-      "semiconductor",
       "water treatment"
     ],
     "sector": "greentech",
@@ -12535,7 +10985,6 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "GaN",
       "water treatment"
     ],
     "sector": "greentech",
@@ -12552,7 +11001,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "hydrogen",
       "water treatment"
     ],
     "sector": "greentech",
@@ -12571,7 +11019,6 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "GaN",
       "water treatment"
     ],
     "sector": "greentech",
@@ -12588,10 +11035,6 @@
     "stage": "Series B",
     "region": "North America",
     "focus": [
-      "GaN",
-      "biofuel",
-      "energy transition",
-      "hydrogen",
       "water treatment"
     ],
     "sector": "greentech",
@@ -12610,12 +11053,7 @@
     "description": "Our proprietary chemistry enhances or introduces bespoke functionality - unlocking a serviceable addressable market of over $10bn by 2030.",
     "stage": null,
     "region": null,
-    "focus": [
-      "DeFi",
-      "GaN",
-      "SiC",
-      "lending"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [
       "Vassilis Ragoussis",
@@ -12636,9 +11074,7 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "circular economy",
-      "photovoltaic",
-      "wearables"
+      "circular economy"
     ],
     "sector": "greentech",
     "key_people": [
@@ -12658,10 +11094,7 @@
     "description": "Headquartered in Boston, NBD Nano is a specialty chemicals company with a proprietary platform technology that gives surfaces unique properties such as repellency or adhesion.",
     "stage": "Series B",
     "region": "North America",
-    "focus": [
-      "EDA",
-      "specialty chemicals"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [
       "Miguel Galvez"
@@ -12678,8 +11111,6 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "GaN",
-      "LMS",
       "clean energy"
     ],
     "sector": "greentech",
@@ -12713,7 +11144,6 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "LMS",
       "circular economy",
       "composite materials"
     ],
@@ -12751,10 +11181,7 @@
     "stage": "Pre-IPO",
     "region": "Europe",
     "focus": [
-      "DeFi",
-      "GaN",
-      "bio-based materials",
-      "wealth management"
+      "bio-based materials"
     ],
     "sector": "greentech",
     "key_people": [
@@ -12771,27 +11198,11 @@
     "scraped_at": "2026-04-30T11:15:53Z"
   },
   {
-    "name": "Scaling Transformative Solutions for Packaging",
-    "description": "Scaling Transformative Solutions for Packaging - New Earth Ventures ## Home ## Team ## Portfolio ## News + Perspectives Become an NEV Company Investor Portal Contact Us × ## Better* Venture Capital.",
-    "stage": null,
-    "region": null,
-    "focus": [],
-    "sector": "greentech",
-    "key_people": [],
-    "portfolio": [],
-    "founded_year": null,
-    "website": "https://newearthventures.vc",
-    "source_url": "https://newearthventures.vc/",
-    "scraped_at": "2026-04-30T11:15:53Z"
-  },
-  {
     "name": "CMPC Ventures",
     "description": "This is achieved through initiatives and disruptive startups connected to our fiber and forests, allowing us to diversify and complement our value proposition for future consumers.",
     "stage": null,
     "region": null,
-    "focus": [
-      "biofuel"
-    ],
+    "focus": [],
     "sector": "greentech",
     "key_people": [],
     "portfolio": [],
@@ -12806,7 +11217,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "bioplastics",
       "circular economy"
     ],
     "sector": "greentech",
@@ -12863,9 +11273,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "circular economy",
-      "green chemistry",
-      "robotics"
+      "circular economy"
     ],
     "sector": "greentech",
     "key_people": [],
@@ -12896,13 +11304,7 @@
     "description": "This award-winning startup has introduced the first ready-to-adopt perovskite solar cells on the market for edge devices and is scaling up its Swiss manufacturing capacity.",
     "stage": null,
     "region": null,
-    "focus": [
-      "EDA",
-      "GaN",
-      "SiC",
-      "cleantech",
-      "photovoltaic"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [],
     "portfolio": [],
@@ -12916,11 +11318,7 @@
     "description": "Perovskia Solar AG - Venture Kick ## Login Username Password Forgot password / Create a new password # Perovskia Solar AG Energy self-sufficiency by enabling solar cells on devices.",
     "stage": null,
     "region": "Europe",
-    "focus": [
-      "advanced materials",
-      "cleantech",
-      "photovoltaic"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [],
     "portfolio": [],
@@ -12935,10 +11333,8 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "SiC",
       "clean energy",
-      "renewable energy",
-      "solar energy"
+      "renewable energy"
     ],
     "sector": "energy",
     "key_people": [
@@ -12958,10 +11354,7 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "DeFi",
-      "clean energy",
-      "photovoltaic",
-      "solar energy"
+      "clean energy"
     ],
     "sector": "energy",
     "key_people": [],
@@ -12977,12 +11370,8 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
-      "GaN",
       "battery",
-      "carbon capture",
       "energy storage",
-      "energy transition",
       "hydrogen",
       "renewable energy"
     ],
@@ -13003,13 +11392,7 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "SiC",
-      "energy transition",
-      "higher education",
-      "photovoltaic",
-      "renewable energy",
-      "semiconductor",
-      "wafer"
+      "renewable energy"
     ],
     "sector": "energy",
     "key_people": [],
@@ -13043,7 +11426,6 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "EV charging",
       "battery",
       "energy storage"
     ],
@@ -13117,8 +11499,7 @@
     "stage": "Pre-IPO",
     "region": "Europe",
     "focus": [
-      "battery",
-      "energy transition"
+      "battery"
     ],
     "sector": "energy",
     "key_people": [],
@@ -13134,12 +11515,9 @@
     "stage": null,
     "region": null,
     "focus": [
-      "AI infrastructure",
-      "DeFi",
       "battery",
       "clean energy",
       "energy storage",
-      "energy transition",
       "renewable energy"
     ],
     "sector": "energy",
@@ -13158,7 +11536,6 @@
     "focus": [
       "battery",
       "energy storage",
-      "energy transition",
       "renewable energy"
     ],
     "sector": "energy",
@@ -13182,7 +11559,6 @@
       "battery",
       "clean energy",
       "energy storage",
-      "energy transition",
       "renewable energy"
     ],
     "sector": "energy",
@@ -13201,10 +11577,8 @@
     "stage": null,
     "region": null,
     "focus": [
-      "NPU",
       "battery",
-      "energy storage",
-      "energy transition"
+      "energy storage"
     ],
     "sector": "energy",
     "key_people": [],
@@ -13220,8 +11594,6 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "GaN",
-      "advanced materials",
       "battery",
       "energy storage"
     ],
@@ -13256,12 +11628,9 @@
     "stage": "Pre-A",
     "region": "North America",
     "focus": [
-      "GaN",
-      "SiC",
       "battery",
       "energy storage",
-      "renewable energy",
-      "solar energy"
+      "renewable energy"
     ],
     "sector": "energy",
     "key_people": [
@@ -13279,11 +11648,8 @@
     "stage": "Pre-A",
     "region": "Europe",
     "focus": [
-      "DeFi",
-      "GaN",
       "battery",
       "energy storage",
-      "energy transition",
       "renewable energy"
     ],
     "sector": "energy",
@@ -13405,8 +11771,6 @@
     "stage": "Series C",
     "region": "North America",
     "focus": [
-      "GaN",
-      "energy transition",
       "hydrogen"
     ],
     "sector": "energy",
@@ -13443,7 +11807,6 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "GaN",
       "hydrogen"
     ],
     "sector": "energy",
@@ -13460,7 +11823,6 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "NPU",
       "hydrogen",
       "renewable energy"
     ],
@@ -13534,8 +11896,6 @@
     "region": null,
     "focus": [
       "clean energy",
-      "cleantech",
-      "energy transition",
       "fuel cell",
       "hydrogen"
     ],
@@ -13555,9 +11915,7 @@
     "stage": "Pre-A",
     "region": null,
     "focus": [
-      "GaN",
       "clean energy",
-      "energy transition",
       "renewable energy"
     ],
     "sector": "energy",
@@ -13576,9 +11934,7 @@
     "description": "They’re reimagining the way we eat, move, and live, creating smarter, more balanced systems that support both people and the planet.",
     "stage": "Angel",
     "region": "North America",
-    "focus": [
-      "GaN"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [
       "Vincent Nallatamby",
@@ -13634,8 +11990,7 @@
     "region": null,
     "focus": [
       "clean energy",
-      "renewable energy",
-      "wind energy"
+      "renewable energy"
     ],
     "sector": "energy",
     "key_people": [],
@@ -13650,9 +12005,7 @@
     "description": "Sedna Wind Technologies | Generating growth through offshore wind hello@sednawind.com Generatinggrowth through offshore wind Sedna Wind Technologies was formed to invest in offshore wind, an industry expected to deliver growth for decades.",
     "stage": null,
     "region": "Europe",
-    "focus": [
-      "wind energy"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [],
     "portfolio": [
@@ -13669,8 +12022,7 @@
     "stage": "Pre-A",
     "region": "Europe",
     "focus": [
-      "renewable energy",
-      "wind energy"
+      "renewable energy"
     ],
     "sector": "energy",
     "key_people": [],
@@ -13686,10 +12038,8 @@
     "stage": null,
     "region": "Europe",
     "focus": [
-      "SiC",
       "clean energy",
       "energy storage",
-      "photovoltaic",
       "renewable energy"
     ],
     "sector": "energy",
@@ -13705,9 +12055,7 @@
     "description": null,
     "stage": null,
     "region": null,
-    "focus": [
-      "cleantech"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [],
     "portfolio": [],
@@ -13721,9 +12069,7 @@
     "description": "Our Team → ![ ](https://northgreencapital.com/our-team/) ### “Our vision is a greener planet for future generations.",
     "stage": null,
     "region": null,
-    "focus": [
-      "energy transition"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [],
     "portfolio": [],
@@ -13752,10 +12098,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "carbon capture",
-      "clean energy",
-      "energy transition",
-      "nuclear energy"
+      "clean energy"
     ],
     "sector": "energy",
     "key_people": [],
@@ -13770,10 +12113,7 @@
     "description": "Compact Fusion Machines | Avalanche Energy # Moving, power.",
     "stage": "Series A",
     "region": "North America",
-    "focus": [
-      "SiC",
-      "advanced materials"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [],
     "portfolio": [
@@ -13790,10 +12130,8 @@
     "stage": "Series B",
     "region": "North America",
     "focus": [
-      "NPU",
       "SMR",
-      "clean energy",
-      "cleantech"
+      "clean energy"
     ],
     "sector": "energy",
     "key_people": [
@@ -13843,10 +12181,7 @@
     "description": "That’s why Fuse is obsessively focused on engineering efficiency and affordability.",
     "stage": null,
     "region": null,
-    "focus": [
-      "EDA",
-      "SiC"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [],
     "portfolio": [
@@ -13879,10 +12214,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "GaN",
-      "clean energy",
-      "energy transition",
-      "nuclear energy"
+      "clean energy"
     ],
     "sector": "energy",
     "key_people": [],
@@ -13898,11 +12230,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "AI infrastructure",
-      "DeFi",
-      "GPU",
-      "SMR",
-      "nuclear energy"
+      "SMR"
     ],
     "sector": "energy",
     "key_people": [],
@@ -13920,8 +12248,7 @@
     "stage": "Pre-IPO",
     "region": "North America",
     "focus": [
-      "SMR",
-      "nuclear energy"
+      "SMR"
     ],
     "sector": "energy",
     "key_people": [
@@ -13941,10 +12268,7 @@
     "description": "Get in touch ## Connect with our team of engineering, physics, and business experts Investor, partner, or media inquiry.",
     "stage": null,
     "region": null,
-    "focus": [
-      "SiC",
-      "lending"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [],
     "portfolio": [],
@@ -13959,7 +12283,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "SiC",
       "clean energy",
       "hydrogen"
     ],
@@ -13979,9 +12302,7 @@
     "description": "Marathon Fusion # Our Mission Since our founding in 2023, Marathon Fusion has developed fuel cycle technologies to deliver fusion energy more quickly with better economics.",
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "SiC"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [],
     "portfolio": [],
@@ -14018,7 +12339,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "LLM",
       "energy management"
     ],
     "sector": "energy",
@@ -14040,11 +12360,8 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "EV charging",
       "battery",
-      "clean energy",
-      "cleantech",
-      "energy transition"
+      "clean energy"
     ],
     "sector": "energy",
     "key_people": [],
@@ -14062,8 +12379,7 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "energy storage",
-      "payments"
+      "energy storage"
     ],
     "sector": "energy",
     "key_people": [],
@@ -14079,10 +12395,8 @@
     "stage": null,
     "region": null,
     "focus": [
-      "EV charging",
       "battery",
-      "energy storage",
-      "machine learning"
+      "energy storage"
     ],
     "sector": "energy",
     "key_people": [],
@@ -14126,10 +12440,7 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "GaN",
-      "artificial intelligence",
-      "battery",
-      "energy transition"
+      "battery"
     ],
     "sector": "energy",
     "key_people": [],
@@ -14144,9 +12455,7 @@
     "description": "GridFlex Analytics | Grid Congestion Mitigation & Flexible Load Control Constraint-Calibrated Load Shape Control # Congestion Has An Economic Lever.",
     "stage": null,
     "region": null,
-    "focus": [
-      "SiC"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [],
     "portfolio": [
@@ -14162,11 +12471,7 @@
     "description": "This partnership marries WEX's fleet mobility and payments expertise with our innovative charging software to accelerate electric fleet adoption.",
     "stage": null,
     "region": "North America",
-    "focus": [
-      "EV charging",
-      "energy transition",
-      "payments"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [
       "Nick Woolley",
@@ -14184,7 +12489,6 @@
     "stage": null,
     "region": null,
     "focus": [
-      "EDA",
       "clean energy"
     ],
     "sector": "energy",
@@ -14203,16 +12507,9 @@
     "stage": "Series A",
     "region": null,
     "focus": [
-      "artificial intelligence",
-      "autonomous vehicle",
-      "blockchain",
-      "carbon capture",
-      "circular economy",
       "energy management",
       "energy storage",
-      "energy transition",
       "hydrogen",
-      "machine learning",
       "smart grid"
     ],
     "sector": "energy",
@@ -14233,11 +12530,7 @@
     "stage": "Series B",
     "region": null,
     "focus": [
-      "LLM",
-      "NPU",
-      "battery",
-      "energy transition",
-      "robotics"
+      "battery"
     ],
     "sector": "energy",
     "key_people": [
@@ -14257,11 +12550,8 @@
     "stage": null,
     "region": "North America",
     "focus": [
-      "EDA",
-      "EV charging",
       "battery",
       "clean energy",
-      "energy transition",
       "hydrogen"
     ],
     "sector": "energy",
@@ -14277,10 +12567,7 @@
     "description": "Prior to founding Linse Capital, Michael was a partner at Kleiner Perkins Caufield & Byers (KPCB) where he invested in businesses like ChargePoint, Proterra, uShip, Telogis, INRIX, Friedola, HYLA, UpWind, and Redaptive.",
     "stage": null,
     "region": "Europe",
-    "focus": [
-      "EDA",
-      "EV charging"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [],
     "portfolio": [
@@ -14296,11 +12583,7 @@
     "description": "Home | MobilityFund top of page # Electrifying mobility.",
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "DeFi",
-      "drone",
-      "self-driving"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [],
     "portfolio": [],
@@ -14314,11 +12597,7 @@
     "description": "We invest in European startups that make infrastructure digital and sustainable.",
     "stage": "Series A",
     "region": "North America",
-    "focus": [
-      "GaN",
-      "NPU",
-      "energy transition"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [
       "Florian Haspinger",
@@ -14336,12 +12615,10 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "LLM",
       "battery",
       "clean energy",
       "energy storage",
-      "fuel cell",
-      "photovoltaic"
+      "fuel cell"
     ],
     "sector": "energy",
     "key_people": [],
@@ -14357,13 +12634,8 @@
     "stage": "Series A",
     "region": "North America",
     "focus": [
-      "DeFi",
-      "blockchain",
-      "drone",
       "energy management",
       "energy storage",
-      "energy transition",
-      "robotics",
       "smart grid"
     ],
     "sector": "energy",
@@ -14380,10 +12652,8 @@
     "stage": null,
     "region": null,
     "focus": [
-      "EV charging",
       "clean energy",
       "energy storage",
-      "energy transition",
       "renewable energy"
     ],
     "sector": "energy",
@@ -14399,9 +12669,7 @@
     "description": "Global climate deep tech VC | Earth Venture Capital top of page # We back science founders building what Earth actually needs #### FROM SPACE, EARTH IS BREATHTAKING, AN AWE-INSPIRING BLUE MARBLE OF LIFE UP CLOSE, THE CRACKS SHOW.",
     "stage": null,
     "region": null,
-    "focus": [
-      "nuclear energy"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [],
     "portfolio": [],
@@ -14416,12 +12684,7 @@
     "stage": null,
     "region": null,
     "focus": [
-      "DeFi",
-      "biotech",
-      "energy transition",
-      "fuel cell",
-      "generative AI",
-      "robotics"
+      "fuel cell"
     ],
     "sector": "energy",
     "key_people": [],
@@ -14436,9 +12699,7 @@
     "description": "Fahrenheit Ventures — Climate Technology Global Temp.",
     "stage": "Pre-A",
     "region": null,
-    "focus": [
-      "energy transition"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [],
     "portfolio": [],
@@ -14453,7 +12714,6 @@
     "stage": "Series A",
     "region": "Europe",
     "focus": [
-      "DeFi",
       "battery",
       "renewable energy"
     ],
@@ -14474,11 +12734,7 @@
     "description": "Anthropocene Ventures Our Why Team Work with us Process Investing in pre and seed stage climate tech ​companies that leverage hard science and ​novel engineering to create a global economy ​more closely aligned with the earth’s ecology.",
     "stage": "Pre-A",
     "region": "North America",
-    "focus": [
-      "SiC",
-      "blockchain",
-      "robotics"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [
       "Cha Umphreys",
@@ -14500,10 +12756,7 @@
     "description": "Endgame Capital | Venture Capital for Near-Market Climate Tech top of page # Enabling tomorrow, today.",
     "stage": "Angel",
     "region": "North America",
-    "focus": [
-      "EV charging",
-      "GaN"
-    ],
+    "focus": [],
     "sector": "energy",
     "key_people": [],
     "portfolio": [],
@@ -14518,14 +12771,7 @@
     "stage": "Pre-A",
     "region": "Europe",
     "focus": [
-      "DeFi",
-      "GaN",
-      "SiC",
-      "advanced materials",
-      "clean energy",
-      "energy transition",
-      "fintech",
-      "lending"
+      "clean energy"
     ],
     "sector": "energy",
     "key_people": [],
@@ -14542,9 +12788,7 @@
     "region": "Europe",
     "focus": [
       "clean energy",
-      "energy storage",
-      "energy transition",
-      "nuclear energy"
+      "energy storage"
     ],
     "sector": "energy",
     "key_people": [

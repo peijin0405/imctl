@@ -14,7 +14,8 @@ from pathlib import Path
 from dotenv import load_dotenv
 load_dotenv()
 
-from flask import Flask, Response, jsonify, redirect, render_template, render_template_string, request, send_file, stream_with_context
+from flask import Flask, Response, jsonify, redirect, render_template, render_template_string, request, send_file, stream_with_context, url_for
+from flask_login import current_user, login_required, login_user, logout_user
 
 try:
     import anthropic as _anthropic
@@ -34,6 +35,15 @@ from scraper.m_matcher import match as run_match  # noqa: E402
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 50 * 1024 * 1024  # 50 MB
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", os.urandom(32))
+
+from demo.database import init_db
+from demo.extensions import init_extensions
+from demo.routes.auth import auth as auth_blueprint
+
+init_db(app)
+init_extensions(app)
+app.register_blueprint(auth_blueprint)
 
 ALLOWED = {".pdf", ".docx", ".doc"}
 
@@ -2048,6 +2058,18 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape') m10CloseDirect(); 
 m10Load();
 </script>
 """
+
+# ══════════════════════════════════════════════════════════════════════════
+# Auth gate
+# ══════════════════════════════════════════════════════════════════════════
+
+_PUBLIC_ENDPOINTS = frozenset({"index", "home", "auth.login", "auth.register", "static"})
+
+@app.before_request
+def require_login():
+    if request.endpoint and request.endpoint not in _PUBLIC_ENDPOINTS:
+        if not current_user.is_authenticated:
+            return redirect(url_for("auth.login", next=request.url))
 
 # ══════════════════════════════════════════════════════════════════════════
 # Routes

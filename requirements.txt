@@ -5,6 +5,7 @@ flask-login
 flask-bcrypt
 flask-sqlalchemy
 flask-migrate
+email-validator
 
 # Database
 psycopg2-binary

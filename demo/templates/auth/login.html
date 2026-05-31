@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In — Washon Capital</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0d0d14;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #e2e0f0;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      backdrop-filter: blur(12px);
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: 1.75rem;
+    }
+    .logo-row img { height: 36px; }
+    .logo-row span {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -.02em;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: .4rem;
+    }
+    .sub {
+      font-size: .875rem;
+      color: #8b87b8;
+      margin-bottom: 1.75rem;
+    }
+    .sub a { color: #9d8fff; text-decoration: none; }
+    .sub a:hover { text-decoration: underline; }
+
+    .alerts { margin-bottom: 1rem; }
+    .alert {
+      padding: .7rem 1rem;
+      border-radius: 8px;
+      font-size: .875rem;
+      margin-bottom: .5rem;
+    }
+    .alert-danger  { background: rgba(239,68,68,.15);  border: 1px solid rgba(239,68,68,.3);  color: #fca5a5; }
+    .alert-success { background: rgba(34,197,94,.12);  border: 1px solid rgba(34,197,94,.25); color: #86efac; }
+    .alert-info    { background: rgba(99,102,241,.12); border: 1px solid rgba(99,102,241,.3); color: #a5b4fc; }
+
+    label {
+      display: block;
+      font-size: .8rem;
+      font-weight: 600;
+      color: #9d9ab8;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: .4rem;
+    }
+    input[type=email], input[type=password], input[type=text] {
+      width: 100%;
+      padding: .7rem 1rem;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 8px;
+      color: #e2e0f0;
+      font-size: .95rem;
+      outline: none;
+      transition: border-color .2s;
+      margin-bottom: 1.1rem;
+    }
+    input:focus { border-color: #7c6fff; }
+
+    .check-row {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .875rem;
+      color: #8b87b8;
+      margin-bottom: 1.4rem;
+    }
+    .check-row input[type=checkbox] { accent-color: #7c6fff; }
+
+    .btn {
+      width: 100%;
+      padding: .8rem;
+      background: linear-gradient(135deg, #6d5fff, #9d6bff);
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity .2s, transform .1s;
+    }
+    .btn:hover  { opacity: .9; }
+    .btn:active { transform: scale(.98); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo-row">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Washon">
+      <span>Washon Capital</span>
+    </div>
+
+    <h1>Welcome back</h1>
+    <p class="sub">Don't have an account? <a href="{{ url_for('auth.register') }}">Sign up</a></p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="alerts">
+          {% for cat, msg in messages %}
+            <div class="alert alert-{{ cat }}">{{ msg }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required autofocus>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="••••••••" required>
+
+      <div class="check-row">
+        <input type="checkbox" id="remember" name="remember">
+        <label for="remember" style="text-transform:none;font-size:.875rem;color:#8b87b8;letter-spacing:0;margin:0;">
+          Remember me
+        </label>
+      </div>
+
+      <button type="submit" class="btn">Sign In</button>
+    </form>
+  </div>
+</body>
+</html>
