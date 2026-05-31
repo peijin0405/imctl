@@ -944,6 +944,7 @@ let currentPage = 1;
 let currentView = 'card';
 let savedOnly = false;
 let tableSortCol = null;
+let currentModalName = null;
 let tableSortDir = 'asc';
 let activeSector = '';
 let bookmarks = new Set(JSON.parse(localStorage.getItem(BOOKMARKS_KEY) || '[]'));
@@ -1265,6 +1266,14 @@ function toggleBookmark(name) {
   else bookmarks.add(name);
   localStorage.setItem(BOOKMARKS_KEY, JSON.stringify([...bookmarks]));
   render();
+  if (currentModalName === name) {
+    const saveBtn = document.getElementById('mBadges').querySelector('button');
+    if (saveBtn) {
+      const saved = bookmarks.has(name);
+      saveBtn.textContent = saved ? '★ Saved' : '☆ Save';
+      saveBtn.classList.toggle('active', saved);
+    }
+  }
 }
 
 function toggleSavedOnly() {
@@ -1277,6 +1286,7 @@ function toggleSavedOnly() {
 // ── Modal ──────────────────────────────────────────────────────────────────
 function openModal(d) {
   if (!d) return;
+  currentModalName = d.name;
   const typeLabel = inferType(d);
   const stages = stageArr(d);
   const score = d.tier1_completeness;
@@ -1405,6 +1415,7 @@ function closeModal(e) {
 function closeModalDirect() {
   document.getElementById('modalOverlay').classList.remove('open');
   document.body.style.overflow = '';
+  currentModalName = null;
 }
 
 document.addEventListener('keydown', e => {
