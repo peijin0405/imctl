@@ -327,47 +327,43 @@ M1_CONTENT = """\
        &nbsp;·&nbsp; PDF or DOCX &nbsp;·&nbsp; max 50 MB</p>
   </div>
 
-  <div style="margin-top:24px;border:.5px solid #2a2a2a;border-radius:10px;padding:18px 20px;">
-    <div style="font-size:.7rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;">
+  <div style="margin-top:24px;border:.5px solid #222;border-radius:10px;padding:18px 20px;">
+    <div style="font-size:.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;">
       To get the most accurate investor matches, make sure your BP clearly covers the following:
     </div>
 
     <div style="margin-bottom:14px;">
-      <div style="font-size:.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">
-        Required — Gates into the Candidate Pool
-      </div>
+      <div style="font-size:.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">Required — Gates into the Candidate Pool</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;">
-        <span style="font-size:.75rem;padding:3px 10px;border-radius:5px;border:.5px solid rgba(239,68,68,.35);background:rgba(239,68,68,.08);color:rgba(239,68,68,.75);">Funding stage (e.g. Seed, Series A)</span>
-        <span style="font-size:.75rem;padding:3px 10px;border-radius:5px;border:.5px solid rgba(239,68,68,.35);background:rgba(239,68,68,.08);color:rgba(239,68,68,.75);">Target raise amount (e.g. $500K–$1M)</span>
-        <span style="font-size:.75rem;padding:3px 10px;border-radius:5px;border:.5px solid rgba(239,68,68,.35);background:rgba(239,68,68,.08);color:rgba(239,68,68,.75);">HQ location (city + state/country)</span>
+        <span style="font-size:.73rem;padding:3px 10px;border-radius:5px;border:.5px solid rgba(239,68,68,.35);background:rgba(239,68,68,.08);color:rgba(239,68,68,.75);">Funding stage (e.g. Seed, Series A)</span>
+        <span style="font-size:.73rem;padding:3px 10px;border-radius:5px;border:.5px solid rgba(239,68,68,.35);background:rgba(239,68,68,.08);color:rgba(239,68,68,.75);">Target raise amount</span>
+        <span style="font-size:.73rem;padding:3px 10px;border-radius:5px;border:.5px solid rgba(239,68,68,.35);background:rgba(239,68,68,.08);color:rgba(239,68,68,.75);">HQ location (city + country)</span>
       </div>
     </div>
 
     <div style="margin-bottom:14px;">
-      <div style="font-size:.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">
-        Core Signals — Directly Set Your Match Score
-      </div>
+      <div style="font-size:.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">Core Signals — Directly Set Your Match Score</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
-        <span style="font-size:.75rem;padding:3px 10px;border-radius:5px;border:.5px solid rgba(245,158,11,.35);background:rgba(245,158,11,.08);color:rgba(245,158,11,.75);">Sub-sector keywords — highest weight</span>
-        <span style="font-size:.75rem;padding:3px 10px;border-radius:5px;border:.5px solid rgba(245,158,11,.35);background:rgba(245,158,11,.08);color:rgba(245,158,11,.75);">Business model (e.g. licensing, B2B SaaS)</span>
+        <span style="font-size:.73rem;padding:3px 10px;border-radius:5px;border:.5px solid rgba(245,158,11,.35);background:rgba(245,158,11,.08);color:rgba(245,158,11,.75);">Industry &amp; sub-sector — highest weight</span>
+        <span style="font-size:.73rem;padding:3px 10px;border-radius:5px;border:.5px solid rgba(245,158,11,.35);background:rgba(245,158,11,.08);color:rgba(245,158,11,.75);">Business model (e.g. SaaS, licensing, services)</span>
       </div>
-      <div style="font-family:monospace;font-size:.72rem;color:#555;background:#0d0d0d;border-radius:5px;padding:8px 12px;line-height:1.7;">
-        cell therapy · CAR-T · allogeneic · gene therapy · CRISPR · gene editing · genomics · immunotherapy · immuno-oncology · platform biotech · synthetic biology · drug discovery
+      <div style="font-family:monospace;font-size:.69rem;color:#555;background:#0d0d0d;border-radius:5px;padding:9px 12px;line-height:1.8;">
+        Name the specific field or technology your company operates in — the more precise, the better.<br>
+        Generic terms like "tech" or "healthcare" are less effective than specific ones like your core<br>
+        technology, therapy type, market category, or product approach.
       </div>
     </div>
 
     <div style="margin-bottom:14px;">
-      <div style="font-size:.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">
-        Boost Signals — Improve Ranking Within Matches
-      </div>
+      <div style="font-size:.68rem;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">Boost Signals — Improve Ranking Within Matches</div>
       <div style="display:flex;flex-wrap:wrap;gap:6px;">
-        <span style="font-size:.75rem;padding:3px 10px;border-radius:5px;border:.5px solid rgba(16,185,129,.3);background:rgba(16,185,129,.07);color:rgba(16,185,129,.72);">Revenue / ARR (specific figures)</span>
-        <span style="font-size:.75rem;padding:3px 10px;border-radius:5px;border:.5px solid rgba(16,185,129,.3);background:rgba(16,185,129,.07);color:rgba(16,185,129,.72);">Team background (PhD, domain expert, repeat founder)</span>
-        <span style="font-size:.75rem;padding:3px 10px;border-radius:5px;border:.5px solid rgba(16,185,129,.3);background:rgba(16,185,129,.07);color:rgba(16,185,129,.72);">Seeking lead investor (yes / open to syndicate)</span>
+        <span style="font-size:.73rem;padding:3px 10px;border-radius:5px;border:.5px solid rgba(16,185,129,.3);background:rgba(16,185,129,.07);color:rgba(16,185,129,.72);">Revenue or ARR (specific figures)</span>
+        <span style="font-size:.73rem;padding:3px 10px;border-radius:5px;border:.5px solid rgba(16,185,129,.3);background:rgba(16,185,129,.07);color:rgba(16,185,129,.72);">Team background (PhD, domain expert, repeat founder)</span>
+        <span style="font-size:.73rem;padding:3px 10px;border-radius:5px;border:.5px solid rgba(16,185,129,.3);background:rgba(16,185,129,.07);color:rgba(16,185,129,.72);">Lead investor preference</span>
       </div>
     </div>
 
-    <div style="font-size:.7rem;color:var(--text3);border-top:.5px solid #222;padding-top:12px;margin-top:4px;">
+    <div style="font-size:.68rem;color:var(--text3);border-top:.5px solid #1e1e1e;padding-top:11px;margin-top:2px;">
       Financial models, competitive tables, and appendices do not affect match scores — the algorithm only reads the signals above.
     </div>
   </div>
