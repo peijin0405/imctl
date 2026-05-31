@@ -1324,6 +1324,10 @@ function openModal(d) {
           .map(s=>`<span class="tag-item">${esc(SECTOR_LABELS[s]||s)}</span>`).join('') || '<span style="color:var(--text3)">—</span>'
         }</div>
       </div>
+      ${(Array.isArray(d.sub_tags) && d.sub_tags.length) ? `
+      <div class="modal-field"><span class="field-key">Sub-Sectors</span>
+        <div class="tag-list">${d.sub_tags.map(s=>`<span class="tag-item">${esc(s)}</span>`).join('')}</div>
+      </div>` : ''}
     </div>
   </div>`;
 
