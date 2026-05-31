@@ -29,8 +29,9 @@ load_dotenv()
 # ── Paths ──────────────────────────────────────────────────────────────────
 
 ROOT       = Path(__file__).parent.parent
-DB_PATH    = ROOT / "web" / "investors.json"
-JSONL_PATH = ROOT / "data" / "enrichment_target" / "active.jsonl"
+DATA_DIR   = Path(os.getenv("DATA_DIR", str(ROOT)))
+DB_PATH    = DATA_DIR / "enrichment_target" / "active.jsonl"
+JSONL_PATH = DATA_DIR / "enrichment_target" / "active.jsonl"
 
 # ── Claude client (for embeddings) ────────────────────────────────────────
 
@@ -992,22 +993,32 @@ def _score_investor(
 # ── Load DB ────────────────────────────────────────────────────────────────
 
 def _load_investors() -> list[dict]:
-    # 优先用 active.jsonl（数据最新最完整）
-    if JSONL_PATH.exists():
-        investors = []
-        with open(JSONL_PATH, encoding="utf-8") as f:
-            for line in f:
-                line = line.strip()
-                if line:
-                    investors.append(json.loads(line))
-        return investors
+    print(f"[DB] JSONL_PATH = {JSONL_PATH}", flush=True)
+    print(f"[DB] JSONL exists = {JSONL_PATH.exists()}", flush=True)
+    print(f"[DB] DATA_DIR env = {os.getenv('DATA_DIR', 'NOT SET')}", flush=True)
+    _candidates = [
+        ROOT / "data" / "enrichment_target" / "active.jsonl",
+        ROOT / "web" / "active.jsonl",
+    ]
+    for path in _candidates:
+        if path.exists():
+            print(f"[DB] loading from {path}", flush=True)
+            investors = []
+            with open(path, encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line:
+                        investors.append(json.loads(line))
+            return investors
     # fallback 到 investors.json
-    if DB_PATH.exists():
-        with open(DB_PATH, encoding="utf-8") as f:
+    fallback = ROOT / "web" / "investors.json"
+    if fallback.exists():
+        print(f"[DB] loading from fallback {fallback}", flush=True)
+        with open(fallback, encoding="utf-8") as f:
             data = json.load(f)
         return data if isinstance(data, list) else data.get("investors", [])
     raise FileNotFoundError(
-        f"Investor DB not found at {JSONL_PATH} or {DB_PATH}"
+        f"Investor DB not found. Tried: {_candidates} + {fallback}"
     )
 
 

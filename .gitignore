@@ -28,7 +28,11 @@ venv/
 .claude/
 
 # Data pipeline outputs (not needed for app runtime)
-data/
+# Ignore everything in data/ EXCEPT the enriched investor DB
+data/*
+!data/enrichment_target/
+data/enrichment_target/*
+!data/enrichment_target/active.jsonl
 BP_exa/
 nohup.out
 audit/
