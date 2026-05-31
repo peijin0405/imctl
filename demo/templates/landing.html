@@ -48,6 +48,7 @@ body{
 .nav-badge{
   font-size:.57rem;font-weight:700;
   background:var(--accent);color:#fff;border-radius:4px;padding:1px 5px;
+  cursor:pointer;
 }
 .nav-cta{
   display:inline-flex;align-items:center;gap:6px;
@@ -241,10 +242,10 @@ footer{
     </div>
   </a>
   <nav class="nav-links" aria-label="Platform modules">
-    <a href="/m1"  class="nav-link"><span>📄</span><span>BP Analyzer</span><span class="nav-badge">M1</span></a>
-    <a href="/m4"  class="nav-link"><span>🗄️</span><span>Investor DB</span><span class="nav-badge">M4</span></a>
-    <a href="/m9"  class="nav-link"><span>🎯</span><span>Fundraising</span><span class="nav-badge">M9</span></a>
-    <a href="/m10" class="nav-link"><span>📊</span><span>Analytics</span><span class="nav-badge">M10</span></a>
+    <a href="/m1"  class="nav-link"><span>📄</span><span>BP Analyzer</span><span class="nav-badge" onclick="event.stopPropagation();location.href='{{ url_for('index') }}'">M1</span></a>
+    <a href="/m4"  class="nav-link"><span>🗄️</span><span>Investor DB</span><span class="nav-badge" onclick="event.stopPropagation();location.href='{{ url_for('index') }}'">M4</span></a>
+    <a href="/m9"  class="nav-link"><span>🎯</span><span>Fundraising</span><span class="nav-badge" onclick="event.stopPropagation();location.href='{{ url_for('index') }}'">M9</span></a>
+    <a href="/m10" class="nav-link"><span>📊</span><span>Analytics</span><span class="nav-badge" onclick="event.stopPropagation();location.href='{{ url_for('index') }}'">M10</span></a>
     {% if current_user.is_authenticated %}
       <a href="/m1" class="nav-cta">Launch Platform →</a>
     {% else %}

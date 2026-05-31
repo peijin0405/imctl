@@ -104,7 +104,10 @@ nav{
 .nav-brand{
   padding:20px 18px 18px;border-bottom:1px solid var(--border);
   display:flex;align-items:center;gap:10px;
+  text-decoration:none;color:inherit;
 }
+.nav-brand:hover .nav-logo{opacity:.85}
+.badge{cursor:pointer}
 .nav-logo{
   width:32px;height:32px;border-radius:8px;
   background:linear-gradient(135deg,var(--accent),#a78bfa);
@@ -156,31 +159,31 @@ main{margin-left:var(--nav-w);flex:1;min-height:100vh}
 <body>
 
 <nav>
-  <div class="nav-brand">
+  <a href="{{ url_for('index') }}" class="nav-brand">
     <div class="nav-logo">W</div>
     <div class="nav-brand-text">
       <h1>Washon</h1>
       <p>Investment Suite</p>
     </div>
-  </div>
+  </a>
 
   <div style="padding:8px 0;flex:1">
     <div class="nav-section">Tools</div>
     <a href="/m1" class="nav-link {{ 'active' if active=='m1' else '' }}">
       <span class="nav-icon">📄</span> BP Parser
-      <span class="badge">M1</span>
+      <span class="badge" onclick="event.stopPropagation();location.href='{{ url_for('index') }}'">M1</span>
     </a>
     <a href="/m4" class="nav-link {{ 'active' if active=='m4' else '' }}">
       <span class="nav-icon">🗄️</span> Investor DB
-      <span class="badge">M4</span>
+      <span class="badge" onclick="event.stopPropagation();location.href='{{ url_for('index') }}'">M4</span>
     </a>
     <a href="/m10" class="nav-link {{ 'active' if active=='m10' else '' }}">
       <span class="nav-icon">📋</span> Saved Analyses
-      <span class="badge">M10</span>
+      <span class="badge" onclick="event.stopPropagation();location.href='{{ url_for('index') }}'">M10</span>
     </a>
     <a href="/m9" class="nav-link {{ 'active' if active=='m9' else '' }}">
       <span class="nav-icon">🎯</span> Pitching Guide
-      <span class="badge">M9</span>
+      <span class="badge" onclick="event.stopPropagation();location.href='{{ url_for('index') }}'">M9</span>
     </a>
   </div>
 
