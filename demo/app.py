@@ -2084,10 +2084,20 @@ m10Load();
 
 _PUBLIC_ENDPOINTS = frozenset({"index", "home", "auth.login", "auth.register", "static"})
 
+def _is_api_request():
+    return (
+        request.path.startswith("/api/")
+        or request.is_json
+        or request.headers.get("X-Requested-With") == "XMLHttpRequest"
+        or request.accept_mimetypes.best == "application/json"
+    )
+
 @app.before_request
 def require_login():
     if request.endpoint and request.endpoint not in _PUBLIC_ENDPOINTS:
         if not current_user.is_authenticated:
+            if _is_api_request():
+                return jsonify({"error": "Unauthorized", "redirect": "/auth/login"}), 401
             return redirect(url_for("auth.login", next=request.url))
 
 # ══════════════════════════════════════════════════════════════════════════
