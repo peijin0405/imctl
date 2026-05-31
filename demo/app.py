@@ -136,6 +136,18 @@ nav{
   padding:16px 18px;border-top:1px solid var(--border);margin-top:auto;
   font-size:.7rem;color:var(--text3);
 }
+.nav-user{
+  font-size:.75rem;color:var(--text2);margin-bottom:8px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.nav-logout{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:5px 12px;border-radius:6px;
+  background:rgba(239,68,68,.1);color:#fca5a5;
+  text-decoration:none;font-size:.73rem;font-weight:600;
+  border:1px solid rgba(239,68,68,.22);transition:background .15s;
+}
+.nav-logout:hover{background:rgba(239,68,68,.2)}
 
 /* ── MAIN ── */
 main{margin-left:var(--nav-w);flex:1;min-height:100vh}
@@ -172,7 +184,14 @@ main{margin-left:var(--nav-w);flex:1;min-height:100vh}
     </a>
   </div>
 
-  <div class="nav-footer">v0.1 · Local mode</div>
+  <div class="nav-footer">
+    {% if current_user.is_authenticated %}
+      <div class="nav-user">Welcome, {{ current_user.name }}</div>
+      <a href="/auth/logout" class="nav-logout">⏻ Logout</a>
+    {% else %}
+      <span>v0.1</span>
+    {% endif %}
+  </div>
 </nav>
 
 <main>

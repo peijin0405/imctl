@@ -56,6 +56,14 @@ body{
   text-decoration:none;transition:opacity .15s;white-space:nowrap;
 }
 .nav-cta:hover{opacity:.88}
+.nav-cta-ghost{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-left:10px;padding:7px 16px;border-radius:8px;
+  border:1px solid var(--border2);
+  background:transparent;color:var(--text2);font-size:.82rem;font-weight:600;
+  text-decoration:none;transition:border-color .15s,color .15s;white-space:nowrap;
+}
+.nav-cta-ghost:hover{border-color:var(--accent2);color:var(--text)}
 
 /* ── HERO ────────────────────────────────────────────────────────────── */
 .hero{
@@ -237,7 +245,12 @@ footer{
     <a href="/m4"  class="nav-link"><span>🗄️</span><span>Investor DB</span><span class="nav-badge">M4</span></a>
     <a href="/m9"  class="nav-link"><span>🎯</span><span>Fundraising</span><span class="nav-badge">M9</span></a>
     <a href="/m10" class="nav-link"><span>📊</span><span>Analytics</span><span class="nav-badge">M10</span></a>
-    <a href="/m1"  class="nav-cta">Launch Platform →</a>
+    {% if current_user.is_authenticated %}
+      <a href="/m1" class="nav-cta">Launch Platform →</a>
+    {% else %}
+      <a href="/auth/login"    class="nav-cta-ghost">Log In</a>
+      <a href="/auth/register" class="nav-cta">Sign Up</a>
+    {% endif %}
   </nav>
 </header>
 
