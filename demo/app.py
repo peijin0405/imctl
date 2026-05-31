@@ -35,7 +35,11 @@ from scraper.m_matcher import match as run_match  # noqa: E402
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 50 * 1024 * 1024  # 50 MB
-app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", os.urandom(32))
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "dev-fallback-key-change-in-prod")
+app.config["SESSION_COOKIE_HTTPONLY"] = True
+app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
+app.config["SESSION_COOKIE_SECURE"] = os.environ.get("RAILWAY_ENVIRONMENT") is not None
+app.config["REMEMBER_COOKIE_DURATION"] = 86400 * 7  # 7 days
 
 from demo.database import init_db
 from demo.extensions import init_extensions

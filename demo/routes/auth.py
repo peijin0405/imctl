@@ -20,7 +20,7 @@ def login():
 
         user = User.query.filter_by(email=email).first()
         if user and bcrypt.check_password_hash(user.password, password):
-            login_user(user, remember=remember)
+            login_user(user, remember=True)
             next_page = request.args.get("next")
             return redirect(next_page or url_for("index"))
 
@@ -57,7 +57,7 @@ def register():
             user = User(name=name, email=email, password=hashed)
             db.session.add(user)
             db.session.commit()
-            login_user(user)
+            login_user(user, remember=True)
             flash("Account created — welcome to Washon!", "success")
             return redirect(url_for("index"))
 
