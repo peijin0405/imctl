@@ -822,7 +822,7 @@
     <option value="name_desc">Name Z→A</option>
   </select>
 
-  <button class="ctrl-btn" id="btnSaved" onclick="toggleSavedOnly()">
+  <button class="ctrl-btn" id="btnSaved" onclick="toggleSavedOnly()" style="display:none">
     ☆ Saved
   </button>
 
@@ -884,7 +884,8 @@
 'use strict';
 
 // ── Constants ──────────────────────────────────────────────────────────────
-const isPro = new URLSearchParams(location.search).has('pro');
+const isPro  = new URLSearchParams(location.search).has('pro');
+const isAuth = new URLSearchParams(location.search).has('auth');
 const PAGE_SIZE = 50;
 const BOOKMARKS_KEY = 'washon_bookmarks_v2';
 
@@ -1163,7 +1164,7 @@ function renderCards(items) {
         <div class="card-z1-top">
           <div class="card-name">${esc(displayName)}</div>
           ${typeBadge}${flagBadge}
-          <button class="bm-btn${isSaved?' saved':''}" onclick="event.stopPropagation();toggleBookmark('${esc(d.name)}')" title="${isSaved?'Remove':'Save'}">${isSaved?'★':'☆'}</button>
+          ${isAuth ? `<button class="bm-btn${isSaved?' saved':''}" onclick="event.stopPropagation();toggleBookmark('${esc(d.name)}')" title="${isSaved?'Remove':'Save'}">${isSaved?'★':'☆'}</button>` : ''}
         </div>
         <div class="card-z1-sub">${geos}${checkSize}</div>
       </div>
@@ -1302,7 +1303,7 @@ function openModal(d) {
   (d.primary_domains || []).slice(0, 2).forEach(dom => {
     badges.push(`<span class="badge" style="background:rgba(59,130,246,0.1);color:var(--blue);border:1px solid rgba(59,130,246,0.3)">${esc(SECTOR_LABELS[dom]||dom)}</span>`);
   });
-  badges.push(`<button class="ctrl-btn${isSaved?' active':''}" style="font-size:12px;padding:4px 10px" onclick="toggleBookmark('${esc(d.name)}')">${isSaved?'★ Saved':'☆ Save'}</button>`);
+  if (isAuth) badges.push(`<button class="ctrl-btn${isSaved?' active':''}" style="font-size:12px;padding:4px 10px" onclick="toggleBookmark('${esc(d.name)}')">${isSaved?'★ Saved':'☆ Save'}</button>`);
   document.getElementById('mBadges').innerHTML = badges.join('');
 
   let html = '';
@@ -1473,6 +1474,7 @@ function bindControls() {
 async function init() {
   document.getElementById('accessBadge').className = isPro ? 'badge-pro' : 'badge-basic';
   document.getElementById('accessBadge').textContent = isPro ? 'PRO' : 'BASIC';
+  if (isAuth) document.getElementById('btnSaved').style.display = '';
 
   try {
     const res = await fetch('active.jsonl');

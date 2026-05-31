@@ -936,7 +936,7 @@ M4_CONTENT = """\
   </div>
   <div class="m4-count">{{ count }} investors</div>
 </div>
-<iframe src="/m4/view" title="Investor DB" id="m4frame"></iframe>
+<iframe src="/m4/view{{ '?auth=1' if current_user.is_authenticated else '' }}" title="Investor DB" id="m4frame"></iframe>
 """
 
 
@@ -2268,7 +2268,11 @@ m10Load();
 # Auth gate
 # ══════════════════════════════════════════════════════════════════════════
 
-_PUBLIC_ENDPOINTS = frozenset({"index", "home", "auth.login", "auth.register", "static"})
+_PUBLIC_ENDPOINTS = frozenset({
+    "index", "home", "auth.login", "auth.register", "static",
+    # Investor DB is publicly browsable — no account needed
+    "m4", "m4_view", "m4_active_jsonl", "m4_investors",
+})
 
 def _is_api_request():
     return (
