@@ -736,12 +736,8 @@ def _build_bp_embedding(bp: dict) -> list[float] | None:
     except (KeyError, TypeError):
         pass
     if not narrative:
-        try:
-            narrative = bp["tier3"]["narrative_text"] or ""
-        except (KeyError, TypeError):
-            pass
-    if not narrative:
-        narrative = bp.get("narrative_text", "")
+        # flat dict stores narrative_text at top level (not under tier3)
+        narrative = bp.get("narrative_text") or ""
     if not narrative:
         return None
     return _embed(narrative)
@@ -1018,6 +1014,11 @@ def _load_investors() -> list[dict]:
 # ── Public API ─────────────────────────────────────────────────────────────
 
 def match(bp_profile: dict, top_n: int = 15, use_semantic: bool = True) -> list[dict]:
+    if "_profile" not in bp_profile and "sub_sector_tags" not in bp_profile:
+        raise ValueError(
+            "bp_profile is missing both '_profile' and 'sub_sector_tags' — "
+            "pass the output of flatten_profile(), not the raw parser dict"
+        )
     investors = _load_investors()
     investors = [i for i in investors if i.get("is_real_investor") is not False]
 

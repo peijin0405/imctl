@@ -2186,6 +2186,26 @@ def m1_parse():
         text    = extract_text(str(tmp_path))
         profile = parse_with_gemini(text)
         flat    = flatten_profile(profile)
+
+        # Defensive normalization: flatten_profile always sets _profile, but guard
+        # against future refactors and ensure flat-level fields are populated from
+        # the nested profile when the parser returns null values.
+        if "_profile" not in flat:
+            flat["_profile"] = profile
+        _p = flat["_profile"]
+        if not flat.get("sub_sector_tags"):
+            try:
+                vals = _p["tier2"]["sub_sector_tags"]["value"] or []
+                if isinstance(vals, list) and vals:
+                    flat["sub_sector_tags"] = ", ".join(str(t) for t in vals)
+            except (KeyError, TypeError):
+                pass
+        if not flat.get("narrative_text"):
+            try:
+                flat["narrative_text"] = _p["tier3"]["narrative_text"] or ""
+            except (KeyError, TypeError):
+                pass
+
         matches = run_match(flat, top_n=15)
 
         # 重新计算字段完整度分数（必须在保存前完成）
