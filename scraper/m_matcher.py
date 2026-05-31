@@ -265,24 +265,34 @@ def _stage_compatible(bp_stage: str | None, investor_stages: list) -> bool:
         return True
     return bp_stage in investor_stages
 
-def _amount_compatible(bp: dict, investor: dict) -> bool:
+def _amount_penalty(bp: dict, investor: dict) -> float:
     inv_min = investor.get("check_size_min_usd")
     inv_max = investor.get("check_size_max_usd")
     if inv_min is None and inv_max is None:
-        return True
+        return 1.0
     try:
         amt    = bp["_profile"]["tier1"]["raise_amount_usd"]
         bp_min = amt.get("value_min") or amt.get("value")
         bp_max = amt.get("value_max") or amt.get("value")
     except (KeyError, TypeError):
-        return True   # BP missing amount → don't hard-exclude
+        return 1.0   # BP missing amount → no penalty
     if bp_min is None and bp_max is None:
-        return True
+        return 1.0
     bp_min  = bp_min  or 0
     bp_max  = bp_max  or bp_min
     inv_min = inv_min or 0
     inv_max = inv_max or float("inf")
-    return bp_max >= inv_min and bp_min <= inv_max
+    if bp_max >= inv_min and bp_min <= inv_max:
+        return 1.0
+    ratio = max(
+        inv_min / bp_max if bp_max else float("inf"),
+        bp_min / inv_max if inv_max else float("inf"),
+    )
+    if ratio <= 3:
+        return 0.7
+    if ratio <= 8:
+        return 0.4
+    return 0.0
 
 def _get_bp_sector_list(bp: dict) -> list[str]:
     """Extract BP sector tags across all profile formats (wrapped, raw JSON, flat)."""
@@ -432,16 +442,19 @@ def _sub_sector_bonus(bp: dict, investor: dict) -> dict:
     inv_sub = list(_normalize_tags([t.lower() for t in (investor.get("sub_tags") or [])]))
 
     def _no_data():
-        return {"base": 0.35, "f1": 0.0, "status": "no_data", "tags_matched": []}
+        return {"base": 0.20, "f1": 0.0, "status": "no_data", "tags_matched": []}
 
     def _mismatch():
         return {"base": 0.03, "f1": 0.0, "status": "confirmed_mismatch", "tags_matched": []}
 
     def _matched(overlap, effective_sub, status):
-        precision = len(overlap) / len(bp_sub)
-        recall    = len(overlap) / len(effective_sub)
-        f1        = 2 * precision * recall / (precision + recall)
-        return {"base": round(f1, 4), "f1": round(f1, 4),
+        precision  = len(overlap) / len(bp_sub)          # BP视角：覆盖了我多少需求
+        hit_bonus  = min(len(overlap) / 3.0, 1.0)        # 命中数奖励，3个封顶为1.0
+        base_score = round(precision * 0.7 + hit_bonus * 0.3, 4)
+        # 保留 f1 字段供调试用，但不再作为 base
+        recall = len(overlap) / len(effective_sub) if effective_sub else 0
+        f1     = round(2 * precision * recall / (precision + recall), 4) if (precision + recall) else 0.0
+        return {"base": base_score, "f1": f1,
                 "status": status, "tags_matched": sorted(overlap)}
 
     # ── no_data: generalist-only investor (strip generalist when other tags exist) ─
@@ -859,10 +872,12 @@ def _score_investor(
     bp_stage       = _bp_stage(bp)
     sector_jaccard = _sector_gate_and_jaccard(bp, investor)
 
+    amount_mult = _amount_penalty(bp, investor)
+
     t1_fails = []
     if not _stage_compatible(bp_stage, investor.get("stages") or []):
         t1_fails.append(f"stage: BP={bp_stage} not in {investor.get('stages')}")
-    if not _amount_compatible(bp, investor):
+    if amount_mult == 0.0:
         t1_fails.append("check_size out of range")
     if sector_jaccard == 0.0:
         t1_fails.append("no sector overlap")
@@ -905,7 +920,7 @@ def _score_investor(
     data_quality = (investor.get("tier1_completeness") or 70) / 100
     data_mult    = 0.75 + data_quality * 0.25      # 0.75 – 1.00
 
-    tier2_score = tier2_raw * sector_mult * data_mult
+    tier2_score = tier2_raw * sector_mult * data_mult * amount_mult
 
     # ── Sub-sector: primary anchor ──────────────────────────────────────
     sub_result      = _sub_sector_bonus(bp, investor)
@@ -926,8 +941,8 @@ def _score_investor(
     # ── Final formula: base × tier2_mod × sem_mod × conf_mult ──────────
     conf_mult  = _confidence_multiplier(bp)
     tier2_mod  = 0.60 + tier2_score * 0.80   # 0.60 (t2=0) → 1.40 (t2=1)
-    sem_mod    = 0.85 + sem * 0.30            # 0.85 (sem=0) → 1.15 (sem=1)
-    final      = round(base * tier2_mod * sem_mod * conf_mult, 4)
+    sem_mod    = 1.0   # semantic disabled as primary signal
+    final      = round(base * tier2_mod * conf_mult, 4)
 
     # ── Match reasons ────────────────────────────────────────────────────
     reasons = []
