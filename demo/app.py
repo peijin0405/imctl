@@ -386,7 +386,7 @@ M1_CONTENT = """\
     <input type="file" id="file-input" accept=".pdf,.docx,.doc">
     <div class="uz-icon">📂</div>
     <h3>Drop your Business Plan here</h3>
-    <p>or <span class="browse-link" onclick="document.getElementById('file-input').click()">browse file</span>
+    <p>or <span class="browse-link" onclick="event.stopPropagation(); document.getElementById('file-input').click()">browse file</span>
        &nbsp;·&nbsp; PDF or DOCX &nbsp;·&nbsp; max 50 MB</p>
   </div>
 
@@ -499,8 +499,9 @@ zone.addEventListener('drop', e => {
   const f = e.dataTransfer.files[0];
   if (f) uploadFile(f);
 });
-zone.addEventListener('click', () => fileIn.click());
-fileIn.addEventListener('change', () => { if (fileIn.files[0]) uploadFile(fileIn.files[0]); });
+let _picking = false;
+zone.addEventListener('click', () => { if (!_picking) { _picking = true; fileIn.click(); } });
+fileIn.addEventListener('change', () => { _picking = false; if (fileIn.files[0]) uploadFile(fileIn.files[0]); });
 
 function showError(msg) {
   errMsg.textContent = msg;
@@ -513,6 +514,7 @@ function resetForm() {
   errBox.classList.remove('show');
   zone.style.display = '';
   fileIn.value = '';
+  _picking = false;
 }
 
 function uploadFile(file) {
