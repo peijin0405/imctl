@@ -20,7 +20,7 @@ def login():
 
         user = User.query.filter_by(email=email).first()
         if user and bcrypt.check_password_hash(user.password, password):
-            login_user(user, remember=True)
+            login_user(user, remember=remember)
             next_page = request.args.get("next")
             return redirect(next_page or url_for("index"))
 

@@ -8,7 +8,7 @@ import json
 import os
 import sys
 import uuid
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -39,7 +39,7 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "dev-fallback-key-change
 app.config["SESSION_COOKIE_HTTPONLY"] = True
 app.config["SESSION_COOKIE_SAMESITE"] = "Lax"
 app.config["SESSION_COOKIE_SECURE"] = os.environ.get("RAILWAY_ENVIRONMENT") is not None
-app.config["REMEMBER_COOKIE_DURATION"] = 86400 * 7  # 7 days
+app.config["REMEMBER_COOKIE_DURATION"] = timedelta(days=7)
 
 from demo.database import init_db, db as _db
 from demo.extensions import init_extensions
