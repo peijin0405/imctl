@@ -15,6 +15,10 @@ def init_db(app):
         local_path = Path(__file__).parent / "washon.db"
         raw_url = f"sqlite:///{local_path}"
 
+    # Mask password for safe logging
+    safe_url = raw_url.split("@")[-1] if "@" in (raw_url or "") else (raw_url or "NOT SET")
+    print(f"[DB] Connecting to: {safe_url}", flush=True)
+
     app.config["SQLALCHEMY_DATABASE_URI"] = raw_url
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
