@@ -249,6 +249,11 @@ main{margin-left:var(--nav-w);flex:1;min-height:100vh}
     <a href="/m10" class="nav-link {{ 'active' if active=='m10' else '' }}">
       <span class="nav-icon">📋</span> Saved Analyses
     </a>
+    {% if current_user.is_authenticated %}
+    <a href="/account" class="nav-link {{ 'active' if active=='account' else '' }}">
+      <span class="nav-icon">👤</span> Account
+    </a>
+    {% endif %}
     <a href="/m9" class="nav-link {{ 'active' if active=='m9' else '' }}">
       <span class="nav-icon">🎯</span> Pitching Guide
       <span class="badge badge-beta">BETA</span>
@@ -3925,6 +3930,203 @@ def m10_export(aid):
     )
     resp.headers["Content-Disposition"] = f'attachment; filename="{name}.json"'
     return resp
+
+
+# ══════════════════════════════════════════════════════════════════════════
+# Account settings page
+# ══════════════════════════════════════════════════════════════════════════
+
+ACCOUNT_CONTENT = """\
+<style>
+.acct-wrap{max-width:560px;margin:48px auto;padding:0 24px}
+.acct-title{font-size:1.4rem;font-weight:700;margin-bottom:6px}
+.acct-sub{font-size:.83rem;color:var(--text2);margin-bottom:32px}
+.acct-section{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:24px 28px;margin-bottom:20px;
+}
+.acct-section-title{
+  font-size:.62rem;text-transform:uppercase;letter-spacing:.09em;
+  font-weight:700;color:var(--text3);margin-bottom:18px;
+}
+.acct-field{margin-bottom:16px}
+.acct-label{
+  display:block;font-size:.78rem;font-weight:600;color:var(--text2);
+  margin-bottom:6px;
+}
+.acct-input{
+  width:100%;padding:.65rem 1rem;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  border-radius:8px;color:var(--text);font-size:.92rem;
+  outline:none;transition:border-color .2s;
+  font-family:inherit;
+}
+.acct-input:focus{border-color:#7c6fff}
+.acct-input[readonly]{opacity:.55;cursor:default}
+.acct-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.acct-info-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 0;border-bottom:1px solid var(--border);font-size:.88rem;
+}
+.acct-info-row:last-child{border-bottom:none;padding-bottom:0}
+.acct-info-key{color:var(--text2)}
+.acct-info-val{color:var(--text);font-weight:500}
+.acct-btn{
+  padding:.65rem 1.4rem;background:linear-gradient(135deg,#6d5fff,#9d6bff);
+  border:none;border-radius:8px;color:#fff;font-size:.88rem;font-weight:600;
+  cursor:pointer;transition:opacity .2s;white-space:nowrap;font-family:inherit;
+}
+.acct-btn:hover{opacity:.88}
+.acct-msg{font-size:.82rem;margin-left:4px}
+.acct-msg.ok{color:#4ade80}
+.acct-msg.err{color:#f87171}
+</style>
+
+<div class="acct-wrap">
+  <div class="acct-title">Account Settings</div>
+  <div class="acct-sub">Manage your profile and security preferences.</div>
+
+  <!-- PROFILE -->
+  <div class="acct-section">
+    <div class="acct-section-title">Profile</div>
+    <div class="acct-field">
+      <label class="acct-label" for="acct-name">Display Name</label>
+      <input class="acct-input" id="acct-name" type="text"
+             value="{{ current_user.name }}" placeholder="Your name">
+    </div>
+    <div class="acct-field">
+      <label class="acct-label">Email Address</label>
+      <input class="acct-input" type="email"
+             value="{{ current_user.email }}" readonly>
+    </div>
+    <div class="acct-row">
+      <button class="acct-btn" onclick="saveProfile()">Save Changes</button>
+      <span class="acct-msg" id="profile-msg"></span>
+    </div>
+  </div>
+
+  <!-- CHANGE PASSWORD -->
+  <div class="acct-section">
+    <div class="acct-section-title">Change Password</div>
+    <div class="acct-field">
+      <label class="acct-label" for="acct-cur">Current Password</label>
+      <input class="acct-input" id="acct-cur" type="password"
+             placeholder="••••••••" autocomplete="current-password">
+    </div>
+    <div class="acct-field">
+      <label class="acct-label" for="acct-new">New Password</label>
+      <input class="acct-input" id="acct-new" type="password"
+             placeholder="Min. 8 characters" autocomplete="new-password">
+    </div>
+    <div class="acct-field">
+      <label class="acct-label" for="acct-confirm">Confirm New Password</label>
+      <input class="acct-input" id="acct-confirm" type="password"
+             placeholder="••••••••" autocomplete="new-password">
+    </div>
+    <div class="acct-row">
+      <button class="acct-btn" onclick="changePassword()">Update Password</button>
+      <span class="acct-msg" id="password-msg"></span>
+    </div>
+  </div>
+
+  <!-- ACCOUNT INFO -->
+  <div class="acct-section">
+    <div class="acct-section-title">Account Info</div>
+    <div class="acct-info-row">
+      <span class="acct-info-key">Member since</span>
+      <span class="acct-info-val">{{ current_user.created_at.strftime('%B %Y') if current_user.created_at else '—' }}</span>
+    </div>
+    <div class="acct-info-row">
+      <span class="acct-info-key">Account type</span>
+      <span class="acct-info-val">Standard</span>
+    </div>
+  </div>
+</div>
+
+<script>
+function showMsg(id, text, isOk) {
+  const el = document.getElementById(id);
+  el.textContent = text;
+  el.className = 'acct-msg ' + (isOk ? 'ok' : 'err');
+  if (isOk) setTimeout(() => { el.textContent = ''; el.className = 'acct-msg'; }, 3000);
+}
+
+function saveProfile() {
+  const name = document.getElementById('acct-name').value.trim();
+  if (!name) { showMsg('profile-msg', 'Name is required.', false); return; }
+  fetch('/account/profile', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({name}),
+  })
+  .then(r => r.json())
+  .then(d => showMsg('profile-msg', d.success ? 'Saved ✓' : (d.error || 'Error'), d.success))
+  .catch(() => showMsg('profile-msg', 'Request failed.', false));
+}
+
+function changePassword() {
+  const cur     = document.getElementById('acct-cur').value;
+  const newPw   = document.getElementById('acct-new').value;
+  const confirm = document.getElementById('acct-confirm').value;
+  if (!cur || !newPw || !confirm) { showMsg('password-msg', 'All fields required.', false); return; }
+  fetch('/account/password', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({current: cur, new_password: newPw, confirm}),
+  })
+  .then(r => r.json())
+  .then(d => {
+    if (d.success) {
+      document.getElementById('acct-cur').value = '';
+      document.getElementById('acct-new').value = '';
+      document.getElementById('acct-confirm').value = '';
+    }
+    showMsg('password-msg', d.success ? 'Password updated ✓' : (d.error || 'Error'), d.success);
+  })
+  .catch(() => showMsg('password-msg', 'Request failed.', false));
+}
+</script>
+"""
+
+
+@app.route("/account")
+@login_required
+def account():
+    html = SHELL.replace("{{ content }}", ACCOUNT_CONTENT)
+    return render_template_string(html, active="account")
+
+
+@app.route("/account/profile", methods=["POST"])
+@login_required
+def account_profile():
+    body = request.get_json(force=True) or {}
+    name = (body.get("name") or "").strip()
+    if not name:
+        return jsonify({"success": False, "error": "Name is required."})
+    current_user.name = name
+    _db.session.commit()
+    return jsonify({"success": True})
+
+
+@app.route("/account/password", methods=["POST"])
+@login_required
+def account_password():
+    from demo.extensions import bcrypt
+    body       = request.get_json(force=True) or {}
+    current_pw = body.get("current", "")
+    new_pw     = body.get("new_password", "")
+    confirm    = body.get("confirm", "")
+
+    if not bcrypt.check_password_hash(current_user.password, current_pw):
+        return jsonify({"success": False, "error": "Current password is incorrect."})
+    if len(new_pw) < 8:
+        return jsonify({"success": False, "error": "New password must be at least 8 characters."})
+    if new_pw != confirm:
+        return jsonify({"success": False, "error": "Passwords do not match."})
+
+    current_user.password = bcrypt.generate_password_hash(new_pw).decode("utf-8")
+    _db.session.commit()
+    return jsonify({"success": True})
 
 
 # ══════════════════════════════════════════════════════════════════════════
