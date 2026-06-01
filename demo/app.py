@@ -2206,6 +2206,7 @@ function m10View(i){
         return `<div class="m10-match-card">
           <div class="m10-match-row">
             <span class="m10-match-name">${nameHtml}</span>
+            <button class="pip-btn" onclick="m10AddToPipeline(this,${JSON.stringify(m.name||'')})">+ Pipeline</button>
             <span class="m10-match-score">${ms}</span>
           </div>
           <div class="m10-match-meta">
@@ -2259,6 +2260,36 @@ function m10CloseDirect(){
   document.body.style.overflow='';
 }
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') m10CloseDirect(); });
+
+function m10AddToPipeline(btn, investorName) {
+  if (btn.disabled) return;
+  btn.disabled = true;
+  btn.textContent = '…';
+  fetch('/api/pipeline/add', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({investor_name: investorName, source: 'saved_analysis'}),
+  })
+  .then(r => r.json())
+  .then(d => {
+    if (d.success) {
+      btn.textContent = '✓ Added';
+      btn.style.borderColor = '#10b981';
+      btn.style.color = '#10b981';
+    } else {
+      btn.textContent = 'Failed';
+      btn.style.borderColor = '#ef4444';
+      btn.style.color = '#ef4444';
+      setTimeout(() => { btn.textContent = '+ Pipeline'; btn.style.borderColor = ''; btn.style.color = ''; btn.disabled = false; }, 2000);
+    }
+  })
+  .catch(() => {
+    btn.textContent = 'Failed';
+    btn.style.borderColor = '#ef4444';
+    btn.style.color = '#ef4444';
+    setTimeout(() => { btn.textContent = '+ Pipeline'; btn.style.borderColor = ''; btn.style.color = ''; btn.disabled = false; }, 2000);
+  });
+}
 
 m10Load();
 </script>
