@@ -2202,22 +2202,113 @@ function m10View(i){
   const matches = a.matches || [];
   const matchHtml = matches.length
     ? matches.map(m => {
-        const ms = typeof m.score==='number' ? Math.round(m.score*100)+'%' : '—';
-        const reasons = (m.match_reasons||[]).join(' · ');
-        const stages  = (m.stages||[]).join(', ');
+        const finalPct = typeof m.score          === 'number' ? Math.round(m.score          * 100) : 0;
+        const t2Pct    = typeof m.tier2_score    === 'number' ? Math.round(m.tier2_score    * 100) : null;
+        const semPct   = typeof m.semantic_score === 'number' ? Math.round(m.semantic_score * 100) : null;
+        const secPct   = typeof m.sector_score   === 'number' ? Math.round(m.sector_score   * 100) : null;
+        const dims     = m.dim_scores || {};
+        const reasons  = (m.match_reasons||[]).join(' · ');
+        const stages   = (m.stages||[]).join(', ');
+        const subF1Base     = typeof m.sub_f1_base      === 'number' ? m.sub_f1_base      : null;
+        const subStatus     = m.sub_sector_status || null;
+        const subTagMatched = Array.isArray(m.sub_tags_matched) ? m.sub_tags_matched : [];
+        const subBonusPct   = subF1Base !== null ? Math.min(100, Math.round(subF1Base * 100)) : null;
+        const hasTiers      = m.dim_scores != null;
+
+        function col(pct) {
+          return pct >= 70 ? '#10b981' : pct >= 45 ? '#f59e0b' : '#ef4444';
+        }
+        function miniBar(val) {
+          const pct = Math.round((val || 0) * 100);
+          return `<div style="display:flex;align-items:center;gap:5px">
+            <div style="width:52px;height:3px;background:var(--border);border-radius:2px;flex-shrink:0">
+              <div style="width:${pct}%;height:100%;background:${col(pct)};border-radius:2px"></div>
+            </div>
+            <span style="font-size:.62rem;color:var(--text3);width:26px">${pct}%</span>
+          </div>`;
+        }
+
         const nameHtml = m.website
-          ? `<a href="${esc(m.website)}" target="_blank" style="color:var(--text);text-decoration:none">${esc(m.name||'—')} <span style="color:var(--accent2);font-size:.72rem">↗</span></a>`
+          ? `<a href="${esc(m.website)}" target="_blank" style="color:var(--text);text-decoration:none;border-bottom:1px solid var(--border2)">${esc(m.name||'—')} <span style="color:var(--accent2);font-size:.7rem">↗</span></a>`
           : esc(m.name||'—');
+
+        const tierPanels = hasTiers ? `
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px;margin-bottom:10px">
+
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:7px;padding:7px 9px">
+              <div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);font-weight:600;margin-bottom:4px">Tier 1 · Hard Filter</div>
+              <div style="font-size:.68rem;color:var(--text2);line-height:1.7">
+                <div style="display:flex;justify-content:space-between"><span>Stage</span><span style="color:#10b981">✓ pass</span></div>
+                <div style="display:flex;justify-content:space-between"><span>Sector</span><span style="color:${col(secPct)};font-weight:600">${secPct != null ? secPct+'%' : '—'}${subTagMatched.length ? ' 🎯' : ''}</span></div>
+                <div style="display:flex;justify-content:space-between"><span>Amount</span><span style="color:#10b981">✓ pass</span></div>
+                <div style="display:flex;justify-content:space-between"><span>Geo</span><span style="color:#10b981">✓ pass</span></div>
+              </div>
+            </div>
+
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:7px;padding:7px 9px">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">
+                <span style="font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);font-weight:600">Tier 2 · Soft Score</span>
+                <span style="font-family:monospace;font-size:.72rem;font-weight:700;color:${col(t2Pct)}">${t2Pct != null ? t2Pct+'%' : '—'}</span>
+              </div>
+              <div style="font-size:.65rem;color:var(--text3);line-height:2">
+                <div style="display:flex;justify-content:space-between;align-items:center"><span>Biz Model</span>${miniBar(dims.business_model)}</div>
+                <div style="display:flex;justify-content:space-between;align-items:center"><span>Traction</span>${miniBar(dims.traction)}</div>
+                <div style="display:flex;justify-content:space-between;align-items:center"><span>Team</span>${miniBar(dims.team)}</div>
+                <div style="display:flex;justify-content:space-between;align-items:center"><span>Lead</span>${miniBar(dims.lead)}</div>
+                <div style="display:flex;justify-content:space-between;align-items:center"><span>Geo</span>${miniBar(dims.geo_soft)}</div>
+              </div>
+            </div>
+
+            <div style="background:var(--bg);border:1px solid var(--border);border-radius:7px;padding:7px 9px">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">
+                <span style="font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);font-weight:600">Tier 3 · Semantic</span>
+                <span style="font-family:monospace;font-size:.72rem;font-weight:700;color:${col(semPct)}">${semPct != null ? semPct+'%' : '—'}</span>
+              </div>
+              <div style="font-size:.65rem;color:var(--text3);line-height:1.6;margin-bottom:6px">Thesis alignment between BP narrative and investor investment thesis</div>
+              <div style="width:100%;height:5px;background:var(--border);border-radius:3px">
+                <div style="width:${semPct || 0}%;height:100%;background:${col(semPct || 0)};border-radius:3px;transition:width .4s"></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:.58rem;color:var(--text3);margin-top:3px"><span>low</span><span>high</span></div>
+            </div>
+
+            ${(() => {
+              const isMatch    = subStatus === 'matched' || subStatus === 'inferred';
+              const isMismatch = subStatus === 'confirmed_mismatch';
+              const isNoData   = !isMatch && !isMismatch;
+              const borderCol  = isMatch ? 'var(--accent)' : 'var(--border)';
+              const pctLabel   = isMatch ? '+'+subBonusPct+'%' : '—';
+              const pctColor   = isMatch ? '#10b981' : 'var(--text3)';
+              const barWidth   = isMatch ? subBonusPct : (isNoData ? 35 : 3);
+              const barColor   = isMatch ? '#10b981' : (isNoData ? 'var(--text3)' : '#ef4444');
+              const bodyHtml   = isMatch && subTagMatched.length
+                ? '<div style="display:flex;flex-wrap:wrap;gap:3px;margin-bottom:5px">'+subTagMatched.map(t=>'<span style="font-size:.58rem;background:rgba(99,102,241,.15);border:1px solid var(--accent);border-radius:3px;padding:1px 5px;color:var(--accent2)">'+esc(t)+'</span>').join('')+'</div>'
+                : isNoData
+                  ? '<div style="font-size:.62rem;color:var(--text3);line-height:1.5;margin-bottom:4px">No sub-sector data</div>'
+                  : '<div style="font-size:.62rem;color:#ef4444;line-height:1.5;margin-bottom:4px">No matching sub-sectors</div>';
+              return '<div style="background:var(--bg);border:1px solid '+borderCol+';border-radius:7px;padding:7px 9px">'
+                +'<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px">'
+                +'<span style="font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);font-weight:600">Sub-Sector</span>'
+                +'<span style="font-family:monospace;font-size:.72rem;font-weight:700;color:'+pctColor+'">'+pctLabel+'</span>'
+                +'</div>'+bodyHtml
+                +'<div style="width:100%;height:3px;background:var(--border);border-radius:2px">'
+                +'<div style="width:'+barWidth+'%;height:100%;background:'+barColor+';border-radius:2px;transition:width .4s"></div>'
+                +'</div></div>';
+            })()}
+
+          </div>` : '';
+
         return `<div class="m10-match-card">
-          <div class="m10-match-row">
+          <div class="m10-match-row" style="margin-bottom:${hasTiers ? '10px' : '4px'}">
             <span class="m10-match-name">${nameHtml}</span>
             <button class="pip-btn" data-name="${esc(m.name||'')}" onclick="m10AddToPipeline(this)">+ Pipeline</button>
-            <span class="m10-match-score">${ms}</span>
+            <span class="m10-match-score" style="color:${col(finalPct)}">${finalPct}%</span>
           </div>
-          <div class="m10-match-meta">
-            ${stages        ? `<span class="m10-tag">${esc(stages)}</span>` : ''}
-            ${m.check_size  ? `<span class="m10-tag">${esc(m.check_size)}</span>` : ''}
+          <div class="m10-match-meta" style="margin-bottom:${hasTiers ? '10px' : '4px'}">
+            ${stages          ? `<span class="m10-tag">${esc(stages)}</span>` : ''}
+            ${m.check_size    ? `<span class="m10-tag">${esc(m.check_size)}</span>` : ''}
+            ${m.investor_type ? `<span class="m10-tag">${esc(m.investor_type)}</span>` : ''}
           </div>
+          ${tierPanels}
           ${reasons ? `<div class="m10-match-reasons">${esc(reasons)}</div>` : ''}
         </div>`;
       }).join('')
