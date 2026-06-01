@@ -700,7 +700,7 @@ function renderResults(data) {
             <div>
               <span style="font-size:.88rem;font-weight:700">${nameHtml}</span>
               <button class="pip-btn" id="pip-btn-${idx}"
-                onclick="addToPipeline(this,${JSON.stringify(m.name||'')})">+ Pipeline</button>
+                data-name="${escHtml(m.name||'')}" onclick="addToPipeline(this)">+ Pipeline</button>
               <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:5px">
                 ${stages          ? `<span class="conf-meta-tag">${escHtml(stages)}</span>`          : ''}
                 ${m.check_size    ? `<span class="conf-meta-tag">${escHtml(m.check_size)}</span>`    : ''}
@@ -871,7 +871,8 @@ function escHtml(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
-function addToPipeline(btn, investorName) {
+function addToPipeline(btn) {
+  const investorName = btn.getAttribute('data-name');
   if (btn.disabled) return;
   btn.disabled = true;
   btn.textContent = '…';
@@ -2210,7 +2211,7 @@ function m10View(i){
         return `<div class="m10-match-card">
           <div class="m10-match-row">
             <span class="m10-match-name">${nameHtml}</span>
-            <button class="pip-btn" onclick="m10AddToPipeline(this,${JSON.stringify(m.name||'')})">+ Pipeline</button>
+            <button class="pip-btn" data-name="${esc(m.name||'')}" onclick="m10AddToPipeline(this)">+ Pipeline</button>
             <span class="m10-match-score">${ms}</span>
           </div>
           <div class="m10-match-meta">
@@ -2265,7 +2266,8 @@ function m10CloseDirect(){
 }
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') m10CloseDirect(); });
 
-function m10AddToPipeline(btn, investorName) {
+function m10AddToPipeline(btn) {
+  const investorName = btn.getAttribute('data-name');
   if (btn.disabled) return;
   btn.disabled = true;
   btn.textContent = '…';
