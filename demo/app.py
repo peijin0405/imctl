@@ -249,11 +249,6 @@ main{margin-left:var(--nav-w);flex:1;min-height:100vh}
     <a href="/m10" class="nav-link {{ 'active' if active=='m10' else '' }}">
       <span class="nav-icon">📋</span> Saved Analyses
     </a>
-    {% if current_user.is_authenticated %}
-    <a href="/account" class="nav-link {{ 'active' if active=='account' else '' }}">
-      <span class="nav-icon">👤</span> Account
-    </a>
-    {% endif %}
     <a href="/m9" class="nav-link {{ 'active' if active=='m9' else '' }}">
       <span class="nav-icon">🎯</span> Pitching Guide
       <span class="badge badge-beta">BETA</span>
@@ -262,6 +257,10 @@ main{margin-left:var(--nav-w);flex:1;min-height:100vh}
 
   <div class="nav-footer">
     {% if current_user.is_authenticated %}
+      <a href="/account" class="nav-link {{ 'active' if active=='account' else '' }}" style="margin:0 -10px 14px">
+        <span class="nav-icon">👤</span> Account
+      </a>
+      <div style="border-top:1px solid var(--border2);margin-bottom:14px"></div>
       <div class="nav-user">Welcome, {{ current_user.name }}</div>
       <a href="/auth/logout" class="nav-logout">⏻ Logout</a>
     {% else %}
