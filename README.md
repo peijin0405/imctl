@@ -9,7 +9,6 @@
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Available-brightgreen?style=for-the-badge)](https://web-production-3970e.up.railway.app/)
 [![Python](https://img.shields.io/badge/Python-Flask-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://flask.palletsprojects.com/)
 [![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![Railway](https://img.shields.io/badge/Deployed%20on-Railway-0B0D0E?style=for-the-badge)](https://railway.app/)
 
 </div>
 
@@ -150,25 +149,6 @@ Personalized investor outreach emails are generated via a **4-layer pipeline**:
 
 ---
 
-## Quick Start
-
-```bash
-git clone https://github.com/your-org/washon-investment-suite.git
-cd washon-investment-suite
-
-pip install -r requirements.txt
-
-cp .env.example .env
-# Add your API keys: Anthropic, Voyage AI, Exa, PostgreSQL, Sentry
-
-flask run
-# SQLite is used automatically when DATABASE_URL is not set
-```
-
-See [`DEPLOY.md`](./DEPLOY.md) for Railway production deployment.
-
----
-
 ## Project Stats
 
 ```
@@ -179,17 +159,16 @@ See [`DEPLOY.md`](./DEPLOY.md) for Railway production deployment.
 
 ---
 
-## Documentation
+## License
 
-| File | Description |
-|------|-------------|
-| [`DEPLOY.md`](./DEPLOY.md) | Production deployment guide |
-| [`docs/sector_taxonomy.md`](./docs/sector_taxonomy.md) | Industry classification taxonomy |
-| [`investor_email_prompt.md`](./investor_email_prompt.md) | Prompt engineering design notes |
-| [`audit/report.md`](./audit/report.md) | Investor data quality audit |
+© Washon Capital. All rights reserved.
+
+This repository is for showcase purposes only. The source code, data, and algorithms contained herein are proprietary and may not be copied, modified, distributed, or used without explicit written permission.
 
 ---
 
-## License
+## Access
 
-All rights reserved.
+This platform is not publicly open-sourced. To request access or discuss collaboration, please reach out via the live platform or contact us directly.
+
+[![Live Platform](https://img.shields.io/badge/Visit-Live%20Platform-blue?style=for-the-badge)](https://web-production-3970e.up.railway.app/)
